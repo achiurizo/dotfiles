@@ -1,0 +1,9 @@
+# Git Aliases
+alias gad='git add .'
+alias gci='git commit -v -a'
+alias gp='git push'
+alias gst='git status'
+
+# common commands
+alias ls='ls -G'
+alias reload='. ~/.bash_profile'

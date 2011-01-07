@@ -4,6 +4,8 @@ alias gci='git commit -v -a'
 alias gp='git push'
 alias gst='git status'
 
-# common commands
+# basic commands
 alias ls='ls -G'
 alias reload='. ~/.bash_profile'
+alias fnd='find . -name'
+alias duh='du -h --max-depth=1'

@@ -1,0 +1,2 @@
+#!/bin/sh
+ps aux | awk /padrino/ | awk /start/

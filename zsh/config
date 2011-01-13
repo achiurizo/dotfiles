@@ -21,3 +21,6 @@ function check_git_changes {
   # tput setaf 1 = RED, tput setaf 2 = GREEN
   [ `parse_git_status` -ne 1 ] && tput setaf 1 || tput setaf 2
 }
+
+# rvm-install added line:
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi

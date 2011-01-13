@@ -1,0 +1,10 @@
+# Git Aliases
+alias gad='git add .'
+alias gci='git commit -v -a'
+alias gp='git push'
+alias gst='git status'
+
+# basic commands
+alias fnd='find . -name'
+alias duh='du -h --max-depth=1'
+

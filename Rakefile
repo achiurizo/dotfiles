@@ -1,6 +1,12 @@
 require 'rake'
 require 'erb'
 
+
+desc "Install oh-my-zsh"
+task :install_zsh do
+  `wget --no-check-certificate http://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh`
+end
+
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false

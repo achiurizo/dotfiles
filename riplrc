@@ -1,0 +1,15 @@
+require 'ripl/irb'
+require 'ripl/multi_line'
+require 'ripl/color_result'
+require 'ripl/color_error'
+
+# multi_line configurations
+Ripl.config[:multi_line_prompt] = ' > '
+
+# color_result config
+# Ripl.config[:color_result_default_schema][:comma] = :green
+# Ripl.config[:color_result_ap_options] = { :multiline => false }
+
+# color error configs
+# Ripl.config[:color_error] = :blue
+#

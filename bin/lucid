@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby -wKU
+
+system "mvim ~/Documents/dreamlog/#{Time.now.strftime("%b%d%Y-%H%M")}.txt"

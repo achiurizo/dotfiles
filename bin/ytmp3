@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby -wKU
+
+system "youtube-dl #{ARGV[0]} -t"
+file = `ls *.flv`.chomp
+system "ffmpeg -i #{file} -vn -acodec libmp3lame -ab 128 #{file.gsub(/-.+/,'.mp3')}"
+system "rm #{file}"

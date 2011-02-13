@@ -27,3 +27,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f $HOME/.zsh_aliases ]; then
   source $HOME/.zsh_aliases
 fi
+
+# rvm-install added line:
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi

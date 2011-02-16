@@ -13,8 +13,11 @@ end
 # multi_line configurations
 Ripl.config[:multi_line_prompt] = ' > '
 
+# Color Engine
+Ripl.config[:color_result_engine] = :ap
+
 # color_result config
-# Ripl.config[:color_result_default_schema][:comma] = :green
+Ripl.config[:color_result_default_schema][:comma] = :green
 # Ripl.config[:color_result_ap_options] = { :multiline => false }
 
 # color error configs

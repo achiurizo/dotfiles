@@ -3,8 +3,9 @@
 
 def download(url)
   system "youtube-dl #{url} -t"
-  file = `ls *.flv`.chomp
-  output = file.gsub(/-.+\./,'.').gsub('.flv','.mp3')
+  file = `ls *.{flv,mp4}`.chomp
+  file =~ /(\w+)\-\w+(\.\w+)/
+  output = "#{$1}.mp3"
   system "ffmpeg -i #{file} -vn -acodec libmp3lame -ab 128 #{output}"
   system "rm #{file}"
 end

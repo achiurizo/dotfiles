@@ -5,7 +5,7 @@ def download(url)
   puts url.inspect
   system "youtube-dl #{url} -t"
   file = `ls *.{flv,mp4}`.chomp
-  file =~ /(\w+)\-?\w+(\.\w+)/
+  file =~ /(\w+)\-?/
   output = "#{$1}.mp3"
   system "ffmpeg -i #{file} -vn -acodec libmp3lame -ab 128 #{output}"
   system "rm #{file}"

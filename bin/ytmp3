@@ -4,7 +4,7 @@
 def download(url)
   system "youtube-dl #{url} -t"
   file = `ls *.{flv,mp4}`.chomp
-  file =~ /(\w+)\-\w+(\.\w+)/
+  file =~ /(\w+)\-?\w+(\.\w+)/
   output = "#{$1}.mp3"
   system "ffmpeg -i #{file} -vn -acodec libmp3lame -ab 128 #{output}"
   system "rm #{file}"
@@ -12,7 +12,7 @@ end
 
 if ARGV[0] =~ /\.txt/
   input = File.open(ARGV[0])
-  input.each_line { |url| download url }
+  input.each_line { |url| download(url) unless url =~ /^#/ }
 else
   download ARGV[0]
 end

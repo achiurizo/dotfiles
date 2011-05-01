@@ -4,4 +4,4 @@ CURRENT=`git branch | grep '\*' | awk '{print $2}'`
 git checkout master
 git merge --no-ff ${CURRENT}
 git push origin master
-git checkout ${CURRENT}
+git branch -d ${CURRENT}

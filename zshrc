@@ -19,7 +19,7 @@ export ZSH_THEME="cloud"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby brew gem github)
+plugins=(git osx ruby brew gem github rvm git-flow)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -7,3 +7,6 @@ source ~/.bash/config
 if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
+
+# Vim bindings
+set -o vi

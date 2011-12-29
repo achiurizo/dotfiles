@@ -7,7 +7,7 @@ def download(url)
   file = `ls *.flv`.chomp
   file = `ls *.mp4`.chomp if file.empty?
   file =~ /(\w+)\-?/
-  output = "#{$1}.mp3"
+  output = file.gsub(/\.(flv|mp4)/,'.mp3')
   system "ffmpeg -i #{file} -vn -acodec libmp3lame -ab 320k #{output}"
   system "mkdir -p flvs"
   system "mv #{file} flvs/"

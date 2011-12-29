@@ -1,6 +1,13 @@
 #!/usr/bin/env ruby -wKU
 
 
+# Since youtube_dl now has options to do this, the other is obselete.
+#
+def youtube_dl(url)
+  system "youtube-dl #{url} -t --extract-audio --audio-format 'mp3' --audio-quality 320k"
+end
+
+
 def download(url)
   puts url.inspect
   system "youtube-dl #{url} -t"
@@ -15,7 +22,7 @@ end
 
 if ARGV[0] =~ /\.txt/
   input = File.open(ARGV[0])
-  input.each_line { |url| download(url.chomp) unless url =~ /^#/ }
+  input.each_line { |url| youtube_dl(url.chomp) unless url =~ /^#/ }
 else
-  download ARGV[0]
+  youtube_dl ARGV[0]
 end

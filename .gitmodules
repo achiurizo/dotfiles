@@ -10,3 +10,6 @@
 [submodule "janus/vim-align"]
 	path = janus/vim-align
 	url = git://github.com/tsaleh/vim-align.git
+[submodule "janus/vim-irblack"]
+	path = janus/vim-irblack
+	url = git://github.com/wgibbs/vim-irblack.git

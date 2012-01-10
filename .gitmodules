@@ -13,3 +13,6 @@
 [submodule "janus/vim-irblack"]
 	path = janus/vim-irblack
 	url = git://github.com/wgibbs/vim-irblack.git
+[submodule "janus/vim-ruby-minitest"]
+	path = janus/vim-ruby-minitest
+	url = git://github.com/sunaku/vim-ruby-minitest.git

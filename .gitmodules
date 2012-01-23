@@ -16,3 +16,6 @@
 [submodule "janus/vim-ruby-minitest"]
 	path = janus/vim-ruby-minitest
 	url = git://github.com/sunaku/vim-ruby-minitest.git
+[submodule "janus/jellybeans.vim"]
+	path = janus/jellybeans.vim
+	url = git://github.com/nanotech/jellybeans.vim.git

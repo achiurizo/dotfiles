@@ -1,4 +1,5 @@
 # basic commands
 alias fnd='find . -name'
 alias duh='du -h --max-depth=1'
+alias tmux='tmux -2'
 

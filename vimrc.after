@@ -1,4 +1,5 @@
 " GUI/Look Options
+set t_Co=256       "xterm 256 color mode
 color jellybeans
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar

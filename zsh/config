@@ -1,5 +1,5 @@
-export EDITOR='mvim'
-export GIT_EDITOR='mvim -f'
+export EDITOR='vim'
+export GIT_EDITOR='vim -f'
 
 # REE Tuned Ruby
 export RUBY_HEAP_MIN_SLOTS=500000

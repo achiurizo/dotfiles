@@ -1,9 +1,6 @@
 [submodule "janus/vim-indent-guides"]
 	path = janus/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "janus/vim-css-color"]
-	path = janus/vim-css-color
-	url = git://github.com/skammer/vim-css-color.git
 [submodule "janus/vwilight.vim"]
 	path = janus/vwilight.vim
 	url = git://github.com/bry4n/vwilight.vim.git

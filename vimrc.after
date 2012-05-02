@@ -6,5 +6,10 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
 " Store temporary files in a central spot
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" Turn off all swaps and backups
+set noswapfile
+set nobackup
+set nowritebackup

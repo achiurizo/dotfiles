@@ -1,7 +1,7 @@
 // Calculate the total activity cost
 function totalActivityCost() {
   var total = 0;
-  $('.shim-td').each(function(i) {
+  $('td.amount').each(function(i) {
     total += parseFloat($(this).text().replace("$",""))
   });
   return total;

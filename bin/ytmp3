@@ -1,10 +1,18 @@
-#!/usr/bin/env ruby -wKU
-
+#!/usr/bin/env ruby
+require 'youtube_it'
 
 # Since youtube_dl now has options to do this, the other is obselete.
 #
 def youtube_dl(url)
-  system "youtube-dl #{url} -t --extract-audio --audio-format 'mp3' --audio-quality 320k"
+  puts "resolving #{url}..."
+  client = YouTubeIt::Client.new
+  begin
+    url    = client.videos_by(:query => url).videos.first.player_url unless url =~ /youtube\.com/
+    puts "downloading #{url}..."
+    system "youtube-dl '#{url}' -t --extract-audio --audio-format 'mp3' --audio-quality 320k"
+  rescue
+    puts "Couldn't find/download #{url}!"
+  end
 end
 
 

@@ -1,3 +1,5 @@
 --type-set=css=.css,.scss,.sass
 --type-set=js=.js,.coffee
+--type-set=html=.html,.haml,.erb
+--type-set=ruby=.rb
 

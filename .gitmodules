@@ -22,3 +22,6 @@
 [submodule "janus/vim-powerline"]
 	path = janus/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "janus/vim-slim"]
+	path = janus/vim-slim
+	url = git://github.com/slim-template/vim-slim.git

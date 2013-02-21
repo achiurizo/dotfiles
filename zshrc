@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="cloud"
+export ZSH_THEME="wedisagree"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -33,5 +33,6 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 # Vim bindings
 bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

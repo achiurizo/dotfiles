@@ -1,4 +1,4 @@
-export EDITOR='/usr/bin/vim -f'
+export EDITOR='/usr/bin/vim'
 export GIT_EDITOR='/usr/bin/vim -f'
 
 # REE Tuned Ruby

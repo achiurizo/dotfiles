@@ -13,3 +13,4 @@ set guioptions-=r  "remove right-hand scroll bar
 set noswapfile
 set nobackup
 set nowritebackup
+let g:ackprg = 'ag --nogroup --nocolor --column'

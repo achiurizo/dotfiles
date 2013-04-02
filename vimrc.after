@@ -14,3 +14,6 @@ set noswapfile
 set nobackup
 set nowritebackup
 let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey

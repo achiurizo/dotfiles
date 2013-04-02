@@ -29,10 +29,20 @@ if [ -f $HOME/.zsh_aliases ]; then
 fi
 
 # rvm-install added line:
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+#if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+
 
 # Vim bindings
 bindkey -v
 bindkey '^R' history-incremental-pattern-search-backward
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# chruby
+[ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ] || return
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+RUBIES+=($HOME/.rvm/rubies/*)
+
+chruby 2.0.0-p0

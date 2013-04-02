@@ -25,3 +25,6 @@
 [submodule "janus/vim-slim"]
 	path = janus/vim-slim
 	url = git://github.com/slim-template/vim-slim.git
+[submodule "janus/vim-dispatch"]
+	path = janus/vim-dispatch
+	url = git://github.com/tpope/vim-dispatch.git

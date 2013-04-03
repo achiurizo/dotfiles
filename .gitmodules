@@ -1,33 +1,3 @@
-[submodule "janus/vim-indent-guides"]
-	path = janus/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "janus/vwilight.vim"]
-	path = janus/vwilight.vim
-	url = git://github.com/bry4n/vwilight.vim.git
-[submodule "janus/vim-align"]
-	path = janus/vim-align
-	url = git://github.com/tsaleh/vim-align.git
-[submodule "janus/vim-irblack"]
-	path = janus/vim-irblack
-	url = git://github.com/wgibbs/vim-irblack.git
-[submodule "janus/vim-ruby-minitest"]
-	path = janus/vim-ruby-minitest
-	url = git://github.com/sunaku/vim-ruby-minitest.git
-[submodule "janus/jellybeans.vim"]
-	path = janus/jellybeans.vim
-	url = git://github.com/nanotech/jellybeans.vim.git
-[submodule "janus/vim-copy-as-rtf"]
-	path = janus/vim-copy-as-rtf
-	url = git://github.com/aniero/vim-copy-as-rtf.git
-[submodule "janus/vim-powerline"]
-	path = janus/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
-[submodule "janus/vim-slim"]
-	path = janus/vim-slim
-	url = git://github.com/slim-template/vim-slim.git
-[submodule "janus/vim-dispatch"]
-	path = janus/vim-dispatch
-	url = git://github.com/tpope/vim-dispatch.git
 [submodule "vim/bundle/vim-sensible"]
 	path = vim/bundle/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git

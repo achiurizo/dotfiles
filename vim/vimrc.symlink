@@ -73,3 +73,7 @@ nmap <leader>gp :Git push<CR>
 "
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 map <leader>n :NERDTreeToggle<CR>
+
+" ZOOMWIN
+"
+map <leader>zw :ZoomWin<CR>

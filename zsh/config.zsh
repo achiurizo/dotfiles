@@ -11,11 +11,13 @@ export GIT_EDITOR='/usr/local/bin/vim -f'
 
 # History Configurations
 #  
-setopt SHARE_HISTORY                    # shared history between session
-setopt EXTEND_HISTORY                   # timestamp for history
-setopt APPEND_HISTORY                   # adds history
-setopt INC_APPEND_HISTORY SHARE_HISTORY # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS             # don't record dupes in history
+HISTFILE=~/.zhistory
+HISTSIZE=SAVEHIST=10000
+setopt SHARE_HISTORY        # shared history between session
+setopt EXTENDED_HISTORY     # timestamp for history
+setopt APPEND_HISTORY       # adds history
+setopt INC_APPEND_HISTORY   # adds history incrementally and share it across sessions
+setopt HIST_IGNORE_ALL_DUPS # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
 # OH-MY-ZSH

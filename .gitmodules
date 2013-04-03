@@ -22,3 +22,24 @@
 [submodule "vim/bundle/ZoomWin"]
 	path = vim/bundle/ZoomWin
 	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "vim/bundle/vim-indent-guides"]
+	path = vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/vim-align"]
+	path = vim/bundle/vim-align
+	url = git://github.com/tsaleh/vim-align.git
+[submodule "vim/bundle/vim-ruby-minitest"]
+	path = vim/bundle/vim-ruby-minitest
+	url = git://github.com/sunaku/vim-ruby-minitest.git
+[submodule "vim/bundle/vim-copy-as-rtf"]
+	path = vim/bundle/vim-copy-as-rtf
+	url = git://github.com/aniero/vim-copy-as-rtf.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/bundle/vim-slim"]
+	path = vim/bundle/vim-slim
+	url = git://github.com/slim-template/vim-slim.git
+[submodule "vim/bundle/vim-dispatch"]
+	path = vim/bundle/vim-dispatch
+	url = git://github.com/tpope/vim-dispatch.git

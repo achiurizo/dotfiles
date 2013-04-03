@@ -1,2 +1,0 @@
-call janus#disable_plugin('pep8', "Shit is broke")
-set shell=/bin/sh

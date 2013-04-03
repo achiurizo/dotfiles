@@ -1,10 +1,13 @@
 " GUI/Look Options
+"
 set t_Co=256       "xterm 256 color mode
 color jellybeans
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
+" Swap and Backup
+"
 " Store temporary files in a central spot
 "set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 "set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -13,7 +16,12 @@ set guioptions-=r  "remove right-hand scroll bar
 set noswapfile
 set nobackup
 set nowritebackup
-let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" ack.vim
+let g:ackprg = 'ag --nogroup --nocolor --column' " Use ag instead
+
+" vim-indent-guides
+"
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey

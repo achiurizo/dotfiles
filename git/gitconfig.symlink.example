@@ -1,0 +1,18 @@
+[user]
+	name  = AUTHORNAME 
+  email = AUTHOREMAIL
+[color]
+  diff   = auto
+  status = auto
+  branch = auto
+[alias]
+  co = checkout
+[push]
+  default = matching
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[core]
+	excludesfile = ~/.gitignore
+	editor       = vim
+[branch]
+	autosetuprebase = always

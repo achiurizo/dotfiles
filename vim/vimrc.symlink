@@ -49,3 +49,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
   \ }
 
+
+" NERDCOMMENTER
+"
+map <leader>/ <plug>NERDCommenterToggle<CR>

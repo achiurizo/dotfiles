@@ -8,6 +8,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 let mapleader=","  " Set my leader key to ','
+set nocompatible
+set expandtab
+set number         " line numbers
 
 " GUI/LOOK OPTIONS
 "
@@ -38,9 +41,13 @@ let g:ackprg = 'ag --nogroup --nocolor --column' " Use ag instead
 
 " VIM-INDENT-GUIDES
 "
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=white
+let g:indent_guides_color_change_percent = 30
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=steelblue3 ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3 ctermbg=4
 
 " CTRLP.VIM
 "
@@ -71,6 +78,7 @@ nmap <leader>gp :Git push<CR>
 
 " NERDTREE
 "
+let NERDTreeQuitOnOpen = 0
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 map <leader>n :NERDTreeToggle<CR>
 

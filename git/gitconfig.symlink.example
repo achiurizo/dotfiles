@@ -1,5 +1,5 @@
 [user]
-	name  = AUTHORNAME 
+  name  = AUTHORNAME 
   email = AUTHOREMAIL
 [color]
   diff   = auto
@@ -12,7 +12,7 @@
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [core]
-	excludesfile = ~/.gitignore
-	editor       = vim
+  excludesfile = ~/.gitignore
+  editor       = vim
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always

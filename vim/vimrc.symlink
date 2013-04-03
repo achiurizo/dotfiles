@@ -30,6 +30,7 @@ set guioptions-=r  "remove right-hand scroll bar
 set noswapfile
 set nobackup
 set nowritebackup
+set noundofile
 
 """""""""""""""""""""
 "" PLUGIN SETTINGS

@@ -2,15 +2,61 @@
 "
 execute pathogen#infect()
 
+"""""""""""""""""""""
+" OVERRIDE VIM-SENSIBLE
+""""""""""""""""""""""
+runtime! plugin/sensible.vim
+
 """"""""""""""""""""
 " GENERAL SETTINGS
 """"""""""""""""""""
-syntax on
 filetype plugin indent on
 let mapleader=","  " Set my leader key to ','
-set nocompatible
-set expandtab
-set number         " line numbers
+set nocompatible      " Use vim, no vi defaults
+set number            " Show line numbers
+set ruler             " Show line and column number
+syntax enable         " Turn on syntax highlighting allowing local overrides
+set encoding=utf-8    " Set default encoding to UTF-8
+
+" Whitespace
+
+set nowrap                        " don't wrap lines
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " an autoindent (with <<) is two spaces
+set expandtab                     " use spaces, not tabs
+set list                          " Show invisible characters
+set backspace=indent,eol,start    " backspace through everything in insert mode
+
+" listchars
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=extends:>          " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+
+" Searching
+set hlsearch    " highlight matches
+set incsearch   " incremental searching
+set ignorecase  " searches are case insensitive...
+set smartcase   " ... unless they contain at least one capital letter
+
+" Wild Settings
+" TODO: Investigate the precise meaning of these settings
+" set wildmode=list:longest,list:full
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
 
 " GUI/LOOK OPTIONS
 "
@@ -33,6 +79,54 @@ set nowritebackup
 set noundofile
 
 """""""""""""""""""""
+"" MAPPINGS
+"""""""""""""""""""""
+
+" Find merge conflits
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+nmap <C-k> [e
+nmap <C-j> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
+" Make shift-insert work like in Xterm
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+
+" Map Control-# to switch tabs
+map  <C-0> 0gt
+imap <C-0> <Esc>0gt
+map  <C-1> 1gt
+imap <C-1> <Esc>1gt
+map  <C-2> 2gt
+imap <C-2> <Esc>2gt
+map  <C-3> 3gt
+imap <C-3> <Esc>3gt
+map  <C-4> 4gt
+imap <C-4> <Esc>4gt
+map  <C-5> 5gt
+imap <C-5> <Esc>5gt
+map  <C-6> 6gt
+imap <C-6> <Esc>6gt
+map  <C-7> 7gt
+imap <C-7> <Esc>7gt
+map  <C-8> 8gt
+imap <C-8> <Esc>8gt
+map  <C-9> 9gt
+imap <C-9> <Esc>9gt
+
+"""""""""""""""""""""
 "" PLUGIN SETTINGS
 """""""""""""""""""""
 
@@ -42,13 +136,10 @@ let g:ackprg = 'ag --nogroup --nocolor --column' " Use ag instead
 
 " VIM-INDENT-GUIDES
 "
-"let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=white
 let g:indent_guides_color_change_percent = 30
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=steelblue3 ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3 ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " CTRLP.VIM
 "
@@ -86,3 +177,21 @@ map <leader>n :NERDTreeToggle<CR>
 " ZOOMWIN
 "
 map <leader>zw :ZoomWin<CR>
+
+" FILETYPES
+"
+function! s:setupWrapping()
+  set wrap
+  set linebreak
+  set textwidth=72
+  set nolist
+endfunction
+
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+au FileType markdown call s:setupWrapping()
+
+au BufNewFile,BufRead *.json set ft=javascript
+
+" make Python follow PEP8 for whitespace (http://www.python.org/dev/peps/pep-0008/)
+au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4

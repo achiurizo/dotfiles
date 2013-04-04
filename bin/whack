@@ -1,4 +1,0 @@
-#!/bin/sh
-# 'Whack' all padrino servers.
-echo "Killing Padrino servers..."
-ps aux | awk /padrino/ | awk '/start/ {print $2}' | xargs kill

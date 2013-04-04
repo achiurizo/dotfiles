@@ -2,10 +2,7 @@
 "
 execute pathogen#infect()
 
-"""""""""""""""""""""
-" OVERRIDE VIM-SENSIBLE
-""""""""""""""""""""""
-runtime! plugin/sensible.vim
+runtime! plugin/sensible.vim " run sensible first so we can override some of its settings.
 
 """"""""""""""""""""
 " GENERAL SETTINGS
@@ -81,117 +78,21 @@ set noundofile
 """""""""""""""""""""
 "" MAPPINGS
 """""""""""""""""""""
-
-" Find merge conflits
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
-
-" Adjust viewports to the same size
-map <Leader>= <C-w>=
-
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-nmap <C-k> [e
-nmap <C-j> ]e
-
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-vmap <C-k> [egv
-vmap <C-j> ]egv
-
-" Make shift-insert work like in Xterm
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
-
-" Map Control-# to switch tabs
-map  <C-0> 0gt
-imap <C-0> <Esc>0gt
-map  <C-1> 1gt
-imap <C-1> <Esc>1gt
-map  <C-2> 2gt
-imap <C-2> <Esc>2gt
-map  <C-3> 3gt
-imap <C-3> <Esc>3gt
-map  <C-4> 4gt
-imap <C-4> <Esc>4gt
-map  <C-5> 5gt
-imap <C-5> <Esc>5gt
-map  <C-6> 6gt
-imap <C-6> <Esc>6gt
-map  <C-7> 7gt
-imap <C-7> <Esc>7gt
-map  <C-8> 8gt
-imap <C-8> <Esc>8gt
-map  <C-9> 9gt
-imap <C-9> <Esc>9gt
+if filereadable(expand("~/.vim/mappings.vim"))
+  source ~/.vim/mappings.vim
+endif
 
 """""""""""""""""""""
 "" PLUGIN SETTINGS
 """""""""""""""""""""
+if filereadable(expand("~/.vim/plugins.vim"))
+  source ~/.vim/plugins.vim
+endif
 
-" ACK.VIM
-"
-let g:ackprg = 'ag --nogroup --nocolor --column' " Use ag instead
+"""""""""""""""""""""
+"" PLUGIN SETTINGS
+"""""""""""""""""""""
+if filereadable(expand("~/.vim/file_types.vim"))
+  source ~/.vim/file_types.vim
+endif
 
-" VIM-INDENT-GUIDES
-"
-let g:indent_guides_color_change_percent = 30
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
-
-" CTRLP.VIM
-"
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
-  \ }
-
-
-" NERDCOMMENTER
-"
-map <leader>/ <plug>NERDCommenterToggle<CR>
-
-" SYNTASTIC
-"
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=0
-let g:syntastic_auto_loc_list=2
-
-" FUGITIVE.VIM"
-"
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>gl :Glog<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gp :Git push<CR>
-
-" NERDTREE
-"
-let NERDTreeQuitOnOpen = 0
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-map <leader>n :NERDTreeToggle<CR>
-
-" ZOOMWIN
-"
-map <leader>zw :ZoomWin<CR>
-
-" FILETYPES
-"
-function! s:setupWrapping()
-  set wrap
-  set linebreak
-  set textwidth=72
-  set nolist
-endfunction
-
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
-au FileType markdown call s:setupWrapping()
-
-au BufNewFile,BufRead *.json set ft=javascript
-
-" make Python follow PEP8 for whitespace (http://www.python.org/dev/peps/pep-0008/)
-au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4

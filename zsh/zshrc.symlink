@@ -33,3 +33,5 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
+
+chruby 2.0.0-p0

@@ -1,8 +1,6 @@
 # Paths
 #
-export PATH="/usr/local/share/python:~/bin:$HOME/.bin:/opt/local/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/local/share/npm/bin:$HOME/node_modules/.bin:$PATH"
-export NODE_PATH="/usr/local/lib/node"
-export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
+export PATH="~/bin:$HOME/.bin:/usr/local/sbin:$PATH"
 
 # EDITORS
 #

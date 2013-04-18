@@ -1,11 +1,11 @@
 # Paths
 #
-export PATH="~/bin:$HOME/.bin:/usr/local/sbin:$PATH"
+export PATH="~/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # EDITORS
 #
-export EDITOR='/usr/local/bin/vim'        # Install vim via homebrew
-export GIT_EDITOR='/usr/local/bin/vim -f'
+export EDITOR='vim'        
+export GIT_EDITOR='vim -f'
 
 # History Configurations
 #  
@@ -39,7 +39,7 @@ export ZSH_THEME="wedisagree"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby brew gem github rvm git-flow)
+#plugins=(git osx ruby brew gem github rvm git-flow)
 
 source $ZSH/oh-my-zsh.sh
 

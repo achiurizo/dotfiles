@@ -1,3 +1,6 @@
+" POWERLINE
+"
+let g:Powerline_symbols = 'fancy'
 " ACK.VIM
 "
 let g:ackprg = 'ag --nogroup --nocolor --column' " Use ag instead

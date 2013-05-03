@@ -76,6 +76,11 @@ set nobackup
 set nowritebackup
 set noundofile
 
+" Auto-Folding
+set foldmethod=syntax
+set foldlevelstart=1
+let ruby_fold=1
+
 """""""""""""""""""""
 "" MAPPINGS
 """""""""""""""""""""

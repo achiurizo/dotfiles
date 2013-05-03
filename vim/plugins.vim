@@ -51,3 +51,8 @@ map <leader>zw :ZoomWin<CR>
 " TAGBAR
 "
 map <Leader>rt :TagbarToggle<CR>
+
+" DISPATCH
+"
+autocmd FileType ruby let b:dispatch = 'bundle exec ruby %'
+map <leader>di :Dispatch<CR>

@@ -3,6 +3,13 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
+# VI bindings
+setw -g mode-keys vi
+unbind p
+bind p paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+
 # force a reload of the config file
 unbind r
 bind r source-file ~/.tmux.conf

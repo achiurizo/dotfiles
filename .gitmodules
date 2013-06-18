@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-ruby-minitest"]
 	path = vim/bundle/vim-ruby-minitest
 	url = git://github.com/sunaku/vim-ruby-minitest.git
-[submodule "vim/bundle/vim-copy-as-rtf"]
-	path = vim/bundle/vim-copy-as-rtf
-	url = git://github.com/aniero/vim-copy-as-rtf.git
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git

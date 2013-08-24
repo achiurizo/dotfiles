@@ -78,7 +78,7 @@ set noundofile
 
 " Auto-Folding
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=2
 let ruby_fold=1
 
 """""""""""""""""""""

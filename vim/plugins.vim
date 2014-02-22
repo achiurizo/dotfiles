@@ -54,4 +54,4 @@ map <Leader>rt :TagbarToggle<CR>
 " DISPATCH
 "
 autocmd FileType ruby let b:dispatch = 'bundle exec ruby -I test %'
-map <leader>di :Dispatch<CR>
+map <leader>di :update \| Dispatch<CR>

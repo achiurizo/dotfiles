@@ -43,8 +43,14 @@ Thumbs.db
 .rvmrc.*
 *.gem
 .ruby-version
+.env
 
 # Vim #
 ######
 tags
+.agignore
 
+
+# Test #
+########
+.test_queue_stats

@@ -1,6 +1,3 @@
-" POWERLINE
-"
-let g:Powerline_symbols = 'fancy'
 " ACK.VIM
 "
 let g:ackprg = 'ag --nogroup --nocolor --column' " Use ag instead
@@ -19,6 +16,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
   \ }
 
+" use silver searcher for ctrlp
+"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " NERDCOMMENTER
 "

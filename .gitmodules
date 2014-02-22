@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-ruby-minitest"]
 	path = vim/bundle/vim-ruby-minitest
 	url = git://github.com/sunaku/vim-ruby-minitest.git
-[submodule "vim/bundle/vim-powerline"]
-	path = vim/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/vim-slim"]
 	path = vim/bundle/vim-slim
 	url = git://github.com/slim-template/vim-slim.git
@@ -85,3 +82,12 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-mustache-handlebars"]
+	path = vim/bundle/vim-mustache-handlebars
+	url = git@github.com:mustache/vim-mustache-handlebars.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git

@@ -4,7 +4,7 @@ export PATH="~/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # EDITORS
 #
-export EDITOR='vim'        
+export EDITOR='vim'
 export GIT_EDITOR='vim -f'
 
 # History Configurations
@@ -26,7 +26,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="wedisagree"
+export ZSH_THEME="nanotech"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -40,7 +40,7 @@ export ZSH_THEME="wedisagree"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git osx ruby brew gem github rvm git-flow)
-
+plugins=(gitfast)
 source $ZSH/oh-my-zsh.sh
 
 # Bindings

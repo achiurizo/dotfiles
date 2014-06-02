@@ -91,3 +91,6 @@
 [submodule "vim/bundle/moonscript-vim"]
 	path = vim/bundle/moonscript-vim
 	url = git@github.com:leafo/moonscript-vim.git
+[submodule "vim/bundle/tmuxline.vim"]
+	path = vim/bundle/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim

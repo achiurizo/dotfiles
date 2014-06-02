@@ -55,3 +55,7 @@ map <Leader>rt :TagbarToggle<CR>
 "
 autocmd FileType ruby let b:dispatch = 'bundle exec ruby -I test %'
 map <leader>di :update \| Dispatch<CR>
+
+" AIRLINE/TMUXLINE
+" 
+let g:tmuxline_powerline_separators = 0

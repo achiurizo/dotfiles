@@ -1,198 +1,139 @@
 #!/bin/bash
 #
-# bootstrap installs things.
+#
 
-DOTFILES_ROOT="`pwd`"
+readonly DOTFILES_ROOT=$(pwd)
 
-set -e
+readonly INFO_HEADER="  [ \033[00;34m....\033[0m ]"
+readonly USER_HEADER="  [ \033[00;33m????\033[0m ]"
+readonly OKAY_HEADER="  [ \033[00;32mOKAY\033[0m ]"
+readonly FAIL_HEADER="  [ \033[00;31mFAIL\033[0m ]"
 
-echo ''
-
-info () {
-  printf "  [ \033[00;34m..\033[0m ] $1"
+info() {
+  local msg=$1
+  printf "$INFO_HEADER $msg \n"
 }
 
-user () {
-  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+user() {
+  local msg=$1
+  printf "$USER_HEADER $msg "
 }
 
-success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+okay() {
+  local msg=$1
+  printf "$OKAY_HEADER $msg \n"
 }
 
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-  echo ''
+fail() {
+  local msg=$1
+  printf "$FAIL_HEADER $msg \n"
   exit
 }
 
-setup_gitconfig () {
-  if ! [ -f git/gitconfig.symlink ] && ! [ -a $HOME/.gitconfig ]
+link_files() {
+  local target=$1
+  local destination=$2
+  ln -s $target $destination
+  okay "linked $target to $destination"
+}
+
+is_existent() {
+  local file=$1
+  [ -a $file ] || [ -L $file ]
+}
+
+ask_action() {
+  overwrite=false
+  backup=false
+  skip=false
+
+  local $file=$1
+  local action
+
+  user "File already exists: $file, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+  read -n 1 action
+
+  case "$action" in
+    o )
+      overwrite=true;;
+    O )
+      overwrite_all=true;;
+    b )
+      backup=true;;
+    B )
+      backup_all=true;;
+    s )
+      skip=true;;
+    S )
+      skip_all=true;;
+    * )
+      ;;
+  esac
+  printf "\n"
+}
+
+not_option_all() {
+  [ "$overwrite_all" == "false" ] \
+  && [ "$backup_all" == "false" ] \
+  && [ "$skip_all" == "false" ]
+}
+
+commit_overwrite() {
+  local destination=$1
+  if [ "$overwrite" == "true" ] || [ "$overwrite_all" == "true" ]
   then
-    info 'setup gitconfig'
-
-    user ' - What is your github author name?'
-    read -e git_authorname
-    user ' - What is your github author email?'
-    read -e git_authoremail
-
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/gitconfig.symlink.example > git/gitconfig.symlink
-
-    success 'gitconfig'
+    rm -rf $destination
+    okay "removed $destination"
   fi
 }
 
-link_files () {
-  ln -s $1 $2
-  success "linked $1 to $2"
+commit_backup() {
+  local destination=$1
+  if [ "$backup" == "true" ] || [ "$backup_all" == "true" ]
+  then
+    mv $destination $destination\.backup
+    okay "moved $destination to $destination.backup"
+  fi
 }
 
-install_dotfiles () {
-  info 'installing dotfiles'
+commit_skip() {
+  local target=$1
+  local destination=$2
+  if [ "$skip" == "false" ] && [ "$skip_all" == "false" ]
+  then
+    link_files $target $destination
+  else
+    okay "skipped $target"
+  fi
+}
 
+install_dotfiles() {
   overwrite_all=false
   backup_all=false
   skip_all=false
+  local files=$(ls $DOTFILES_ROOT | grep -v 'README.md' | grep -v 'script')
+  local dotfile
+  local action
 
-  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
+  for dotfile in $files
   do
-    dest="$HOME/.`basename \"${source%.*}\"`"
+    local destination="$HOME/.$dotfile"
+    local target="$DOTFILES_ROOT/$dotfile"
 
-    if [ -f $dest ] || [ -d $dest ] || [ -L $dest ]
+    if is_existent $destination
     then
-
-      overwrite=false
-      backup=false
-      skip=false
-
-      if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
+      if not_option_all
       then
-        user "File already exists: `basename $source`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-        read -n 1 action
-
-        case "$action" in
-          o )
-            overwrite=true;;
-          O )
-            overwrite_all=true;;
-          b )
-            backup=true;;
-          B )
-            backup_all=true;;
-          s )
-            skip=true;;
-          S )
-            skip_all=true;;
-          * )
-            ;;
-        esac
+        ask_action $destination
       fi
-
-      if [ "$overwrite" == "true" ] || [ "$overwrite_all" == "true" ]
-      then
-        rm -rf $dest
-        success "removed $dest"
-      fi
-
-      if [ "$backup" == "true" ] || [ "$backup_all" == "true" ]
-      then
-        mv $dest $dest\.backup
-        success "moved $dest to $dest.backup"
-      fi
-
-      if [ "$skip" == "false" ] && [ "$skip_all" == "false" ]
-      then
-        link_files $source $dest
-      else
-        success "skipped $source"
-      fi
+      commit_overwrite $destination
+      commit_backup $destination
+      commit_skip $target $destination
 
     else
-      link_files $source $dest
+      link_files $target $destination
     fi
-
   done
 }
 
-install_vim () {
-	info "installing vim configuration"
-
-  overwrite_all=false
-  backup_all=false
-  skip_all=false
-
-	source="$DOTFILES_ROOT/vim"
-	dest="$HOME/.vim"
-
-	if [ -f $dest ] || [ -d $dest ] || [ -L $dest ]
-	then
-
-		overwrite=false
-		backup=false
-		skip=false
-
-		if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
-		then
-			user "File already exists: `basename $source`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-			read -n 1 action
-
-			case "$action" in
-				o )
-					overwrite=true;;
-				O )
-					overwrite_all=true;;
-				b )
-					backup=true;;
-				B )
-					backup_all=true;;
-				s )
-					skip=true;;
-				S )
-					skip_all=true;;
-				* )
-					;;
-			esac
-		fi
-
-		if [ "$overwrite" == "true" ] || [ "$overwrite_all" == "true" ]
-		then
-			rm -rf $dest
-			success "removed $dest"
-		fi
-
-		if [ "$backup" == "true" ] || [ "$backup_all" == "true" ]
-		then
-			mv $dest $dest\.backup
-			success "moved $dest to $dest.backup"
-		fi
-
-		if [ "$skip" == "false" ] && [ "$skip_all" == "false" ]
-		then
-			link_files $source $dest
-		else
-			success "skipped $source"
-		fi
-
-	else
-		link_files $source $dest
-	fi
-}
-
-setup_gitconfig
 install_dotfiles
-install_vim
-
-# If we are on a mac, lets install and setup homebrew
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing dependencies"
-  if . bin/dot > /tmp/dotfiles-dot 2>&1
-  then
-    success "dependencies installed"
-  else
-    fail "error installing dependencies"
-  fi
-fi
-
-echo ''
-echo '  All installed!'

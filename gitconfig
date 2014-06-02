@@ -1,0 +1,20 @@
+[color]
+	ui     = auto
+  	diff   = auto
+  	status = auto
+  	branch = auto
+[alias]
+  	co = checkout
+[push]
+  	default = current
+[format]
+  	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[core]
+  	excludesfile = ~/.gitignore
+  	editor       = vim
+[branch]
+  	autosetuprebase = always
+[include]
+  	path = ~/.gitconfig.local
+
+# vim: noexpandtab ts=4 sw=4 sts=0

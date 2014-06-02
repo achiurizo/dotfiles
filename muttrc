@@ -1,21 +1,14 @@
-# From: http://kaleb.horns.by/comp/mail/mutt-email-client-and-gmail-over-imap/
-#
-set imap_user = mr.arthur.chiu@gmail.com
-set smtp_url  = smtp://mr.arthur.chiu@smtp.gmail.com:587/
-set from      = mr.arthur.chiu@gmail.com
-set realname  = "Arthur Chiu"
-set editor    = 'vim'
-
+set editor = 'vim'
 # Don't let your firewall kill your idle connection.
 set imap_keepalive = 900
 
 # Do not copy sent mail.  Gmail smtp already does this.
 set copy = no
-
-set sleep_time=0 # Don't have delays
+# Don't have delays
+set sleep_time = 0
 
 set folder    = imaps://imap.gmail.com:993
-set spoolfile = +INBOX #or +[Gmail]/Important
+set spoolfile = +INBOX # or +[Gmail]/Important
 set postponed = +[Gmail]/Drafts
 
 # This is using the 'trash' patch.
@@ -56,14 +49,8 @@ set to_chars = ' +>-<L' # This should be ' »›-‹L' to match Gmail, but $to_c
 set move     = no       # Don't move read mail.
 
 # Sort by newest conversation first.
-set sort    = reverse-threads
-set sort_aux    = last-date-received
+set sort     = reverse-threads
+set sort_aux = last-date-received
 
-# Contact aliases, could also use `goobook`.
-#set alias_file    = ~/.mutt/aliases
-#set sort_alias    = alias
-#set reverse_alias = yes
-#set reverse_name  = yes
-#source $alias_file
-
-source ~/.mutt/blackback
+# Add custom account information like user, smtp and whatever here.
+source ~/.muttrc.local

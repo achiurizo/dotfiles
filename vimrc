@@ -60,7 +60,7 @@ set wildignore+=*.swp,*~,._*
 " GUI/LOOK OPTIONS
 "
 set t_Co=256       "xterm 256 color mode
-color jellybeans
+color hybrid
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar

@@ -59,3 +59,4 @@ map <leader>di :update \| Dispatch<CR>
 " AIRLINE/TMUXLINE
 " 
 let g:tmuxline_powerline_separators = 0
+let g:airline_powerline_fonts = 1

@@ -52,5 +52,7 @@ set move     = no       # Don't move read mail.
 set sort     = reverse-threads
 set sort_aux = last-date-received
 
+# add color scheme
+source ~/.mutt/colors/badwolf.muttrc
 # Add custom account information like user, smtp and whatever here.
 source ~/.muttrc.local

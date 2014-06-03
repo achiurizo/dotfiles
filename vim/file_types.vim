@@ -5,11 +5,20 @@ function! s:setupWrapping()
   set nolist
 endfunction
 
+" ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.rabl} set ft=ruby
+let ruby_fold=3
+
+" markdown
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 au FileType markdown call s:setupWrapping()
 
+" javscript
 au BufNewFile,BufRead *.json set ft=javascript
+
+" coffeescript
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " make Python follow PEP8 for whitespace (http://www.python.org/dev/peps/pep-0008/)
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4

@@ -80,7 +80,6 @@ set noundofile
 " Auto-Folding
 set foldmethod=syntax
 set foldlevelstart=3
-let ruby_fold=3
 
 """""""""""""""""""""
 "" MAPPINGS

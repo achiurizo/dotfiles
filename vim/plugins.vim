@@ -17,7 +17,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " use silver searcher for ctrlp
-"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " NERDCOMMENTER
 "

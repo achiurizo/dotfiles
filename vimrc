@@ -1,17 +1,16 @@
 " PATHOGEN
 "
 execute pathogen#infect()
+" Helptags " Generate the help docs
 
 runtime! plugin/sensible.vim " run sensible first so we can override some of its settings.
 
 """"""""""""""""""""
 " GENERAL SETTINGS
 """"""""""""""""""""
-filetype plugin indent on
-let mapleader=","  " Set my leader key to ','
+let mapleader=","     " Set my leader key to ','
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
-set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 set shell=zsh
@@ -23,7 +22,6 @@ set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
-set backspace=indent,eol,start    " backspace through everything in insert mode
 
 " listchars
 set listchars=""                  " Reset the listchars
@@ -36,7 +34,6 @@ set listchars+=precedes:<         " The character to show in the last column whe
 
 " Searching
 set hlsearch    " highlight matches
-set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 set noic        " case sensitive search
@@ -78,8 +75,9 @@ set nowritebackup
 set noundofile
 
 " Auto-Folding
+set foldenable
 set foldmethod=syntax
-set foldlevelstart=3
+set foldlevelstart=99 " open all folds by default
 
 """""""""""""""""""""
 "" MAPPINGS

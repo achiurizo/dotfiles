@@ -1,12 +1,5 @@
 # achiu's dotfiles #
 
-This a collection of dotfiles I use for my day to day use. Mainly its a
-collection of dotfiles as well as configuration and setup I've borrowed
-from other's dotfiles to make my own custom setup. I've ported this over
-to use [holman's topical organization and
-bootstrap](https://github.com/holman/dotfiles) and have taken bits from
-[janus](github.com/carlhuda/janus) that I liked. 
-
 ## Setup ##
 
 To get it up and running, you can simply:
@@ -15,15 +8,13 @@ To get it up and running, you can simply:
 $ script/bootstrap
 ```
 
-Then, you'll need to load the vim submodules:
+To update, simply run:
 
 ```bash
-$ git submodule init
-$ git submodule update
+$ script/update
 ```
 
 ## Configurations
-
 
 ### Vim
 
@@ -42,14 +33,12 @@ few exceptions:
 * no swap, no backup, no undofile
 * ignores output files like swp, .class, .rbc and much more
 
-#### Plugins
+#### Plugin Mappings
 
-##### ack.vim
+#### emmet
 
-This defaults to use [ag]() instead.
+Maps `<C-y>,` to generate HTML tags
 
-##### ctrlp.vim
-##### jellybeans.vim
 ##### nerdcommenter
 
 Maps `<leader>/` to comment out lines
@@ -58,19 +47,18 @@ Maps `<leader>/` to comment out lines
 
 Maps `<leader>n` to open NERDTree
 
-##### snipmate-snippets
-##### supertab
-##### syntastic
 ##### tabular
+
+maps `<leader>al` to align `=>` and/or `=`
+
 ##### tagbar
 
 Maps `<leader>rt` to open TagBar
 
-##### tlib_vim
-##### vim-addon-mw-utils
-##### vim-coffee-script
-##### vim-copy-as-rtf
 ##### vim-dispatch
+
+maps `<leader>di` to save the current buffer and run `bundle exec ruby -I test` on it
+
 ##### vim-fugitive
 
 maps `<leader>gb` to Gblame
@@ -80,17 +68,10 @@ maps `<leader>gl` to Glog
 maps `<leader>gc` to Gcommit
 maps `<leader>gp` to Git push
 
-##### vim-haml
 ##### vim-indent-guides
 
 Maps `<leader>ig` to enable indent guides
 
-##### vim-markdown
-##### vim-powerline
-##### vim-ruby-minitest
-##### vim-sensible
-##### vim-slim
-##### vim-snipmate
 ##### ZoomWin
 
 Maps `<leader>zw` to ZoomWin

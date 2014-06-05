@@ -4,9 +4,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = git://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
@@ -52,9 +49,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
-	url = git://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
@@ -94,3 +88,9 @@
 [submodule "vim/bundle/vim-colorschemes"]
 	path = vim/bundle/vim-colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
+[submodule "vim/bundle/unite.vim"]
+	path = vim/bundle/unite.vim
+	url = git@github.com:Shougo/unite.vim.git
+[submodule "vim/bundle/vimproc.vim"]
+	path = vim/bundle/vimproc.vim
+	url = git@github.com:Shougo/vimproc.vim.git

@@ -21,7 +21,7 @@ let g:unite_source_grep_default_opts        = '--nocolor --nogroup -S -C4'
 let g:unite_source_grep_recursive_opt       = ''
 " file_rec
 let g:unite_source_file_rec_max_cache_files = 0
-let g:unite_source_rec_async_command        = 'ag -l --nocolor --nogroup --nonumber -i -Q -g ""'
+let g:unite_source_rec_async_command        = 'ag --nocolor --nogroup -i -l -g ""'
 
 " NERDCOMMENTER
 "

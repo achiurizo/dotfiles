@@ -8,8 +8,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 " UNITE.VIM
 "call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 1000)
 "call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#profile('ignorecase', 'ignorecase', 1)
 "call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <C-p> :Unite -toggle -start-insert -buffer-name=search file_rec/async<CR>
+nnoremap <C-p> :Unite -toggle -start-insert -profile-name=ignorecase -buffer-name=search file_rec/async<CR>
 nnoremap <C-b> :Unite -toggle -buffer-name=buffer buffer<CR>
 nnoremap <C-_> :Unite -toggle grep:.<CR>
 
@@ -64,3 +65,8 @@ map <leader>di :update \| Dispatch<CR>
 " 
 "let g:tmuxline_powerline_separators = 0
 let g:airline_powerline_fonts = 1
+
+" TABULAR
+"
+nmap <leader>al :Tabularize /=>\\|=<CR>
+vmap <leader>al :Tabularize /=>\\|=<CR>

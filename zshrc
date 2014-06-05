@@ -1,6 +1,15 @@
-# Paths
-#
-export PATH="~/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+function is_osx() {
+  [ $(uname -s) = "Darwin" ]
+}
+
+function source_if_exist() {
+  local dotfile=$1
+  if [[ -a $dotfile ]]
+  then
+    source $dotfile
+  fi
+}
 
 # EDITORS
 #
@@ -47,3 +56,21 @@ source $ZSH/oh-my-zsh.sh
 #
 bindkey -v                                               # Vim bindings
 bindkey '^R' history-incremental-pattern-search-backward # allow CTRL-R backward history search
+
+# Visual Edit Command Line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+local git_completion='$(brew --prefix)/share/zsh/site-functions/_git'
+source_if_exist git_completion
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+source_if_exist "/opt/github/env.sh"
+source_if_exist "$HOME/.paths.zsh"
+source_if_exist "$HOME/.chruby.zsh"
+source_if_exist "$HOME/.zshrc.local"
+source_if_exist "$HOME/.aliases"

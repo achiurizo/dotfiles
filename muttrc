@@ -1,6 +1,7 @@
 set editor = 'vim'
 # Don't let your firewall kill your idle connection.
-set imap_keepalive = 900
+set imap_check_subscribed = no
+set imap_keepalive        = 900
 
 # Do not copy sent mail.  Gmail smtp already does this.
 set copy = no
@@ -20,6 +21,29 @@ set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
 
 # Gmail style keybindings
+#
+macro index <C-Up>      <sidebar-prev>
+macro index <C-Down>    <sidebar-next>
+macro index \CO         <sidebar-open>
+macro index <up>        <previous-entry>
+macro index <down>      <next-entry>
+macro index <right>     <display-message>
+macro index <left>      <sync-mailbox><change-folder>? "Go to the folder menu"
+
+macro pager <left>      <previous-entry>
+macro pager <right>     <next-entry>
+macro pager <up>        <previous-line>
+macro pager <down>      <next-line>
+macro pager <pageup>    <previous-entry>
+macro pager <pagedown>  <next-entry>
+macro pager <space>     <next-entry>
+macro pager <C-Up>      <sidebar-prev>
+macro pager <C-Down>    <sidebar-next>
+macro pager \CO         <sidebar-open>
+macro pager y           "<save-message>+[Gmail]/All Mail<enter><enter><sync-mailbox>" "Archive"
+macro pager d           "<save-message>+[Gmail]/Trash<enter><enter><sync-mailbox>" "Trash"
+macro pager b           "<enter-command>toggle sidebar_visible<enter><redraw-screen>" "Toggle Sidebar"
+
 bind  editor <space> noop
 bind  index,pager c  mail     #Compose
 macro index,pager e  "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive conversation"
@@ -46,13 +70,36 @@ folder-hook +[Gmail]/Trash macro index,pager y <save-message>=INBOX<enter><enter
 folder-hook +[Gmail]/Starred bind  index,pager y flag-message #"Toggle star"
 
 set to_chars = ' +>-<L' # This should be ' »›-‹L' to match Gmail, but $to_chars breaks on unicode.
-set move     = no       # Don't move read mail.
+unset record            # prevent dups in Sent
+unset move              # gmail does that
+unset mark_old          # read/new is good enough
 
 # Sort by newest conversation first.
 set sort     = reverse-threads
 set sort_aux = last-date-received
+set sort_re           # thread based on reply_regexp
+unset collapse_unread # don't collaps unread threads
+
+set pager_index_lines   = 12 # show 12 messages when in pager
+set pager_context       = 5  # show five lines when skipping in pager
+set pager_stop               # don't go to next message automatically
+set menu_scroll              # scroll in menus
+set smart_wrap               # don't split words
+unset tilde                  # don't show tildes
+unset markers                # no ugly plus signs
+
+set fcc_attach                      # save attachments with the body
+unset mime_forward                  # forward attachments as part of body
+set forward_format      = "Fwd: %s" # format for subject when forwarding
+set include                         # include message in replies
+
+set sidebar_visible     = no  # start without sidebar
+set sidebar_width       = 30  # width of sidebar
+set sidebar_delim       = '|' # sidebar delimiter
 
 # add color scheme
 source ~/.mutt/colors/badwolf.muttrc
 # Add custom account information like user, smtp and whatever here.
 source ~/.muttrc.local
+
+#vim: ft=muttrc

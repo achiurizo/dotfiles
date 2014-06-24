@@ -49,6 +49,7 @@ Thumbs.db
 ######
 tags
 .agignore
+.vimrc.local
 
 
 # Test #

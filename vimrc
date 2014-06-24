@@ -94,9 +94,23 @@ if filereadable(expand("~/.vim/plugins.vim"))
 endif
 
 """""""""""""""""""""
-"" PLUGIN SETTINGS
+"" FILE TYPE SETTINGS
 """""""""""""""""""""
 if filereadable(expand("~/.vim/file_types.vim"))
   source ~/.vim/file_types.vim
+endif
+
+"""""""""""""""""""""
+"" LOCAL VIM SETTINGS
+"""""""""""""""""""""
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+"""""""""""""""""""""
+"" PROJECT VIM SETTINGS
+"""""""""""""""""""""
+if filereadable(expand(".vimrc.local"))
+  source .vimrc.local
 endif
 

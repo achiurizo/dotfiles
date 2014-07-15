@@ -6,6 +6,9 @@ export PATH="~/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
 if which go > /dev/null; then
   if is_osx; then
     export GOPATH=$HOME/code/go
+    export GOBIN=$HOME/code/go/bin
+    export PATH=$PATH:$(brew --prefix)/opt/go/libexec/bin
+    export PATH=$GOBIN:$PATH
   fi
 fi
 

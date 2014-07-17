@@ -2,7 +2,13 @@
 
 ## Setup ##
 
-To get it up and running, you can simply:
+To get it up and running, first pull it down into your $HOME:
+
+```bash
+$ git clone git@github.com:achiu/dotfiles.git .dotfiles
+```
+
+then you can simply:
 
 ```bash
 $ script/bootstrap

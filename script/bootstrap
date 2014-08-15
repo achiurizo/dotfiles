@@ -138,3 +138,4 @@ install_dotfiles() {
 
 install_dotfiles
 script/update
+script/brew

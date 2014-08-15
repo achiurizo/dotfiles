@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+if which brew > /dev/null; then
+  brew bundle Brewfile
+fi
+

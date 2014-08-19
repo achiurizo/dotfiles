@@ -13,7 +13,7 @@ call unite#custom#profile('ignorecase', 'ignorecase', 1)
 nnoremap <C-p> :Unite -toggle -start-insert -profile-name=ignorecase -buffer-name=search file_rec/async<CR>
 nnoremap <C-b> :Unite -toggle -buffer-name=buffer buffer<CR>
 nnoremap <C-_> :Unite -toggle grep:.<CR>
-nnoremap <C-?> :Unite -toggle grep<CR>
+nnoremap <C-\> :Unite -toggle grep<CR>
 
 let g:unite_data_directory='~/tmp/unite-cache'
 

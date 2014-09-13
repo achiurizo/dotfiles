@@ -1,3 +1,3 @@
 [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ] || return
-source "$(brew --prefix)/share/chruby/chruby.sh"
-source "$(brew --prefix)/share/chruby/auto.sh"
+source_if_exist "$(brew --prefix)/share/chruby/chruby.sh"
+source_if_exist "$(brew --prefix)/share/chruby/auto.sh"

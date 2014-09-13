@@ -17,7 +17,7 @@ export EDITOR='vim'
 export GIT_EDITOR='vim -f'
 
 # History Configurations
-#  
+#
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt SHARE_HISTORY        # shared history between session

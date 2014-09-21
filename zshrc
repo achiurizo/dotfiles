@@ -69,6 +69,17 @@ source_if_exist git_completion
 autoload -U compinit
 compinit
 
+# Paths
+#
+PATH="/bin"
+PATH="/sbin:$PATH"
+PATH="/usr/bin:$PATH"
+PATH="/usr/sbin:$PATH"
+PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/sbin:$PATH"
+PATH="$HOME/.bin:$PATH"
+PATH="~/bin:$PATH"
+
 source_if_exist "/opt/github/env.sh"
 source_if_exist "$HOME/.paths.zsh"
 source_if_exist "$HOME/.chruby.zsh"

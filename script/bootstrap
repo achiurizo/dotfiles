@@ -137,7 +137,3 @@ install_dotfiles() {
 }
 
 install_dotfiles
-git pull
-git submodule init
-git submodule update
-script/brew

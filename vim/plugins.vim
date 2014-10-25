@@ -8,7 +8,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 " UNITE.VIM
 "call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 1000)
 "call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#profile('ignorecase', 'ignorecase', 1)
+call unite#custom#profile('context.ignorecase', 'context.ignorecase', 1)
 "call unite#filters#sorter_default#use(['sorter_rank'])
 nnoremap <C-p> :Unite -toggle -start-insert -profile-name=ignorecase -buffer-name=search file_rec/async<CR>
 nnoremap <C-b> :Unite -toggle -buffer-name=buffer buffer<CR>

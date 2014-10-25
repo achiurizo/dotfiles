@@ -20,5 +20,8 @@ au BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
+" HTML
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=manual
+
 " make Python follow PEP8 for whitespace (http://www.python.org/dev/peps/pep-0008/)
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4

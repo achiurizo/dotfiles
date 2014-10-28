@@ -37,6 +37,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 export ZSH_THEME="nanotech"
 
+export DISABLE_AUTO_UPDATE="true"
+export DISSABLE_AUTO_TITLE="true"
+
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -62,8 +65,8 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-local git_completion='$(brew --prefix)/share/zsh/site-functions/_git'
-source_if_exist git_completion
+# zsh completions
+fpath=($(brew --prefix)/share/zsh/site-functions/ $fpath)
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit

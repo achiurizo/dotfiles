@@ -65,13 +65,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# zsh completions
-fpath=($(brew --prefix)/share/zsh/site-functions/ $fpath)
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
 # Paths
 #
 PATH="/bin"
@@ -88,3 +81,10 @@ source_if_exist "$HOME/.paths.zsh"
 source_if_exist "$HOME/.chruby.zsh"
 source_if_exist "$HOME/.zshrc.local"
 source_if_exist "$HOME/.aliases"
+
+# zsh completions
+fpath=($(brew --prefix)/share/zsh/site-functions/ $fpath)
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit

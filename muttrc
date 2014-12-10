@@ -2,8 +2,6 @@ set editor = 'vim'
 # Don't let your firewall kill your idle connection.
 set imap_check_subscribed = no
 set imap_keepalive        = 900
-set ssl_force_tls         = yes
-set ssl_starttls          = yes
 
 # Do not copy sent mail.  Gmail smtp already does this.
 set copy = no

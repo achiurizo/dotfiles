@@ -5,6 +5,9 @@ totalActivityCost = ()->
     total += parseFloat $(this).text().replace('$','')
   return total
 
+totalTransactions = () ->
+  $(".summary").length
+
 bigPurchases    = 0
 mediumPurchases = 0
 otherPurchases  = 0
@@ -44,6 +47,14 @@ addTotalToMenu = ()->
     <tr class="custom-totals">
       <td class="left">Total Other Purchases:</td>
       <td>$#{otherPurchases}</td>
+    </tr>
+    <tr class="custom-totals">
+      <td class="left">Total Transactions:</td>
+      <td>#{totalTransactions()}</td>
+    </tr>
+    <tr class="custom-totals">
+      <td class="left">Cost/Transaction Ratio:</td>
+      <td>#{totalActivityCost() / totalTransactions()}</td>
     </tr>
   """
   $('table.card-accountdetailcol > tbody:first > tr:nth-child(3)').after(totalHtml)

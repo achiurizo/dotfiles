@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-mkdir -p ~/Documents/dreamlog
-vim "~/Documents/dreamlog/$(date +%Y-%m-%d-%H-%M).txt"

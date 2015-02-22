@@ -35,7 +35,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="nanotech"
+export ZSH_THEME="awesomepanda"
 
 export DISABLE_AUTO_UPDATE="true"
 export DISSABLE_AUTO_TITLE="true"

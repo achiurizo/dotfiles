@@ -34,6 +34,7 @@ map <leader>/ <plug>NERDCommenterToggle<CR>
 let g:syntastic_enable_signs   = 1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_auto_loc_list  = 2
+let g:syntastic_ruby_exec      = 'which ruby'
 
 " FUGITIVE.VIM"
 "
@@ -59,11 +60,12 @@ map <Leader>rt :TagbarToggle<CR>
 
 " DISPATCH
 "
-autocmd FileType ruby let b:dispatch = 'bundle exec ruby -I test %'
+autocmd FileType ruby   let b:dispatch = 'bundle exec ruby -I test %'
+autocmd FileType coffee let b:dispatch = 'coffee %'
 map <leader>di :update \| Dispatch<CR>
 
 " AIRLINE/TMUXLINE
-" 
+"
 "let g:tmuxline_powerline_separators = 0
 let g:airline_powerline_fonts = 1
 

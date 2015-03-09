@@ -27,16 +27,6 @@ setopt INC_APPEND_HISTORY   # adds history incrementally and share it across ses
 setopt HIST_IGNORE_ALL_DUPS # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
-# Bindings
-#
-bindkey -v                                               # Vim bindings
-bindkey '^R' history-incremental-pattern-search-backward # allow CTRL-R backward history search
-
-# Visual Edit Command Line
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-
 # Antigen
 local antigen_path="$HOME/.zsh/antigen/antigen.zsh"
 if [[ -a "$HOME/.zsh/antigen/antigen.zsh" ]]
@@ -47,6 +37,16 @@ then
   antigen theme S1cK94/minimal minimal-path-git
   antigen apply
 fi
+
+# Bindings
+#
+bindkey -v                                               # Vim bindings
+bindkey '^R' history-incremental-pattern-search-backward # allow CTRL-R backward history search
+
+# Visual Edit Command Line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Paths
 #

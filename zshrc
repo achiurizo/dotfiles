@@ -34,7 +34,7 @@ then
   source $antigen_path
   antigen use oh-my-zsh
   antigen bundle zsh-users/zsh-syntax-highlighting
-  antigen theme S1cK94/minimal minimal-path-git
+  antigen theme $HOME/.zsh minimal-plus
   antigen apply
 fi
 

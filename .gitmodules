@@ -109,3 +109,6 @@
 [submodule "zsh/antigen"]
 	path = zsh/antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "vim/bundle/vim-cjsx"]
+	path = vim/bundle/vim-cjsx
+	url = https://github.com/mtscout6/vim-cjsx.git

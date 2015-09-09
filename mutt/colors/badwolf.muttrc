@@ -21,7 +21,6 @@ color   tree        color211        color233
 color   attachment  brightcolor211  color233
 
 color   index       color154        color233 ~N
-color   sidebar_new color154        color233
 
 color   index       color243        color233 ~P
 color   index       brightcolor221  color233 ~F

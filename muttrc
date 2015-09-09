@@ -22,9 +22,6 @@ set certificate_file = ~/.mutt/certificates
 
 # Gmail style keybindings
 #
-macro index <C-Up>      <sidebar-prev>
-macro index <C-Down>    <sidebar-next>
-macro index \CO         <sidebar-open>
 macro index <up>        <previous-entry>
 macro index <down>      <next-entry>
 macro index <right>     <display-message>
@@ -37,12 +34,8 @@ macro pager <down>      <next-line>
 macro pager <pageup>    <previous-entry>
 macro pager <pagedown>  <next-entry>
 macro pager <space>     <next-entry>
-macro pager <C-Up>      <sidebar-prev>
-macro pager <C-Down>    <sidebar-next>
-macro pager \CO         <sidebar-open>
 macro pager y           "<save-message>+[Gmail]/All Mail<enter><enter><sync-mailbox>" "Archive"
 macro pager d           "<save-message>+[Gmail]/Trash<enter><enter><sync-mailbox>" "Trash"
-macro pager b           "<enter-command>toggle sidebar_visible<enter><redraw-screen>" "Toggle Sidebar"
 
 bind  editor <space> noop
 bind  index,pager c  mail     #Compose
@@ -92,10 +85,6 @@ set fcc_attach                      # save attachments with the body
 unset mime_forward                  # forward attachments as part of body
 set forward_format      = "Fwd: %s" # format for subject when forwarding
 set include                         # include message in replies
-
-set sidebar_visible     = no  # start without sidebar
-set sidebar_width       = 30  # width of sidebar
-set sidebar_delim       = '|' # sidebar delimiter
 
 # add color scheme
 source ~/.mutt/colors/badwolf.muttrc

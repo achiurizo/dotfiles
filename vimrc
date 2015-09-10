@@ -80,6 +80,13 @@ set foldenable
 set foldmethod=syntax
 set foldlevelstart=99 " open all folds by default
 
+" NeoVim handles ESC keys as alt+key, set this to solve the problem
+" https://github.com/neovim/neovim/issues/2017
+if has('nvim')
+   set ttimeout
+   set ttimeoutlen=0
+endif
+
 """""""""""""""""""""
 "" MAPPINGS
 """""""""""""""""""""
@@ -114,4 +121,3 @@ endif
 if filereadable(expand(".vimrc.local"))
   source .vimrc.local
 endif
-

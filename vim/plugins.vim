@@ -10,20 +10,22 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 "call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#custom#profile('context.ignorecase', 'context.ignorecase', 1)
 "call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <C-p> :Unite -toggle -start-insert -profile-name=ignorecase -buffer-name=search file_rec/async<CR>
+nnoremap <C-p> :Unite -toggle -start-insert -profile-name=ignorecase -buffer-name=search file_rec/neovim<CR>
 nnoremap <C-b> :Unite -toggle -buffer-name=buffer buffer<CR>
-nnoremap <C-_> :Unite -toggle grep:.<CR>
-nnoremap <C-\> :Unite -toggle grep<CR>
+nnoremap <C-_> :Unite -toggle grep:. -buffer-name=grep-pwd<CR>
+nnoremap <C-\> :Unite -toggle grep -buffer-name=grep-buffer<CR>
 
 let g:unite_data_directory='~/tmp/unite-cache'
 
 " grep
-let g:unite_source_grep_command             = 'ag'
-let g:unite_source_grep_default_opts        = '--nocolor --nogroup -S -C4'
-let g:unite_source_grep_recursive_opt       = ''
+let g:unite_source_grep_command       = 'pt'
+let g:unite_source_grep_default_opts  = '--nogroup --nocolor -S'
+let g:unite_source_grep_recursive_opt = ''
 " file_rec
 let g:unite_source_file_rec_max_cache_files = 0
-let g:unite_source_rec_async_command        = 'ag --nocolor --nogroup -i -l -g ""'
+let g:unite_source_rec_async_command        = ['pt', '--follow', '--nocolor', '--nogroup', '-i', '--hidden', '-g', '.']
+
+
 
 " NERDCOMMENTER
 "

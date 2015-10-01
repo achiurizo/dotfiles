@@ -57,7 +57,7 @@ set wildignore+=*.swp,*~,._*
 " GUI/LOOK OPTIONS
 "
 set t_Co=256       "xterm 256 color mode
-color gruvbox
+colorscheme jellyx
 set background=dark
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar

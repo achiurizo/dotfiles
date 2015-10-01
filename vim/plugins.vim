@@ -75,3 +75,7 @@ let g:airline_powerline_fonts = 1
 "
 nmap <leader>al :Tabularize /=>\\|=<CR>
 vmap <leader>al :Tabularize /=>\\|=<CR>
+
+" JAVASCRIPT
+" 
+let g:javascript_enable_domhtmlcss = 1

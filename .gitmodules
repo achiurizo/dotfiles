@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vim-cjsx"]
 	path = vim/bundle/vim-cjsx
 	url = https://github.com/mtscout6/vim-cjsx.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git

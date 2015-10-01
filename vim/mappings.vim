@@ -1,6 +1,9 @@
 " Find merge conflits
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
+" remove trailing whitespaces
+nmap <silent> <leader>tw <ESC>:%s/\s\+$//<CR>
+
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
 

@@ -2,41 +2,39 @@
 # Usage: `brew bundle Brewfile`
 
 # Update to latest
-update
-upgrade
 
-install zsh
-install wget --enable-iri
+brew "zsh"
+brew "wget", args: ['enable-iri']
 
-install pcre
-install pkg-config
-install rename
-install pv
+brew "pcre"
+brew "pkg-config"
+brew "rename"
+brew "pv"
 
 # Build vim with lua support for unity.vim
-install vim --with-lua --with-luajit
-install tmux
-install reattach-to-user-namespace
-install ctags
+brew "vim", args: ["with-lua", "with-luajit"]
+brew "tmux"
+brew "reattach-to-user-namespace"
+brew "ctags"
 
-install the_silver_searcher
+brew "the_silver_searcher"
+brew "the_platinum_searcher"
 
-install git --with-brewed-curl --with-brewed-openssl
-install hub
-install tig
+brew "git", args: ["with-brewed-curl", "with-brewed-openssl"]
+brew "hub"
+brew "tig"
 
-install mutt --with-sidebar-patch
+brew "mutt", args: ["with-sidebar-patch"]
 
-install node
-install chruby
-install lua
-install luarocks
-install clisp
-install python
+brew "node"
+brew "chruby"
+brew "lua"
+brew "clisp"
+brew "python"
 
-install hashpump
-install nmap
-install kismet
-install wireshark --with-lua --with-pcre
+brew "hashpump"
+brew "nmap"
+brew "wireshark"
 
-install valgrind
+tap "neovim/neovim"
+brew "neovim", args: ["HEAD"]

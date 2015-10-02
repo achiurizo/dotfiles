@@ -61,6 +61,7 @@ PATH="~/bin:$PATH"
 
 source_if_exist "/opt/github/env.sh"
 source_if_exist "$HOME/.chruby.zsh"
+source_if_exist "$HOME/.nvm.zsh"
 source_if_exist "$HOME/.zshrc.local"
 source_if_exist "$HOME/.aliases"
 

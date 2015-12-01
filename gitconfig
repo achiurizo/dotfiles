@@ -26,6 +26,6 @@
 protocol = https
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
+	helper = osxkeychain
 [ghi]
 	token = !security find-internet-password -a achiu -s github.com -l 'ghi token' -w

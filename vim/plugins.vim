@@ -6,11 +6,15 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " UNITE.VIM
-"call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 1000)
-"call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#profile('context.ignorecase', 'context.ignorecase', 1)
-"call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <C-p> :Unite -toggle -start-insert -profile-name=ignorecase -buffer-name=search file_rec/async:!<CR>
+call unite#custom#profile('searcher', 'context', {
+      \ 'start_insert' : 1,
+      \ 'update_time'  : 1,
+      \ 'filters'      : 'sorter_rank'
+      \})
+call unite#custom#source('file_rec/async,file_rec/git', 'ignore_globs', [])
+call unite#custom#source('file_rec,file_rec/async,file_rec/git', 'max_candidates', 1000)
+
+nnoremap <C-p> :Unite -toggle -profile-name=searcher -buffer-name=search file_rec/async:!<CR>
 nnoremap <C-b> :Unite -toggle -buffer-name=buffer buffer<CR>
 nnoremap <C-_> :Unite -toggle grep:. -buffer-name=grep-pwd<CR>
 nnoremap <C-\> :Unite -toggle grep -buffer-name=grep-buffer<CR>
@@ -18,6 +22,7 @@ nnoremap <C-\> :Unite -toggle grep -buffer-name=grep-buffer<CR>
 let g:unite_data_directory             = '~/tmp/unite-cache'
 let g:unite_source_grep_max_candidates = 200
 let g:unite_redraw_hold_candidates     = 50000
+let g:unite_source_rec_max_cache_files = 50000
 
 " grep
 let g:unite_source_grep_command       = 'pt'
@@ -79,5 +84,5 @@ nmap <leader>al :Tabularize /=>\\|=<CR>
 vmap <leader>al :Tabularize /=>\\|=<CR>
 
 " JAVASCRIPT
-" 
+"
 let g:javascript_enable_domhtmlcss = 1

@@ -7,7 +7,6 @@ endfunction
 
 " ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.rabl} set ft=ruby
-let ruby_fold=3
 
 " markdown
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown

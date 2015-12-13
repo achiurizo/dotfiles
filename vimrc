@@ -75,10 +75,8 @@ set nobackup
 set nowritebackup
 set noundofile
 
-" Auto-Folding
 set foldenable
-set foldmethod=syntax
-set foldlevelstart=99 " open all folds by default
+set foldmethod=manual
 
 " NeoVim handles ESC keys as alt+key, set this to solve the problem
 " https://github.com/neovim/neovim/issues/2017

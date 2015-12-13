@@ -13,8 +13,8 @@ function source_if_exist() {
 
 # EDITORS
 #
-export EDITOR='vim'
-export GIT_EDITOR='vim -f'
+export EDITOR='nvim'
+export GIT_EDITOR='nvim -f'
 
 # History Configurations
 #

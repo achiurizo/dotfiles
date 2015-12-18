@@ -14,7 +14,7 @@ call unite#custom#profile('searcher', 'context', {
 call unite#custom#source('file_rec/async,file_rec/git', 'ignore_globs', [])
 call unite#custom#source('file_rec,file_rec/async,file_rec/git', 'max_candidates', 1000)
 
-nnoremap <C-p> :Unite -toggle -profile-name=searcher -buffer-name=search file_rec/async:!<CR>
+nnoremap <C-p> :Unite -toggle -profile-name=searcher -buffer-name=search file_rec/neovim<CR>
 nnoremap <C-b> :Unite -toggle -buffer-name=buffer buffer<CR>
 nnoremap <C-_> :Unite -toggle grep:. -buffer-name=grep-pwd<CR>
 nnoremap <C-\> :Unite -toggle grep -buffer-name=grep-buffer<CR>

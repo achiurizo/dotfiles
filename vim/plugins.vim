@@ -11,8 +11,8 @@ call unite#custom#profile('searcher', 'context', {
       \ 'update_time'  : 1,
       \ 'filters'      : 'sorter_rank'
       \})
-call unite#custom#source('file_rec/async,file_rec/git', 'ignore_globs', [])
-call unite#custom#source('file_rec,file_rec/async,file_rec/git', 'max_candidates', 1000)
+call unite#custom#source('file_rec/async,file_rec/git,file_rec/neovim', 'ignore_globs', [])
+call unite#custom#source('file_rec,file_rec/async,file_rec/git,file_rec/neovim', 'max_candidates', 1000)
 
 nnoremap <C-p> :Unite -toggle -profile-name=searcher -buffer-name=search file_rec/neovim<CR>
 nnoremap <C-b> :Unite -toggle -buffer-name=buffer buffer<CR>

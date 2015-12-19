@@ -1,7 +1,7 @@
 " PATHOGEN
 "
 execute pathogen#infect()
-" Helptags " Generate the help docs
+Helptags " Generate the help docs
 
 runtime! plugin/sensible.vim " run sensible first so we can override some of its settings.
 

@@ -11,8 +11,6 @@ brew "pkg-config"
 brew "rename"
 brew "pv"
 
-# Build vim with lua support for unity.vim
-brew "vim", args: ["with-lua", "with-luajit"]
 brew "tmux"
 brew "reattach-to-user-namespace"
 brew "ctags"
@@ -32,6 +30,7 @@ brew "ruby-install"
 brew "lua"
 brew "clisp"
 brew "python"
+brew "go"
 
 brew "hashpump"
 brew "nmap"

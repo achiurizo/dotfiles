@@ -57,11 +57,12 @@ set wildignore+=*.swp,*~,._*
 " GUI/LOOK OPTIONS
 "
 set t_Co=256       "xterm 256 color mode
-colorscheme jellyx
 set background=dark
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
+
+colorscheme hybrid
 
 " SWAP AND BACKUP
 "
@@ -78,9 +79,9 @@ set noundofile
 set foldenable
 set foldmethod=manual
 
-" NeoVim handles ESC keys as alt+key, set this to solve the problem
-" https://github.com/neovim/neovim/issues/2017
 if has('nvim')
+  " NeoVim handles ESC keys as alt+key, set this to solve the problem
+  " https://github.com/neovim/neovim/issues/2017
    set ttimeout
    set ttimeoutlen=0
 endif

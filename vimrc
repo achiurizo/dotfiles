@@ -62,7 +62,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme obsidian
+colorscheme Tomorrow-Night
 
 " SWAP AND BACKUP
 "

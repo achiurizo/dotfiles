@@ -63,7 +63,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set termguicolors  " https://github.com/neovim/neovim/pull/4690
 
-colorscheme Tomorrow-Night
+colorscheme two-firewatch
 
 " SWAP AND BACKUP
 "

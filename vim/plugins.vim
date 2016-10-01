@@ -86,3 +86,13 @@ vmap <leader>al :Tabularize /=>\\|=<CR>
 " JAVASCRIPT
 "
 let g:javascript_enable_domhtmlcss = 1
+
+" GO
+"
+let g:go_highlight_types     = 1
+let g:go_highlight_methods   = 1
+let g:go_highlight_fields    = 1
+let g:go_highlight_operators = 1
+
+
+

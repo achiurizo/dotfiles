@@ -109,3 +109,9 @@
 [submodule "vim/bundle/two-firewatch.vim"]
 	path = vim/bundle/two-firewatch.vim
 	url = git@github.com:rakr/vim-two-firewatch.git
+[submodule "vim/bundle/hybrid-material"]
+	path = vim/bundle/hybrid-material
+	url = git@github.com:kristijanhusak/vim-hybrid-material.git
+[submodule "vim/bundle/airline-themes.vim"]
+	path = vim/bundle/airline-themes.vim
+	url = git@github.com:vim-airline/vim-airline-themes.git

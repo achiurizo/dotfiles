@@ -1,9 +1,9 @@
 " VIM-INDENT-GUIDES
 "
-let g:indent_guides_color_change_percent = 30
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+"let g:indent_guides_color_change_percent = 30
+let g:indent_guides_auto_colors = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " UNITE.VIM
 call unite#custom#profile('searcher', 'context', {

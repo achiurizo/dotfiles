@@ -115,3 +115,6 @@
 [submodule "vim/bundle/airline-themes.vim"]
 	path = vim/bundle/airline-themes.vim
 	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/tender.vim"]
+	path = vim/bundle/tender.vim
+	url = git@github.com:jacoborus/tender.vim.git

@@ -76,7 +76,7 @@ map <leader>di :update \| Dispatch<CR>
 "
 "let g:tmuxline_powerline_separators = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme='hybrid'
+let g:airline_theme='tender'
 
 " TABULAR
 "

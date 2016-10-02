@@ -1,9 +1,9 @@
 " VIM-INDENT-GUIDES
 "
-let g:indent_guides_color_change_percent = 30
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+"let g:indent_guides_color_change_percent = 30
+let g:indent_guides_auto_colors = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " UNITE.VIM
 call unite#custom#profile('searcher', 'context', {
@@ -76,6 +76,7 @@ map <leader>di :update \| Dispatch<CR>
 "
 "let g:tmuxline_powerline_separators = 0
 let g:airline_powerline_fonts = 1
+let g:airline_theme='tender'
 
 " TABULAR
 "
@@ -85,3 +86,13 @@ vmap <leader>al :Tabularize /=>\\|=<CR>
 " JAVASCRIPT
 "
 let g:javascript_enable_domhtmlcss = 1
+
+" GO
+"
+let g:go_highlight_types     = 1
+let g:go_highlight_methods   = 1
+let g:go_highlight_fields    = 1
+let g:go_highlight_operators = 1
+
+
+

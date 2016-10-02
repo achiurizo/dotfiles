@@ -103,3 +103,18 @@
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = git@github.com:rust-lang/rust.vim.git
+[submodule "vim/bundle/vim-srcery.vim"]
+	path = vim/bundle/vim-srcery.vim
+	url = git@github.com:roosta/vim-srcery.git
+[submodule "vim/bundle/two-firewatch.vim"]
+	path = vim/bundle/two-firewatch.vim
+	url = git@github.com:rakr/vim-two-firewatch.git
+[submodule "vim/bundle/hybrid-material"]
+	path = vim/bundle/hybrid-material
+	url = git@github.com:kristijanhusak/vim-hybrid-material.git
+[submodule "vim/bundle/airline-themes.vim"]
+	path = vim/bundle/airline-themes.vim
+	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/tender.vim"]
+	path = vim/bundle/tender.vim
+	url = git@github.com:jacoborus/tender.vim.git

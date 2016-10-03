@@ -5,6 +5,7 @@
 
 brew "zsh"
 brew "wget", args: ['enable-iri']
+brew "zplug"
 
 brew "pcre"
 brew "pkg-config"

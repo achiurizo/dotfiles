@@ -27,17 +27,6 @@ setopt INC_APPEND_HISTORY   # adds history incrementally and share it across ses
 setopt HIST_IGNORE_ALL_DUPS # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
-# Antigen
-local antigen_path="$HOME/.zsh/antigen/antigen.zsh"
-if [[ -a "$HOME/.zsh/antigen/antigen.zsh" ]]
-then
-  source $antigen_path
-  antigen use oh-my-zsh
-  antigen bundle zsh-users/zsh-syntax-highlighting
-  antigen theme $HOME/.zsh minimal-plus
-  antigen apply
-fi
-
 # Bindings
 #
 bindkey -v                                               # Vim bindings
@@ -71,3 +60,16 @@ fpath=($(brew --prefix)/share/zsh/site-functions/ $fpath)
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
+
+# zplug
+#
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "plugins/git", from:oh-my-zsh, as:plugin, nice:0
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+setopt prompt_subst # Make sure propt is able to be generated properly.
+zplug "~/.dotfiles/zsh/minimal-plus.zsh-theme", from:local, as:plugin, nice:11
+#zplug "caiogondim/bullet-train-oh-my-zsh-theme", as:plugin, use:"bullet-train.zsh-theme", nice:11
+
+zplug load

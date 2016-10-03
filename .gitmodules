@@ -94,9 +94,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "zsh/antigen"]
-	path = zsh/antigen
-	url = https://github.com/zsh-users/antigen.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git@github.com:pangloss/vim-javascript.git

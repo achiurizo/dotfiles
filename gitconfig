@@ -29,3 +29,5 @@ protocol = https
 	helper = osxkeychain
 [ghi]
 	token = !security find-internet-password -a achiu -s github.com -l 'ghi token' -w
+[gpg]
+	program = /usr/local/bin/gpg1

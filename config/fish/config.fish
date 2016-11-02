@@ -12,11 +12,6 @@ if which brew > /dev/null
 else
 end
 
-# Setup nvm
-if which brew > /dev/null
-  bass source (brew --prefix nvm)/nvm.sh --no-use
-end
-
 # Local config
 if test -e ~/.local.fish
   source ~/.local.fish

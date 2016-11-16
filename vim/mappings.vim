@@ -47,3 +47,6 @@ imap <C-9> <Esc>9gt
 
 " logical Y, yank from current to end of line
 map Y y$
+
+" run . on visual block
+vnoremap . :norm.<cr>

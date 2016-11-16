@@ -64,6 +64,10 @@ set guioptions-=r  "remove right-hand scroll bar
 
 colorscheme tender
 
+" highlight overrides
+hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=#282828 guibg=#c9d05c
+hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=#282828 guibg=#c9d05c
+
 " SWAP AND BACKUP
 "
 " Store temporary files in a central spot

@@ -11,7 +11,7 @@
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [core]
   excludesfile = /Users/achiu/.gitignore
-  editor       = vim
+  editor       = nvim -f
   whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   autocrlf     = input
   safecrlf     = true

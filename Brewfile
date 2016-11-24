@@ -4,6 +4,7 @@
 # Update to latest
 
 brew "zsh"
+brew "fish"
 brew "wget", args: ['enable-iri']
 brew "zplug"
 
@@ -27,6 +28,7 @@ brew "mutt", args: ["with-sidebar-patch"]
 
 brew "node"
 brew "chruby"
+brew "chruby-fish"
 brew "ruby-install"
 brew "lua"
 brew "clisp"

@@ -1,12 +1,12 @@
 fish_vi_key_bindings
 
-set fish_greeting ""
-set EDITOR nvim -f
-set GIT_EDITOR nvim -f
-set GOPATH $HOME/go
-set PATH /usr/local/sbin $PATH
-set PATH $PATH $GOPATH/bin
-set PATH node_modules/.bin $PATH
+set -x fish_greeting ""
+set -x EDITOR "nvim -f"
+set -x GIT_EDITOR "nvim -f"
+set -x GOPATH $HOME/go
+set -x PATH /usr/local/sbin $PATH
+set -x PATH $PATH $GOPATH/bin
+set -x PATH node_modules/.bin $PATH
 
 
 set NVM_DIR $HOME/.nvm

@@ -10,7 +10,7 @@
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [core]
-  excludesfile = /Users/achiu/.gitignore
+  excludesfile = ~/.gitignore
   editor       = nvim -f
   whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   autocrlf     = input
@@ -31,3 +31,5 @@ protocol = https
 	token = !security find-internet-password -a achiu -s github.com -l 'ghi token' -w
 [gpg]
 	program = /usr/local/bin/gpg1
+[user]
+	signingkey = 460E39342B6738D5

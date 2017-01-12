@@ -8,8 +8,7 @@ set -x PATH /usr/local/sbin $PATH
 set -x PATH $PATH $GOPATH/bin
 set -x PATH node_modules/.bin $PATH
 
-
-set NVM_DIR $HOME/.nvm
+set -x NVM_DIR $HOME/.nvm
 
 # Setup chruby
 if which brew > /dev/null

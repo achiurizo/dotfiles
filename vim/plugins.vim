@@ -70,6 +70,7 @@ map <Leader>rt :TagbarToggle<CR>
 "
 autocmd FileType ruby   let b:dispatch = 'bundle exec ruby -I test %'
 autocmd FileType coffee let b:dispatch = 'coffee %'
+autocmd FileType rust   let b:dispatch = 'cargo test'
 map <leader>di :update \| Dispatch<CR>
 
 " AIRLINE/TMUXLINE

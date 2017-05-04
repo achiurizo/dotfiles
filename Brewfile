@@ -6,7 +6,6 @@
 brew "zsh"
 brew "fish"
 brew "wget", args: ['enable-iri']
-brew "zplug"
 
 brew "pcre"
 brew "pkg-config"

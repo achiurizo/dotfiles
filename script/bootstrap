@@ -9,6 +9,24 @@ readonly USER_HEADER="  [ \033[00;33m????\033[0m ]"
 readonly OKAY_HEADER="  [ \033[00;32mOKAY\033[0m ]"
 readonly FAIL_HEADER="  [ \033[00;31mFAIL\033[0m ]"
 
+log() {
+  local type=$1
+  local message=$1
+  case type in
+    info )
+      header=$INFO_HEADER
+      ;;
+    okay )
+      header=$OKAY_HEADER
+      ;;
+    fail )
+      header=$FAIL_HEADER
+      ;;
+  esac
+
+  printf "$header $message"
+}
+
 info() {
   local msg=$1
   printf "$INFO_HEADER $msg \n"
@@ -80,30 +98,26 @@ not_option_all() {
 
 commit_overwrite() {
   local destination=$1
-  if [ "$overwrite" == "true" ] || [ "$overwrite_all" == "true" ]
+  if [[ "$overwrite" == "true" ]] || [[ "$overwrite_all" == "true" ]]
   then
-    rm -rf $destination
-    okay "removed $destination"
+    rm -rfv $destination
   fi
 }
 
 commit_backup() {
   local destination=$1
-  if [ "$backup" == "true" ] || [ "$backup_all" == "true" ]
+  if [[ "$backup" == "true" ]] || [[ "$backup_all" == "true" ]]
   then
-    mv $destination $destination\.backup
-    okay "moved $destination to $destination.backup"
+    mv -v $destination $destination\.backup
   fi
 }
 
 commit_skip() {
   local target=$1
   local destination=$2
-  if [ "$skip" == "false" ] && [ "$skip_all" == "false" ]
+  if [[ "$skip" == "false" ]] && [[ "$skip_all" == "false" ]]
   then
-    link_files $target $destination
-  else
-    okay "skipped $target"
+    ln -sv $target $destination
   fi
 }
 
@@ -129,9 +143,8 @@ install_dotfiles() {
       commit_overwrite $destination
       commit_backup $destination
       commit_skip $target $destination
-
     else
-      link_files $target $destination
+      ln -sv $target $destination
     fi
   done
 }

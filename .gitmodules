@@ -112,3 +112,6 @@
 [submodule "vim/bundle/tender.vim"]
 	path = vim/bundle/tender.vim
 	url = git@github.com:jacoborus/tender.vim.git
+[submodule "vim/bundle/vim-graphql"]
+	path = vim/bundle/vim-graphql
+	url = https://github.com/jparise/vim-graphql.git

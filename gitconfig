@@ -28,4 +28,6 @@ protocol = https
 [credential]
 	helper = osxkeychain
 [gpg]
-	program = /usr/local/bin/gpg1
+	program = gpg
+[commit]
+	gpgsign = true

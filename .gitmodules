@@ -115,3 +115,6 @@
 [submodule "vim/bundle/vim-graphql"]
 	path = vim/bundle/vim-graphql
 	url = https://github.com/jparise/vim-graphql.git
+[submodule "vim/bundle/challenger-deep-theme"]
+	path = vim/bundle/challenger-deep-theme
+	url = git@github.com:challenger-deep-theme/vim.git

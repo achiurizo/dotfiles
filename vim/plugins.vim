@@ -68,6 +68,7 @@ map <Leader>rt :TagbarToggle<CR>
 
 " DISPATCH
 "
+let g:dispatch_quickfix_height = 20 " Set our pop up window height a bit larger. defaults to 10
 autocmd FileType ruby   let b:dispatch = 'bundle exec ruby -I test %'
 autocmd FileType coffee let b:dispatch = 'coffee %'
 autocmd FileType rust   let b:dispatch = 'cargo test'

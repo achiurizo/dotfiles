@@ -115,3 +115,6 @@
 [submodule "vim/bundle/challenger-deep-theme"]
 	path = vim/bundle/challenger-deep-theme
 	url = git@github.com:challenger-deep-theme/vim.git
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = git@github.com:mxw/vim-jsx.git

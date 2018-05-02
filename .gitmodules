@@ -73,9 +73,6 @@
 [submodule "vim/bundle/tmuxline.vim"]
 	path = vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
-[submodule "vim/bundle/vim-colorschemes"]
-	path = vim/bundle/vim-colorschemes
-	url = git@github.com:flazz/vim-colorschemes.git
 [submodule "vim/bundle/unite.vim"]
 	path = vim/bundle/unite.vim
 	url = git@github.com:Shougo/unite.vim.git

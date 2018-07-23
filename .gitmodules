@@ -118,3 +118,6 @@
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
+[submodule "vim/bundle/denite.nvim"]
+	path = vim/bundle/denite.nvim
+	url = git@github.com:Shougo/denite.nvim.git

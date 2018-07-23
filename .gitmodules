@@ -52,9 +52,6 @@
 [submodule "vim/bundle/vim-snippets"]
 	path = vim/bundle/vim-snippets
 	url = git://github.com/honza/vim-snippets.git
-[submodule "vim/bundle/vim-puppet"]
-	path = vim/bundle/vim-puppet
-	url = git@github.com:rodjek/vim-puppet.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
@@ -67,18 +64,6 @@
 [submodule "vim/bundle/emmet-vim"]
 	path = vim/bundle/emmet-vim
 	url = git@github.com:mattn/emmet-vim.git
-[submodule "vim/bundle/moonscript-vim"]
-	path = vim/bundle/moonscript-vim
-	url = git@github.com:leafo/moonscript-vim.git
-[submodule "vim/bundle/tmuxline.vim"]
-	path = vim/bundle/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim
-[submodule "vim/bundle/unite.vim"]
-	path = vim/bundle/unite.vim
-	url = git@github.com:Shougo/unite.vim.git
-[submodule "vim/bundle/vimproc.vim"]
-	path = vim/bundle/vimproc.vim
-	url = git@github.com:Shougo/vimproc.vim.git
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git

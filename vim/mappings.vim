@@ -7,6 +7,9 @@ nmap <silent> <leader>tw <ESC>:%s/\s\+$//<CR>
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
 
+" Remove highlights
+nmap <C-l> :set nohlsearch<cr>
+
 " Bubble single lines
 nmap <C-Up> [e
 nmap <C-Down> ]e

@@ -50,7 +50,7 @@ This setups vim to use
 [vim-sensible](https://github.com/tpope/vim-sensible) as a base with a
 few exceptions:
 
-* sets leader key to ','
+* sets leader key to `,`
 * sets to `nocompatible `
 * shows line numbers
 * syntax is enabled

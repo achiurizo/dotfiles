@@ -2,25 +2,22 @@
 "
 let g:indent_guides_color_change_percent = 40
 let g:indent_guides_auto_colors = 1
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=red
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=green
-
 
 " DENITE.NVIM
 "
 " ctrl+p
 call denite#custom#var('file/rec', 'ag', ['--follow', '--nocolor', '--nogroup', '-g', ''])
-nnoremap <C-p> :Denite file/rec<CR>
+nnoremap <C-p> :Denite file/rec<cr>
 " ctrl+b
-nnoremap <C-b> :Denite buffer<CR>
+nnoremap <C-b> :Denite buffer<cr>
 " ctrl+/ directory search
 call denite#custom#var('grep', 'ag', ['--nogroup', '--nocolor', '-S'])
-noremap <C-_> :Denite grep <CR>
+noremap <C-_> :Denite grep <cr>
 
 " NERDCOMMENTER
 "
 " , + /
-map <leader>/ <plug>NERDCommenterToggle<CR>
+map <leader>/ <plug>NERDCommenterToggle<cr>
 
 "" SYNTASTIC
 ""
@@ -28,21 +25,21 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_auto_loc_list  = 1
 let g:syntastic_ruby_exec      = 'which ruby'
 
-" FUGITIVE.VIM"
+" FUGITIVE.VIM
 "
 " , + gb
-nmap <leader>gb :Gblame<CR>
+nmap <leader>gb :Gblame<cr>
 
 " NERDTREE
 "
 " , + n
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-map <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<cr>
 
 " TAGBAR
 "
 " , + rt
-map <Leader>rt :TagbarToggle<CR>
+map <Leader>rt :TagbarToggle<cr>
 
 " DISPATCH
 "
@@ -50,18 +47,18 @@ map <Leader>rt :TagbarToggle<CR>
 let g:dispatch_quickfix_height = 20 " Set our pop up window height a bit larger. defaults to 10
 autocmd FileType ruby   let b:dispatch = 'bundle exec ruby -I test %'
 autocmd FileType rust   let b:dispatch = 'cargo test'
-map <leader>di :update \| Dispatch<CR>
+map <leader>di :update \| Dispatch<cr>
 
 " AIRLINE/TMUXLINE
 "
 let g:airline_powerline_fonts = 1
-let g:airline_theme           = 'zenburn'
+let g:airline_theme           = 'tender'
 
 " TABULAR
 "
 " , + al
-nmap <leader>al :Tabularize /=>\\|=<CR>:Tabularize /|<CR>
-vmap <leader>al :Tabularize /=>\\|=<CR>:Tabularize /|<CR>
+nmap <leader>al :Tabularize /=>\\|=<cr>
+vmap <leader>al :Tabularize /=>\\|=<cr>
 
 " JAVASCRIPT
 "

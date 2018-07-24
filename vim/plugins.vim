@@ -22,8 +22,8 @@ noremap <C-_> :Denite grep <CR>
 " , + /
 map <leader>/ <plug>NERDCommenterToggle<CR>
 
-"" SYNTASTIC
-""
+" SYNTASTIC
+"
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_auto_loc_list  = 1
 let g:syntastic_ruby_exec      = 'which ruby'
@@ -60,8 +60,8 @@ let g:airline_theme           = 'zenburn'
 " TABULAR
 "
 " , + al
-nmap <leader>al :Tabularize /=>\\|=<CR>:Tabularize /|<CR>
-vmap <leader>al :Tabularize /=>\\|=<CR>:Tabularize /|<CR>
+nmap <leader>al :Tabularize /=>\\|=<CR>
+vmap <leader>al :Tabularize /=>\\|=<CR>
 
 " JAVASCRIPT
 "

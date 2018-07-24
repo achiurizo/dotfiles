@@ -61,9 +61,6 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "vim/bundle/vim-projectionist"]
-	path = vim/bundle/vim-projectionist
-	url = git://github.com/tpope/vim-projectionist.git
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git

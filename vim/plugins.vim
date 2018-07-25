@@ -8,14 +8,21 @@ let g:indent_guides_auto_colors = 1
 
 " DENITE.NVIM
 "
-" ctrl+p
-call denite#custom#var('file/rec', 'ag', ['--follow', '--nocolor', '--nogroup', '-g', ''])
+" ctrl + p
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 nnoremap <C-p> :Denite file/rec<CR>
-" ctrl+b
+
+" ctrl + b
 nnoremap <C-b> :Denite buffer<CR>
-" ctrl+/ directory search
-call denite#custom#var('grep', 'ag', ['--nogroup', '--nocolor', '-S'])
-noremap <C-_> :Denite grep <CR>
+
+" ctrl + / directory search
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+noremap <C-_> :Denite grep<CR>
 
 " NERDCOMMENTER
 "

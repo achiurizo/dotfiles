@@ -1,4 +1,0 @@
-#!/bin/bash
-#
-# build coffee files for dotjs
-coffee -cbw -o js js/src

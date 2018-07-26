@@ -6,4 +6,3 @@ git submodule init
 git submodule update --depth 1
 git submodule foreach git reset --hard
 git submodule foreach git pull origin master
-cd vim/bundle/vimproc.vim && make

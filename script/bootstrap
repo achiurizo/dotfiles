@@ -149,4 +149,16 @@ install_dotfiles() {
   done
 }
 
+install_brews() {
+  if which brew > /dev/null; then
+    brew bundle Brewfile
+  fi
+}
+
+
+
 install_dotfiles
+install_brews
+
+# Make Fish the default.
+chsh -s /usr/local/bin/fish

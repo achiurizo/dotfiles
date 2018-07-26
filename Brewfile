@@ -7,7 +7,9 @@ brew "fish"
 brew "wget", args: ['enable-iri']
 brew "tmux", args: ['--with-utf8proc']
 brew "reattach-to-user-namespace"
-brew "ctags"
+
+tap "universal-ctags/universal-ctags"
+brew "universal-ctags", args: ['HEAD']
 
 tap "neovim/neovim"
 brew "neovim", args: ["HEAD"]

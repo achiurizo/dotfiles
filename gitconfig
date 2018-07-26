@@ -4,7 +4,9 @@
   status = auto
   branch = auto
 [alias]
-  co = checkout
+  co     = checkout
+  subadd = submodule add
+  subbye = submodule deinit
 [push]
   default = current
 [format]
@@ -19,11 +21,7 @@
   autosetuprebase = always
 [include]
   path = ~/.gitconfig.local
-
-# vim: noexpandtab ts=4 sw=4 sts=0
-
 [hub]
-protocol = https
-
+  protocol = https
 [credential]
 	helper = osxkeychain

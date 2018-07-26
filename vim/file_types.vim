@@ -15,5 +15,8 @@ au FileType markdown call s:setupGHWrapping()
 " javscript
 au BufNewFile,BufRead *.json set ft=javascript
 
+" fish
+au BufNewFile,BufRead *.fish set ft=sh
+
 " make Python follow PEP8 for whitespace (http://www.python.org/dev/peps/pep-0008/)
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4

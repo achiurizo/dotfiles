@@ -18,7 +18,6 @@ set -x NVM_DIR $HOME/.nvm
 if which brew > /dev/null
   source (brew --prefix)"/share/chruby/chruby.fish"
   source (brew --prefix)"/share/chruby/auto.fish"
-else
 end
 
 # Local config

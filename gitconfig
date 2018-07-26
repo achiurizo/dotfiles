@@ -5,6 +5,7 @@
   branch = auto
 [alias]
   co     = checkout
+  cm     = commit -S -va
   subadd = submodule add
   subbye = submodule deinit
 [push]

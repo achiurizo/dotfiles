@@ -1,3 +1,11 @@
+" Plug
+" 
+
+call plug#begin('~/.vim/plugged')
+
+ ~/.local/share/nvim/plugged
+ o
+
 " VIM-INDENT-GUIDES
 "
 let g:indent_guides_color_change_percent = 40
@@ -81,3 +89,4 @@ let g:go_highlight_operators = 1
 " Markdown
 "
 let g:vim_markdown_folding_disabled = 1
+

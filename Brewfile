@@ -3,40 +3,58 @@
 
 # Update to latest
 
-brew "zsh"
 brew "fish"
 brew "wget", args: ['enable-iri']
+brew "tmux", args: ['--with-utf8proc']
+brew "reattach-to-user-namespace"
+brew "ctags"
+
+tap "neovim/neovim"
+brew "neovim", args: ["HEAD"]
 
 brew "pcre"
 brew "pkg-config"
 brew "rename"
 brew "pv"
 
-brew "tmux"
-brew "reattach-to-user-namespace"
-brew "ctags"
+# Searchers
+brew "ag"
+brew "pt"
+brew "jq"
 
-brew "the_silver_searcher"
-brew "the_platinum_searcher"
-
+# gits
 brew "git", args: ["with-brewed-curl", "with-brewed-openssl"]
+brew "gist"
 brew "hub"
 brew "tig"
+brew "gnupg", args: ['with-readline']
 
-brew "mutt", args: ["with-sidebar-patch"]
-
+# javascript
 brew "node"
+brew "nvm"
+brew "yarn"
+
+# ruby
 brew "chruby"
 brew "chruby-fish"
-brew "ruby-install"
-brew "lua"
-brew "clisp"
-brew "python"
-brew "go"
+brew "ruby-build"
+brew "readline"
 
+# python
+brew "python"
+
+# go
+brew "go"
+brew "godep"
+
+# rust
+brew "rust"
+brew "rustup-init"
+brew "xsv"
+
+# rust
+
+# security
 brew "hashpump"
 brew "nmap"
 brew "wireshark"
-
-tap "neovim/neovim"
-brew "neovim", args: ["HEAD"]

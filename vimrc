@@ -1,7 +1,40 @@
-" PATHOGEN
-"
-execute pathogen#infect()
-Helptags " Generate the help docs
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'sunaku/vim-ruby-minitest',  { 'for': 'ruby' }
+Plug 'tpope/vim-dispatch'
+Plug 'plasticboy/vim-markdown'
+Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'ervandew/supertab'
+Plug 'majutsushi/tagbar'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'vim-ruby/vim-ruby',  { 'for': 'ruby' }
+Plug 'pangloss/vim-javascript',  { 'for': 'javscript' }
+Plug 'rust-lang/rust',  { 'for': 'rust' }
+Plug 'roosta/vim-srcery'
+Plug 'rakr/vim-two-firewatch'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jacoborus/tender'
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
+Plug 'challenger-deep-theme/vim'
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'git@github.com:Shougo/denite.nvim.git'
+
+call plug#end()
 
 runtime! plugin/sensible.vim " run sensible first so we can override some of its settings.
 

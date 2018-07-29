@@ -1,11 +1,3 @@
-" Plug
-" 
-
-call plug#begin('~/.vim/plugged')
-
- ~/.local/share/nvim/plugged
- o
-
 " VIM-INDENT-GUIDES
 "
 let g:indent_guides_color_change_percent = 40

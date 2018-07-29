@@ -8,7 +8,7 @@ nmap <silent> <leader>tw <ESC>:%s/\s\+$//<CR>
 map <Leader>= <C-w>=
 
 " Remove highlights
-nmap <C-l> :set nohlsearch<cr>
+nmap <C-l> :noh<cr>
 
 " logical Y, yank from current to end of line
 map Y y$

@@ -3,7 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sunaku/vim-ruby-minitest',  { 'for': 'ruby' }
@@ -33,6 +33,7 @@ Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'challenger-deep-theme/vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'git@github.com:Shougo/denite.nvim.git'
+Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
 call plug#end()
 

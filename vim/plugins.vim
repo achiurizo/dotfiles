@@ -82,3 +82,15 @@ let g:go_highlight_operators = 1
 "
 let g:vim_markdown_folding_disabled = 1
 
+" Typora integration
+if has('mac')
+
+  function! Typora()
+      " Launch Typora
+      call system("open -a Typora \"" . expand("%") . "\"")
+      setlocal autoread
+  endfunction
+
+  command! Typora call Typora()
+
+endif

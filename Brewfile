@@ -60,3 +60,5 @@ brew "xsv"
 brew "hashpump"
 brew "nmap"
 brew "wireshark"
+
+cask "typora"

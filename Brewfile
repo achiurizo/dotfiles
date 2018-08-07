@@ -54,11 +54,16 @@ brew "rust"
 brew "rustup-init"
 brew "xsv"
 
-# rust
-
 # security
 brew "hashpump"
 brew "nmap"
 brew "wireshark"
+
+# ethereum
+tap "paritytech/paritytech"
+brew "parity",  args: ['devel']
+brew "ethabi"
+brew "ethkey"
+brew "ethstore"
 
 cask "typora"

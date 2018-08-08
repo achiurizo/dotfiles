@@ -124,7 +124,7 @@ install_dotfiles() {
   backup_all=false
   skip_all=false
   local files
-  files=$(ls $DOTFILES_ROOT | grep -v 'README.md' | grep -v 'script')
+  files=$(ls $DOTFILES_ROOT | grep -v 'README.md' | grep -v 'script' | grep -v 'Brewfile' | grep -v 'screenshot.png')
   local dotfile
   local action
 

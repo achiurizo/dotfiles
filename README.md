@@ -1,3 +1,5 @@
+![](screenshot.png)
+
 # Quick Start
 
 To get it up and running, first pull it down into your $HOME:

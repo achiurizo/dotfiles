@@ -61,19 +61,19 @@ few exceptions:
 * no swap, no backup, no undofile
 * ignores output files like swp, .class, .rbc and much more
 
-| Command                          | Plugin                                                              | Description                                              |
-| ------                           | ------                                                              | -----------                                              |
-| `ctrl + p`                       | [Denite](https://github.com/Shougo/denite.nvim)                     | Shows all the files in the current directory             |
-| `ctrl + b`                       | [Denite](https://github.com/Shougo/denite.nvim)                     | Shows all the  currently existing buffers                |
-| `ctrl + /`                       | [Denite](https://github.com/Shougo/denite.nvim)                     | grep over the current director                           |
-| `, + n`                          | [NERDTree](https://github.com/scrooloose/nerdtree)                  | Opens the file browser                                   |
-| `, + rt`                         | [TagBar](https://github.com/majutsushi/tagbar)                      | Opens the ctags browser                                  |
-| `, + /`                          | [NERDCommenter](https://github.com/scrooloose/nerdcommenter)        | Comment out the current or visually slected lines        |
-| `, + gb                          | [Fugitive.vim](https://github.com/tpope/vim-fugitive)               | Show the gitblame for the current buffer                 |
-| `, + al`                         | [Tabularize](https://github.com/godlygeek/tabular)                  | Align certain characters e.g `=>` `=`                    |
-| `, + di`                         | [Dispatch](https://github.com/tpope/vim-dispatch)                   | Run specific command for the given project and file type |
-| `, + ig`                         | [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides) | Shows the indentation for the current buffer             |
-| `<html element> + `ctrl + y + ,` | [Emmet](https://github.com/mattn/emmet-vim)                         | Generate the html tag for the given HTML shorthand       |
+| Command        | Plugin                                                              | Description                                              |
+| ------         | ------                                                              | -----------                                              |
+| `ctrl + p`     | [Denite](https://github.com/Shougo/denite.nvim)                     | Shows all the files in the current directory             |
+| `ctrl + b`     | [Denite](https://github.com/Shougo/denite.nvim)                     | Shows all the  currently existing buffers                |
+| `ctrl + /`     | [Denite](https://github.com/Shougo/denite.nvim)                     | grep over the current director                           |
+| `, + n`        | [NERDTree](https://github.com/scrooloose/nerdtree)                  | Opens the file browser                                   |
+| `, + rt`       | [TagBar](https://github.com/majutsushi/tagbar)                      | Opens the ctags browser                                  |
+| `, + /`        | [NERDCommenter](https://github.com/scrooloose/nerdcommenter)        | Comment out the current or visually slected lines        |
+| `, + gb`       | [Fugitive.vim](https://github.com/tpope/vim-fugitive)               | Show the gitblame for the current buffer                 |
+| `, + al`       | [Tabularize](https://github.com/godlygeek/tabular)                  | Align certain characters e.g `=>` `=`                    |
+| `, + di`       | [Dispatch](https://github.com/tpope/vim-dispatch)                   | Run specific command for the given project and file type |
+| `, + ig`       | [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides) | Shows the indentation for the current buffer             |
+| `ctrl + y + ,` | [Emmet](https://github.com/mattn/emmet-vim)                         | Generate the html tag for the given HTML shorthand       |
 
 ### Denite
 

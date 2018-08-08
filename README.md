@@ -1,5 +1,11 @@
 ![](screenshot.png)
 
+These are my dotfiles, my configurations, my shell home I'd like to share.
+
+---
+
+![](https://badgen.net/github/tag/achiu/dotfiles) ![](https://badgen.net/badge/platform/macOS)
+
 # Quick Start
 
 To get it up and running, first pull it down into your $HOME:
@@ -11,13 +17,7 @@ $ git clone git@github.com:achiu/dotfiles.git .dotfiles
 then you can simply:
 
 ```bash
-$ script/bootstrap
-```
-
-To update, simply run:
-
-```bash
-$ script/update
+$ script/setup
 ```
 
 # Configurations
@@ -26,8 +26,6 @@ $ script/update
 * Tmux
 * Neovim
 * chruby
-
-
 
 ## Fish
 
@@ -110,3 +108,27 @@ Use `FocusDispatch`:
 ```vim
 :FocusDispatch my/shell/command
 ```
+
+### vim-plug
+
+Plugins all sit in [nvimrc](nvimrc). Once you've updated the list you can install it with:
+
+```
+:PlugInstall
+```
+
+Some plugins requires an additional step to leverage neovim:
+
+```
+:UpdateRemotePlugins
+```
+
+### Typora
+
+You can also render your markdown in a GUI for better viewing by leveraging [Typora](https://typora.io/). This is installed via the [Brewfile](Brewfile). Goto your markdown
+buffer and run:
+
+```
+:Typora
+```
+

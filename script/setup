@@ -1,0 +1,179 @@
+#! /bin/bash
+set -o nounset
+
+readonly DOTFILES_ROOT=$(pwd)
+
+# Output headers
+readonly BLACK=$(tput setaf 0)
+readonly RED=$(tput setaf 1)
+readonly GREEN=$(tput setaf 2)
+readonly YELLOW=$(tput setaf 3)
+readonly LIME_YELLOW=$(tput setaf 190)
+readonly POWDER_BLUE=$(tput setaf 153)
+readonly BLUE=$(tput setaf 4)
+readonly MAGENTA=$(tput setaf 5)
+readonly CYAN=$(tput setaf 6)
+readonly WHITE=$(tput setaf 7)
+readonly BRIGHT=$(tput bold)
+readonly NORMAL=$(tput sgr0)
+readonly BLINK=$(tput blink)
+readonly REVERSE=$(tput smso)
+readonly UNDERLINE=$(tput smul)
+
+readonly INFO_HEADER="${CYAN}[INFO]${NORMAL}"
+readonly USER_HEADER="${MAGENTA}[....]${NORMAL}"
+readonly OKAY_HEADER="${GREEN}[✔]${NORMAL}"
+readonly FAIL_HEADER="${RED}[𝗫]${NORMAL}"
+
+info() {
+  local msg=$1
+  printf "%s %s \\n" "$INFO_HEADER" "$msg"
+}
+
+user() {
+  local msg=$1
+  printf "%s %s \\n" "$USER_HEADER" "$msg "
+}
+
+okay() {
+  local msg=$1
+  printf "%s %s \\n" "$OKAY_HEADER" "$msg "
+}
+
+fail() {
+  local msg=$1
+  printf "%s %s \\n" "$FAIL_HEADER" "$msg "
+  exit
+}
+
+link_files() {
+  local target=$1
+  local destination=$2
+  ln -s "$target" "$destination"
+  okay "linked $target to $destination"
+}
+
+is_existent() {
+  local file=$1
+  [ -a "$file" ] || [ -L "$file" ]
+}
+
+ask_action() {
+  overwrite=false
+  backup=false
+  skip=false
+
+  local file=$1
+  local action
+
+  user "File already exists: $file, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+  read -rn 1 action
+
+  case "$action" in
+    o )
+      overwrite=true;;
+    O )
+      overwrite_all=true;;
+    b )
+      backup=true;;
+    B )
+      backup_all=true;;
+    s )
+      skip=true;;
+    S )
+      skip_all=true;;
+    * )
+      ;;
+  esac
+  printf "\\n"
+}
+
+not_option_all() {
+  [ "$overwrite_all" == "false" ] \
+  && [ "$backup_all" == "false" ] \
+  && [ "$skip_all" == "false" ]
+}
+
+commit_overwrite() {
+  local destination=$1
+  if [[ "$overwrite" == "true" ]] || [[ "$overwrite_all" == "true" ]]
+  then
+    rm -rfv "$destination"
+  fi
+}
+
+commit_backup() {
+  local destination=$1
+  if [[ "$backup" == "true" ]] || [[ "$backup_all" == "true" ]]
+  then
+    mv -v "$destination" "$destination.backup"
+  fi
+}
+
+commit_skip() {
+  local target=$1
+  local destination=$2
+  if [[ "$skip" == "false" ]] && [[ "$skip_all" == "false" ]]
+  then
+    ln -sv "$target" "$destination"
+  fi
+}
+
+install_dotfiles() {
+  overwrite_all=false
+  backup_all=false
+  skip_all=false
+  local files
+  files=$(ls $DOTFILES_ROOT | grep -v 'README.md' | grep -v 'script')
+  local dotfile
+  local action
+
+  for dotfile in $files
+  do
+    local destination="$HOME/.$dotfile"
+    local target="$DOTFILES_ROOT/$dotfile"
+
+    if is_existent "$destination"
+    then
+      if not_option_all
+      then
+        ask_action "$destination"
+      fi
+      commit_overwrite "$destination"
+      commit_backup "$destination"
+      commit_skip "$target" "$destination"
+    else
+      ln -sv "$target" "$destination"
+    fi
+  done
+  okay "dotfiles installed"
+}
+
+install_brews() {
+  info "Installing Homebrews"
+  if command -v brew > /dev/null; then
+    brew bundle
+  fi
+  okay "brews installed"
+}
+
+install_vim_plug() {
+  info "Installing vim-plug"
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+  info "Running neovim installation"
+  nvim --headless +PlugInstall +UpdateRemotePlugins +qa
+  okay "vim plug installation complete"
+}
+
+make_fish_default() {
+  info "Making fish default shell"
+  chsh -s /usr/local/bin/fish
+  okay "fish shell change complete"
+}
+
+install_dotfiles
+install_brews
+install_vim_plug
+make_fish_default

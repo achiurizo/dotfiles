@@ -18,7 +18,6 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
-Plug 'bling/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'vim-ruby/vim-ruby',  { 'for': 'ruby' }

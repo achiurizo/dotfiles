@@ -9,7 +9,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sunaku/vim-ruby-minitest',  { 'for': 'ruby' }
 Plug 'tpope/vim-dispatch'
 Plug 'plasticboy/vim-markdown'
-Plug 'garbas/vim-snipmate'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'ervandew/supertab'
@@ -33,6 +32,9 @@ Plug 'challenger-deep-theme/vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'git@github.com:Shougo/denite.nvim.git'
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
+Plug 'sirver/ultisnips'
+Plug 'epilande/vim-react-snippets'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 

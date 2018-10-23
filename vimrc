@@ -98,11 +98,12 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme challenger_deep
+colorscheme two-firewatch
 
 " highlight overrides
-hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=#282828 guibg=#c9d05c
-hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=#282828 guibg=#c9d05c
+hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
+hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
+hi Search gui=bold guibg=pink guifg=wheat
 
 " SWAP AND BACKUP
 "

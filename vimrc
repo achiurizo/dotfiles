@@ -30,7 +30,7 @@ Plug 'jacoborus/tender'
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'challenger-deep-theme/vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'git@github.com:Shougo/denite.nvim.git'
+Plug 'Shougo/denite.nvim'
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'sirver/ultisnips'
 Plug 'epilande/vim-react-snippets'

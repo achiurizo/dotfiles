@@ -1,40 +1,41 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'sunaku/vim-ruby-minitest',  { 'for': 'ruby' }
-Plug 'tpope/vim-dispatch'
-Plug 'plasticboy/vim-markdown'
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+Plug 'Shougo/denite.nvim'
+Plug 'challenger-deep-theme/vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
-Plug 'majutsushi/tagbar'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
-Plug 'honza/vim-snippets'
-Plug 'tpope/vim-surround'
-Plug 'mattn/emmet-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'vim-ruby/vim-ruby',  { 'for': 'ruby' }
-Plug 'pangloss/vim-javascript',  { 'for': 'javscript' }
-Plug 'rust-lang/rust',  { 'for': 'rust' }
-Plug 'roosta/vim-srcery'
-Plug 'rakr/vim-two-firewatch'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
 Plug 'jacoborus/tender'
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
-Plug 'challenger-deep-theme/vim'
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'Shougo/denite.nvim'
-Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
-Plug 'sirver/ultisnips'
-Plug 'epilande/vim-react-snippets'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'leafgarland/typescript-vim'
+Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript',  { 'for': 'javscript' }
+Plug 'plasticboy/vim-markdown'
+Plug 'rakr/vim-two-firewatch'
+Plug 'roosta/vim-srcery'
+Plug 'rust-lang/rust',  { 'for': 'rust' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'sirver/ultisnips'
+Plug 'sunaku/vim-ruby-minitest',  { 'for': 'ruby' }
+Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby',  { 'for': 'ruby' }
+Plug 'w0rp/ale'
 
 call plug#end()
 

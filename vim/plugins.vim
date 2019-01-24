@@ -7,10 +7,10 @@ let g:indent_guides_auto_colors = 1
 "
 " ctrl + p
 call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-nnoremap <C-p> :Denite file/rec<CR>
+nnoremap <C-p> :Denite file/rec -highlight-mode-insert=Search<CR>
 
 " ctrl + b
-nnoremap <C-b> :Denite buffer<CR>
+nnoremap <C-b> :Denite buffer -highlight-mode-insert=Search<CR>
 
 " ctrl + / directory search
 call denite#custom#var('grep', 'command', ['ag'])
@@ -19,7 +19,7 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-noremap <C-_> :Denite grep<CR>
+noremap <C-_> :Denite grep -highlight-mode-insert=Search<CR>
 
 " NERDCOMMENTER
 "

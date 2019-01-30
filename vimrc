@@ -72,7 +72,6 @@ set listchars+=precedes:<         " The character to show in the last column whe
 set hlsearch    " highlight matches
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
-set noic        " case sensitive search
 
 " Wild Settings
 " TODO: Investigate the precise meaning of these settings

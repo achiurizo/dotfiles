@@ -98,7 +98,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme two-firewatch
+colorscheme tender
 
 " highlight overrides
 hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink

@@ -14,6 +14,9 @@ brew "universal-ctags", args: ['HEAD']
 tap "neovim/neovim"
 brew "neovim", args: ["HEAD"]
 
+tap "xo/xo"
+brew "usql"
+
 brew "pcre"
 brew "pkg-config"
 brew "rename"

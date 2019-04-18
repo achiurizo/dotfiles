@@ -17,6 +17,9 @@ brew "neovim", args: ["HEAD"]
 tap "xo/xo"
 brew "usql"
 
+tap "cjbassi/gotop"
+brew "gotop"
+
 brew "pcre"
 brew "pkg-config"
 brew "rename"

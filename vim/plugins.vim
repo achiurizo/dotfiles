@@ -19,7 +19,7 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-noremap <C-_> :Denite grep -highlight-mode-insert=Search<CR>
+noremap <C-bslash> :Denite grep -highlight-mode-insert=Search<CR>
 
 " NERDCOMMENTER
 "

@@ -36,6 +36,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby',  { 'for': 'ruby' }
 Plug 'w0rp/ale'
+Plug 'aonemd/kuroi.vim'
 
 call plug#end()
 
@@ -98,7 +99,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme tender
+colorscheme kuroi
 
 " highlight overrides
 hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink

@@ -8,15 +8,8 @@
 brew "fish"
 brew "tmux", args: ['--with-utf8proc']
 
-# Editor related
-tap "universal-ctags/universal-ctags"
-brew "universal-ctags", args: ['HEAD']
-
 tap "neovim/neovim"
 brew "neovim", args: ["HEAD"]
-
-tap "xo/xo"
-brew "usql"
 
 # Command line
 brew "ag"

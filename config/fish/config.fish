@@ -16,6 +16,7 @@ set -x NVM_DIR $HOME/.nvm
 
 # Setup chruby
 if which brew > /dev/null
+  set -x PATH (brew --prefix)"/sbin" $PATH
   source (brew --prefix)"/share/chruby/chruby.fish"
   source (brew --prefix)"/share/chruby/auto.fish"
 end

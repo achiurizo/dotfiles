@@ -21,6 +21,7 @@ brew "pv"
 brew "rename"
 brew "wireshark"
 brew "xsv"
+brew "bat"
 
 brew "gist"
 brew "git", args: ["with-brewed-curl", "with-brewed-openssl"]

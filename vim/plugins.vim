@@ -5,12 +5,37 @@ let g:indent_guides_auto_colors = 1
 
 " DENITE.NVIM
 "
+
+
+" Denite 2.0+ requires that we manually specify our actions in the denite
+" buffer
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+  imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
+endfunction
+
 " ctrl + p
 call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-nnoremap <C-p> :Denite file/rec -highlight-mode-insert=Search<CR>
+nnoremap <C-p> :Denite file/rec<CR>
 
 " ctrl + b
-nnoremap <C-b> :Denite buffer -highlight-mode-insert=Search<CR>
+nnoremap <C-b> :Denite buffer<CR>
 
 " ctrl + / directory search
 call denite#custom#var('grep', 'command', ['ag'])
@@ -19,7 +44,7 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-noremap <C-bslash> :Denite grep -highlight-mode-insert=Search<CR>
+noremap <C-bslash> :Denite grep<CR>
 
 " NERDCOMMENTER
 "

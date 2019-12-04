@@ -18,3 +18,5 @@ set -x NVM_DIR $HOME/.nvm
 if test -e ~/.local.fish
   source ~/.local.fish
 end
+
+source /home/linuxbrew/.linuxbrew/opt/asdf/asdf.fish

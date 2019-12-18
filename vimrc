@@ -102,9 +102,9 @@ set guioptions-=r  "remove right-hand scroll bar
 colorscheme kuroi
 
 " highlight overrides
-hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
-hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
-hi Search gui=bold guibg=gold guifg=gray
+hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=gold guibg=black
+hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=gold guibg=black
+hi Search cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=gold guibg=black
 
 " SWAP AND BACKUP
 "

@@ -8,6 +8,7 @@ set -x PATH /usr/local/sbin $PATH
 set -x PATH $PATH $GOPATH/bin
 set -x PATH node_modules/.bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
 set -x GPG_TTY (tty)
 set -x NVM_DIR $HOME/.nvm
 export NVM_DIR="$HOME/.nvm"

@@ -44,7 +44,7 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-noremap <C-bslash> :Denite grep<CR>
+noremap <C-f> :Denite grep<CR>
 
 " NERDCOMMENTER
 "

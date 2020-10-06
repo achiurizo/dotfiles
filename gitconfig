@@ -20,7 +20,7 @@
   safecrlf     = true
 [branch]
   autosetuprebase = always
+[credential]
+  helper = store
 [include]
   path = ~/.gitconfig.local
-[hub]
-	protocol = ssh

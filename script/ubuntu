@@ -9,7 +9,7 @@ install_fish() {
 }
 
 install_packages() {
-  sudo apt install -y curl git unzip tmux tig silversearcher-ag universal-ctags dirmngr libssl-dev make automake autoconf libncurses5-dev
+  sudo apt install -y build-essential curl git unzip tmux tig silversearcher-ag universal-ctags dirmngr libssl-dev make automake autoconf libncurses5-dev zlib1g-dev libffi-dev
 }
 
 install_asdf() {

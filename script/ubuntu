@@ -28,7 +28,15 @@ install_neovim() {
   nvim --headless +PlugInstall +UpdateRemotePlugins +qa
 }
 
+install_rust_packages() {
+  asdf install rust latest
+  asdf global rust $(asdf latest rust)
+  cargo install exa bat jql
+}
+
+
 install_fish
 install_packages
 install_asdf
+install_rust_packages
 install_neovim

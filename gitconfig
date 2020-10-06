@@ -24,5 +24,3 @@
   path = ~/.gitconfig.local
 [hub]
 	protocol = ssh
-[credential]
-	helper = osxkeychain

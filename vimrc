@@ -1,31 +1,30 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'Shougo/denite.nvim'
 Plug 'challenger-deep-theme/vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jacoborus/tender'
-Plug 'jparise/vim-graphql', { 'for': 'graphql' }
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript',  { 'for': 'javscript' }
 Plug 'plasticboy/vim-markdown'
-Plug 'rakr/vim-two-firewatch'
 Plug 'roosta/vim-srcery'
-Plug 'rust-lang/rust',  { 'for': 'rust' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sirver/ultisnips'
-Plug 'sunaku/vim-ruby-minitest',  { 'for': 'ruby' }
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
@@ -33,8 +32,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby',  { 'for': 'ruby' }
 Plug 'w0rp/ale'
 
 call plug#end()

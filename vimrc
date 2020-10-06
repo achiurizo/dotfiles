@@ -98,8 +98,8 @@ set guioptions-=r  "remove right-hand scroll bar
 colorscheme tender
 
 " highlight overrides
-hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
-hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
+hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
+hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
 hi Search gui=bold guibg=gold guifg=gray
 
 " SWAP AND BACKUP

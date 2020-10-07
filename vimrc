@@ -9,13 +9,11 @@ else
 endif
 
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'challenger-deep-theme/vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'jacoborus/tender'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -33,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
@@ -95,7 +94,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme tender
+colorscheme dracula
 
 " highlight overrides
 hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f

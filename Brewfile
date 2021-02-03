@@ -27,7 +27,6 @@ brew "pv"
 
 # Searchers
 brew "ag"
-brew "pt"
 brew "jq"
 
 # gits

@@ -18,7 +18,7 @@ install_asdf() {
   asdf plugin-add python
   asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
   asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-  asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+  asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
   bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 }
@@ -33,7 +33,7 @@ install_neovim() {
 install_rust_packages() {
   asdf install rust latest
   asdf global rust $(asdf latest rust)
-  cargo install exa bat jql
+  cargo install exa bat jql ripgrep
 }
 
 

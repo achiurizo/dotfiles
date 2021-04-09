@@ -935,7 +935,7 @@ function! s:prepare(...)
     call s:new_window()
   endif
 
-  nnoremap <silent> <buffer> q  :if b:plug_preview==1<bar>pc<bar>endif<bar>bd<cr>
+  nnoremap <silent> <buffer> q :call <SID>close_pane()<cr>
   if a:0 == 0
     call s:finish_bindings()
   endif
@@ -954,6 +954,15 @@ function! s:prepare(...)
   setf vim-plug
   if exists('g:syntax_on')
     call s:syntax()
+  endif
+endfunction
+
+function! s:close_pane()
+  if b:plug_preview == 1
+    pc
+    let b:plug_preview = -1
+  else
+    bd
   endif
 endfunction
 
@@ -1080,11 +1089,7 @@ function! s:checkout(spec)
   if !empty(output) && !s:hash_match(sha, s:lines(output)[0])
     let credential_helper = s:git_version_requirement(2) ? '-c credential.helper= ' : ''
     let output = s:system(
-<<<<<<< Updated upstream
           \ 'git '.credential_helper.'fetch --depth 999999 && git checkout '.plug#shellescape(sha).' --', a:spec.dir)
-=======
-          \ 'git -c credential.helper= fetch --depth 999999 && git checkout '.plug#shellescape(sha).' --', a:spec.dir)
->>>>>>> Stashed changes
   endif
   return output
 endfunction
@@ -1852,7 +1857,7 @@ class Plugin(object):
       self.write(Action.UPDATE, self.name, ['Updating ...'])
       callback = functools.partial(self.write, Action.UPDATE, self.name)
       fetch_opt = '--depth 99999999' if self.tag and os.path.isfile(os.path.join(self.args['dir'], '.git/shallow')) else ''
-      cmd = 'git -c credential.helper= fetch {0} {1} 2>&1'.format(fetch_opt, G_PROGRESS)
+      cmd = 'git fetch {0} {1} 2>&1'.format(fetch_opt, G_PROGRESS)
       com = Command(cmd, self.args['dir'], G_TIMEOUT, callback)
       result = com.execute(G_RETRIES)
       self.write(Action.DONE, self.name, result[-1:])
@@ -2160,7 +2165,7 @@ function! s:update_ruby()
                 if pull
                   log.call name, 'Updating ...', :update
                   fetch_opt = (tag && File.exist?(File.join(dir, '.git/shallow'))) ? '--depth 99999999' : ''
-                  bt.call "#{chdir} && git -c credential.helper= fetch #{fetch_opt} #{progress} 2>&1", name, :update, nil
+                  bt.call "#{chdir} && git fetch #{fetch_opt} #{progress} 2>&1", name, :update, nil
                 else
                   [true, skip]
                 end

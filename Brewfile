@@ -37,29 +37,6 @@ brew "hub"
 brew "tig"
 brew "gnupg", args: ['with-readline']
 
-# javascript
-brew "node"
-brew "nvm"
-brew "yarn"
-
-# ruby
-brew "chruby"
-brew "chruby-fish"
-brew "ruby-build"
-brew "readline"
-
-# python
-brew "python"
-
-# go
-brew "go"
-brew "godep"
-
-# rust
-brew "rust"
-brew "rustup-init"
-brew "xsv"
-
 # security
 brew "hashpump"
 brew "nmap"

@@ -8,6 +8,9 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'ayu-theme/ayu-vim'
+Plug 'sainnhe/everforest'
+Plug 'dag/vim-fish', { 'for' : 'fish' }
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
@@ -94,7 +97,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme srcery
+colorscheme ayu
 
 " highlight overrides
 hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f

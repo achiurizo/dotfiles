@@ -159,7 +159,7 @@ let g:syntastic_ruby_exec      = 'which ruby'
 " FUGITIVE.VIM
 "
 " , + gb
-nmap <leader>gb :Gblame<cr>
+nmap <leader>gb :Git blame<cr>
 
 " NERDTREE
 "

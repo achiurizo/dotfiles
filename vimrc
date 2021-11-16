@@ -100,9 +100,10 @@ set guioptions-=r  "remove right-hand scroll bar
 colorscheme ayu
 
 " highlight overrides
-hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
-hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
-hi Search gui=bold guibg=gold guifg=gray
+"hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
+"hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
+"hi Search gui=bold guibg=gold guifg=black
+"hi Pmenu guibg=black
 
 " SWAP AND BACKUP
 "

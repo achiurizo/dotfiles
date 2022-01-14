@@ -180,11 +180,6 @@ autocmd FileType ruby   let b:dispatch = 'bundle exec ruby -I test %'
 autocmd FileType rust   let b:dispatch = 'cargo test'
 map <leader>di :update \| Dispatch<cr>
 
-" AIRLINE/TMUXLINE
-"
-let g:airline_powerline_fonts = 1
-let g:airline_theme           = 'tender'
-
 " TABULAR
 "
 " , + al
@@ -205,16 +200,3 @@ let g:go_highlight_operators = 1
 " Markdown
 "
 let g:vim_markdown_folding_disabled = 1
-
-" Typora integration
-if has('mac')
-
-  function! Typora()
-      " Launch Typora
-      call system("open -a Typora \"" . expand("%") . "\"")
-      setlocal autoread
-  endfunction
-
-  command! Typora call Typora()
-
-endif

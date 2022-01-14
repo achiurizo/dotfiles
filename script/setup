@@ -13,9 +13,9 @@ install_files() {
 }
 
 install_fish() {
-  sudo apt-add-repository ppa:fish-shell/release-3
-  sudo apt-get update
-  sudo apt-get install -y fish
+  sudo add-apt-repository ppa:fish-shell/release-3
+  sudo apt update
+  sudo apt install -y fish
   chsh -s /usr/bin/fish
 }
 
@@ -24,7 +24,7 @@ install_packages() {
 }
 
 install_asdf() {
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf
   mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
   asdf plugin-add python
   asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git

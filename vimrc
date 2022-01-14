@@ -16,7 +16,6 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'godlygeek/tabular'
-Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -127,25 +126,29 @@ if has('nvim')
    set ttimeoutlen=0
 endif
 
-"""""""""""""""""""""
-"" MAPPINGS
-"""""""""""""""""""""
-if filereadable(expand("~/.vim/mappings.vim"))
-  source ~/.vim/mappings.vim
-endif
+" Find merge conflits
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" remove trailing whitespaces
+nmap <silent> <leader>tw <ESC>:%s/\s\+$//<CR>
+
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+
+" Remove highlights
+nmap <C-l> :noh<cr>
+
+" logical Y, yank from current to end of line
+map Y y$
+
+" run . on visual block
+vnoremap . :norm.<cr>
 
 """""""""""""""""""""
 "" PLUGIN SETTINGS
 """""""""""""""""""""
 if filereadable(expand("~/.vim/plugins.vim"))
   source ~/.vim/plugins.vim
-endif
-
-"""""""""""""""""""""
-"" FILE TYPE SETTINGS
-"""""""""""""""""""""
-if filereadable(expand("~/.vim/file_types.vim"))
-  source ~/.vim/file_types.vim
 endif
 
 """""""""""""""""""""

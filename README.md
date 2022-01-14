@@ -1,10 +1,10 @@
-![](screenshot.png)
+![image](https://user-images.githubusercontent.com/24772/149449251-07c09a8b-edf0-4757-ae17-f1b1892275d3.png)
 
 These are my dotfiles, my configurations, my shell home I'd like to share.
 
 ---
 
-![](https://badgen.net/github/tag/achiu/dotfiles) ![](https://badgen.net/badge/platform/macOS)
+![](https://badgen.net/github/tag/achiu/dotfiles) ![](https://badgen.net/badge/platform/ubuntu)
 
 # Quick Start
 
@@ -25,15 +25,12 @@ $ script/setup
 * Fish shell
 * Tmux
 * Neovim
-* chruby
-
-## Fish
+* asdf
 
 ## Tmux
 
 * Sets leader key to `ctrl + a`
 * Sets default shell to fish
-* Adds `tmux-powerline`
 * configured `reattach-to-user-namespace` for copy-pasta in fish
 
 | Command             | Description                      |
@@ -122,13 +119,3 @@ Some plugins requires an additional step to leverage neovim:
 ```
 :UpdateRemotePlugins
 ```
-
-### Typora
-
-You can also render your markdown in a GUI for better viewing by leveraging [Typora](https://typora.io/). This is installed via the [Brewfile](Brewfile). Goto your markdown
-buffer and run:
-
-```
-:Typora
-```
-

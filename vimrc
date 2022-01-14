@@ -1,31 +1,30 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+Plug 'ayu-theme/ayu-vim'
+Plug 'sainnhe/everforest'
+Plug 'dag/vim-fish', { 'for' : 'fish' }
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'Shougo/denite.nvim'
-Plug 'challenger-deep-theme/vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'epilande/vim-react-snippets'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'godlygeek/tabular'
-Plug 'honza/vim-snippets'
-Plug 'jacoborus/tender'
-Plug 'jparise/vim-graphql', { 'for': 'graphql' }
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript',  { 'for': 'javscript' }
 Plug 'plasticboy/vim-markdown'
-Plug 'rakr/vim-two-firewatch'
 Plug 'roosta/vim-srcery'
-Plug 'rust-lang/rust',  { 'for': 'rust' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sirver/ultisnips'
-Plug 'sunaku/vim-ruby-minitest',  { 'for': 'ruby' }
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
@@ -33,9 +32,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby',  { 'for': 'ruby' }
 Plug 'w0rp/ale'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
@@ -98,12 +96,13 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme tender
+colorscheme ayu
 
 " highlight overrides
-hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
-hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=pink
-hi Search gui=bold guibg=gold guifg=gray
+"hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
+"hi VisualNOS cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
+"hi Search gui=bold guibg=gold guifg=black
+"hi Pmenu guibg=black
 
 " SWAP AND BACKUP
 "
@@ -127,25 +126,29 @@ if has('nvim')
    set ttimeoutlen=0
 endif
 
-"""""""""""""""""""""
-"" MAPPINGS
-"""""""""""""""""""""
-if filereadable(expand("~/.vim/mappings.vim"))
-  source ~/.vim/mappings.vim
-endif
+" Find merge conflits
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" remove trailing whitespaces
+nmap <silent> <leader>tw <ESC>:%s/\s\+$//<CR>
+
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+
+" Remove highlights
+nmap <C-l> :noh<cr>
+
+" logical Y, yank from current to end of line
+map Y y$
+
+" run . on visual block
+vnoremap . :norm.<cr>
 
 """""""""""""""""""""
 "" PLUGIN SETTINGS
 """""""""""""""""""""
 if filereadable(expand("~/.vim/plugins.vim"))
   source ~/.vim/plugins.vim
-endif
-
-"""""""""""""""""""""
-"" FILE TYPE SETTINGS
-"""""""""""""""""""""
-if filereadable(expand("~/.vim/file_types.vim"))
-  source ~/.vim/file_types.vim
 endif
 
 """""""""""""""""""""

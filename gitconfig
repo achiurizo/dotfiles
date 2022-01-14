@@ -6,8 +6,6 @@
 [alias]
   co     = checkout
   cm     = commit -S -va
-  subadd = submodule add
-  subbye = submodule deinit
 [push]
   default = current
 [format]
@@ -20,9 +18,7 @@
   safecrlf     = true
 [branch]
   autosetuprebase = always
+[credential]
+  helper = store
 [include]
   path = ~/.gitconfig.local
-[hub]
-	protocol = ssh
-[credential]
-	helper = osxkeychain

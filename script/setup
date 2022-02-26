@@ -2,13 +2,13 @@
 set -o nounset
 
 install_files() {
-  files=$(ls $DOTFILES_ROOT | grep -v 'README.md' | grep -v 'script' | grep -v 'Brewfile' | grep -v 'screenshot.png')
+  files=$(ls $DOTFILES_ROOT | grep -v 'README.md' | grep -v 'script')
 
   for dotfile in $files
   do
     local destination="$HOME/.$dotfile"
     local target="$DOTFILES_ROOT/$dotfile"
-
+    ln -sv "$target" "$destination"
   done
 }
 

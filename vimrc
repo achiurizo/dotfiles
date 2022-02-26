@@ -8,32 +8,29 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-Plug 'ayu-theme/ayu-vim'
-Plug 'sainnhe/everforest'
-Plug 'dag/vim-fish', { 'for' : 'fish' }
+
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'elixir-editors/vim-elixir'
+Plug 'ayu-theme/ayu-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
+Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pangloss/vim-javascript',  { 'for': 'javscript' }
-Plug 'plasticboy/vim-markdown'
+Plug 'preservim/tagbar'
 Plug 'roosta/vim-srcery'
+Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
 Plug 'sirver/ultisnips'
-Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'tomtom/tlib_vim'
-Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
-Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 

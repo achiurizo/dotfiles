@@ -1,12 +1,20 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ervandew/supertab'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'godlygeek/tabular'
+Plug 'junegunn/seoul256.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -86,7 +94,8 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme ayu
+let g:seoul256_background = 234
+colorscheme seoul256
 
 " highlight overrides
 "hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f

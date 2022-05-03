@@ -11,7 +11,6 @@ endif
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ervandew/supertab'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'godlygeek/tabular'
 Plug 'junegunn/seoul256.vim'
@@ -20,6 +19,7 @@ Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
+Plug 'projekt0n/github-nvim-theme'
 Plug 'roosta/vim-srcery'
 Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdcommenter'

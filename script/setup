@@ -1,6 +1,8 @@
 #!/bin/bash
 set -o nounset
 
+readonly DOTFILES_ROOT=$(pwd)
+
 install_files() {
   files=$(ls $DOTFILES_ROOT | grep -v 'README.md' | grep -v 'script')
 

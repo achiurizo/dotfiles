@@ -1,15 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-if has('nvim')
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ervandew/supertab'
@@ -18,6 +10,7 @@ Plug 'godlygeek/tabular'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
 Plug 'roosta/vim-srcery'
 Plug 'sainnhe/everforest'

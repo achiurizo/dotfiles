@@ -17,7 +17,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'roosta/vim-srcery'
@@ -25,13 +25,14 @@ Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
-Plug 'sirver/ultisnips'
+"Plug 'sirver/ultisnips'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'prisma/vim-prisma'
+"Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -116,7 +117,10 @@ set nowritebackup
 set noundofile
 
 set foldenable
-set foldmethod=manual
+set foldmethod=syntax
+set foldlevelstart=1
+
+set statusline=%f
 
 if has('nvim')
   " NeoVim handles ESC keys as alt+key, set this to solve the problem

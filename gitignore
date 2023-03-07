@@ -200,3 +200,7 @@ vim/bundle
 # Test #
 ########
 .test_queue_stats
+
+# ASDF
+.tool-versions
+

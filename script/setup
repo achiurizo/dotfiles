@@ -50,6 +50,7 @@ install_rust_packages() {
 }
 
 
+install_files
 install_fish
 install_packages
 install_asdf

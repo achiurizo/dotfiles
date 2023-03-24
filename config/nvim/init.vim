@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -44,6 +45,7 @@ syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 set shell=sh
 set clipboard^=unnamed
+set mouse=
 " Whitespace
 
 set nowrap                        " don't wrap lines

@@ -44,7 +44,7 @@ set number            " Show line numbers
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 set shell=sh
-set clipboard^=unnamed
+set clipboard=unnamedplus
 set mouse=
 " Whitespace
 

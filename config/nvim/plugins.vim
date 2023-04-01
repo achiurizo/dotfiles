@@ -150,12 +150,6 @@ endfunction
 " , + /
 map <leader>/ <plug>NERDCommenterToggle<cr>
 
-" SYNTASTIC
-"
-let g:syntastic_quiet_messages = {'level': 'warnings'}
-let g:syntastic_auto_loc_list  = 1
-let g:syntastic_ruby_exec      = 'which ruby'
-
 " FUGITIVE.VIM
 "
 " , + gb
@@ -186,18 +180,3 @@ map <leader>di :update \| Dispatch<cr>
 " , + al
 nmap <leader>al :Tabularize /=>\\|=<CR>
 vmap <leader>al :Tabularize /=>\\|=<CR>
-
-" JAVASCRIPT
-"
-let g:javascript_enable_domhtmlcss = 1
-
-" GO
-"
-let g:go_highlight_types     = 1
-let g:go_highlight_methods   = 1
-let g:go_highlight_fields    = 1
-let g:go_highlight_operators = 1
-
-" Markdown
-"
-let g:vim_markdown_folding_disabled = 1

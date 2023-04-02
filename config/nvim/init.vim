@@ -11,6 +11,7 @@ endif
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
@@ -18,6 +19,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'preservim/tagbar'
 Plug 'prisma/vim-prisma'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'rebelot/kanagawa.nvim'
 Plug 'roosta/vim-srcery'
 Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdcommenter'
@@ -29,7 +31,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -93,8 +94,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-let g:seoul256_background = 234
-colorscheme seoul256-light
+colorscheme kanagawa
 
 " highlight overrides
 "hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f

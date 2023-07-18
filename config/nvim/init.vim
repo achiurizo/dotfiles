@@ -31,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'rose-pine/neovim'
 
 call plug#end()
 
@@ -55,15 +56,6 @@ set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 
-" listchars
-set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.            " show trailing spaces as dots
-set listchars+=extends:>          " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
-set listchars+=precedes:<         " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
-
 " Searching
 set hlsearch    " highlight matches
 set ignorecase  " searches are case insensitive...
@@ -87,14 +79,14 @@ set wildignore+=*.swp,*~,._*
 
 " GUI/LOOK OPTIONS
 "
-set t_Co=256       "xterm 256 color mode
-set termguicolors
-set background=dark
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
+"set t_Co=256       "xterm 256 color mode
+"set termguicolors
+"set background=dark
+"set guioptions-=m  "remove menu bar
+"set guioptions-=T  "remove toolbar
+"set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme kanagawa
+colorscheme rose-pine
 
 " highlight overrides
 "hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
@@ -118,7 +110,7 @@ set foldenable
 set foldmethod=syntax
 set foldlevelstart=1
 
-set statusline=%f
+"set statusline=%f
 
 if has('nvim')
   " NeoVim handles ESC keys as alt+key, set this to solve the problem

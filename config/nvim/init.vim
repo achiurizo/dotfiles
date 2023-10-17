@@ -10,6 +10,7 @@ endif
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'ayu-theme/ayu-vim'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
@@ -21,6 +22,7 @@ Plug 'prisma/vim-prisma'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'roosta/vim-srcery'
+Plug 'rose-pine/neovim'
 Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -31,7 +33,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'rose-pine/neovim'
 
 call plug#end()
 
@@ -86,7 +87,8 @@ set wildignore+=*.swp,*~,._*
 "set guioptions-=T  "remove toolbar
 "set guioptions-=r  "remove right-hand scroll bar
 
-colorscheme rose-pine
+set background=dark
+colorscheme github_dark_default
 
 " highlight overrides
 "hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f

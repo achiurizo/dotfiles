@@ -18,3 +18,5 @@ end
 fish_add_path ~/.cargo/bin
 fish_add_path ~/.deno/bin
 fish_add_path ~/.bin
+
+export PATH="$PATH:/home/achiurizo/.foundry/bin"

@@ -1,0 +1,7 @@
+brew "asdf"
+brew "bat"
+brew "chezmoi"
+brew "exa"
+brew "jql"
+brew "neovim"
+brew "ripgrep"

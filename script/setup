@@ -14,17 +14,6 @@ install_files() {
   done
 }
 
-install_fish() {
-  sudo add-apt-repository ppa:fish-shell/release-3
-  sudo apt update
-  sudo apt install -y fish
-  chsh -s /usr/bin/fish
-}
-
-install_packages() {
-  sudo apt install -y build-essential curl git unzip tmux tig silversearcher-ag universal-ctags dirmngr libssl-dev make automake autoconf libncurses5-dev zlib1g-dev libffi-dev
-}
-
 install_asdf() {
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf
   mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
@@ -36,23 +25,5 @@ install_asdf() {
   bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 }
 
-install_neovim() {
-  sudo apt install neovim
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  nvim --headless +PlugInstall +UpdateRemotePlugins +qa
-}
-
-install_rust_packages() {
-  asdf install rust latest
-  asdf global rust $(asdf latest rust)
-  cargo install exa bat jql ripgrep
-}
-
 
 install_files
-install_fish
-install_packages
-install_asdf
-install_rust_packages
-install_neovim

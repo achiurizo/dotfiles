@@ -1,0 +1,15 @@
+#!/bin/bash
+set -o nounset
+
+install_homebrew() {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+install_nvim_plug() {
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  nvim --headless +PlugInstall +UpdateRemotePlugins +qa
+}
+
+install_homebrew
+install_nvim_plug

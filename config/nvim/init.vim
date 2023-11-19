@@ -1,13 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-if has('nvim')
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'ayu-theme/ayu-vim'
 Plug 'dhruvasagar/vim-table-mode'
@@ -88,7 +81,7 @@ set wildignore+=*.swp,*~,._*
 "set guioptions-=r  "remove right-hand scroll bar
 
 set background=dark
-colorscheme github_dark_default
+colorscheme kanagawa
 
 " highlight overrides
 "hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f

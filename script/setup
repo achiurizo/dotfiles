@@ -3,6 +3,13 @@ set -o nounset
 
 install_homebrew() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Add Homebrew to your PATH in /home/linuxbrew/.profile:
+  if [[ $(uname) = "Linux" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  elif [[ $(uname) = "Darwin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
 }
 
 install_nvim_plug() {
@@ -13,3 +20,4 @@ install_nvim_plug() {
 
 install_homebrew
 install_nvim_plug
+brew bundle

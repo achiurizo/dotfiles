@@ -10,6 +10,7 @@ install_homebrew() {
   elif [[ $(uname) = "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
+  brew bundle
 }
 
 install_nvim_plug() {
@@ -18,6 +19,10 @@ install_nvim_plug() {
   nvim --headless +PlugInstall +UpdateRemotePlugins +qa
 }
 
+install_files() {
+  chezmoi init --apply --verbose achiurizo
+}
+
 install_homebrew
+install_files
 install_nvim_plug
-brew bundle

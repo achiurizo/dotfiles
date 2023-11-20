@@ -18,11 +18,11 @@ if status is-interactive
 end
 
 if test (uname) = "Linux"
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
 if test (uname) = "Darwin"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+  eval (/opt/homebrew/bin/brew shellenv)
 end
 
 if test -e ~/.asdf/asdf.fish

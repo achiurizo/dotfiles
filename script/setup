@@ -35,6 +35,7 @@ install_asdf() {
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
   asdf install python latest
   asdf global python $(asdf latest python)
+  pip install pynvim
 }
 
 install_homebrew

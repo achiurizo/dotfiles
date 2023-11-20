@@ -18,7 +18,8 @@ if status is-interactive
 end
 
 if test (uname) = "Linux"
-  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv) # homebrew
+  source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish # asdf
 end
 
 if test (uname) = "Darwin"

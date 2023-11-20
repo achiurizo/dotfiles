@@ -1,0 +1,24 @@
+[color]
+	ui     = auto
+  diff   = auto
+  status = auto
+  branch = auto
+[alias]
+  co     = checkout
+  cm     = commit -S -va
+[push]
+  default = current
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[core]
+  excludesfile = ~/.gitignore
+  editor       = nvim -f
+  whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  autocrlf     = false
+  safecrlf     = true
+[branch]
+  autosetuprebase = always
+[credential]
+  helper = store
+[include]
+  path = ~/.gitconfig.local

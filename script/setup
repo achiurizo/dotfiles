@@ -33,8 +33,9 @@ install_asdf() {
   asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
   asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  asdf install python latest
-  asdf global python $(asdf latest python)
+  asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+  asdf install python 3.11.0 # We use this version as neovim/denite doesn't work well with latest currently (>3.12)
+  asdf global python 3.11.0
   pip install pynvim
 }
 

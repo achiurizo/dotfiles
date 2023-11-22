@@ -23,11 +23,8 @@ if test (uname) = "Linux"
 end
 
 if test (uname) = "Darwin"
-  eval (/opt/homebrew/bin/brew shellenv)
-end
-
-if test -e ~/.asdf/asdf.fish
-  source ~/.asdf/asdf.fish
+  eval (/opt/homebrew/bin/brew shellenv) # homebrew
+  source /opt/homebrew/opt/asdf/libexec/asdf.fish # asdf
 end
 
 if test -e ~/.local.fish

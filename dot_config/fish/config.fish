@@ -2,6 +2,7 @@ fish_vi_key_bindings
 
 set -gx EDITOR "nvim -f"
 set -gx GPG_TTY (tty)
+set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git"
 
 # Add paths, codespace doesn't have latest fish (>3.2) so can't use `fish_add_path` yet
 contains ~/.cargo/bin $fish_user_paths; or set -Ua fish_user_paths ~/.cargo/bin $fish_user_paths

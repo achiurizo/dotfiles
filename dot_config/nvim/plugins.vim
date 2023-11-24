@@ -84,6 +84,7 @@ endtry
 "   <leader>j - Search current directory for occurences of word under cursor
 nmap <leader>b :Denite buffer<CR>
 nmap <leader>t :DeniteProjectDir file/rec<CR>
+nmap <leader>f :FZF<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 

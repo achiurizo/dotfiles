@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ayu-theme/ayu-vim'
@@ -43,6 +44,15 @@ set encoding=utf-8    " Set default encoding to UTF-8
 set shell=sh
 set clipboard=unnamedplus
 set mouse=
+
+" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved
+set signcolumn=yes
+
 " Whitespace
 
 set nowrap                        " don't wrap lines

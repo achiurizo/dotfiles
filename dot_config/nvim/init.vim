@@ -13,8 +13,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/tagbar'
-Plug 'prisma/vim-prisma'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'roosta/vim-srcery'

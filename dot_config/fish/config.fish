@@ -28,6 +28,8 @@ if test (uname) = "Darwin"
   source /opt/homebrew/opt/asdf/libexec/asdf.fish # asdf
 end
 
+rtx activate fish | source
+
 if test -e ~/.local.fish
   source ~/.local.fish
 end

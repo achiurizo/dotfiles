@@ -1,4 +1,9 @@
 "languageserver": {
+  "rubocop": {
+    "command": "rubocop",
+    "args": ["--lsp"],
+    "filetypes": ["ruby"]
+  },
   "ruby-lsp": {
     "command": "ruby-lsp",
     "initializationOptions": {

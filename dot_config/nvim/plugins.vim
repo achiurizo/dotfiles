@@ -164,9 +164,12 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', 
 map <leader>n :NERDTreeToggle<cr>
 
 " TAGBAR
+" VISTA
 "
 " , + rt
-map <Leader>rt :TagbarToggle<cr>
+"map <Leader>rt :TagbarToggle<cr>
+map <Leader>rt :Vista<cr>
+map <Leader>rc :Vista coc<cr>
 
 " DISPATCH
 "

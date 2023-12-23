@@ -85,8 +85,8 @@ endtry
 nmap <leader>b :Denite buffer<CR>
 nmap <leader>t :DeniteProjectDir file/rec<CR>
 nmap <leader>f :FZF<CR>
-nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
-nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
+nnoremap <leader>tg :<C-u>Denite grep:. -no-empty<CR>
+nnoremap <leader>tj :<C-u>DeniteCursorWord grep:.<CR>
 
 " Define mappings while in 'filter' mode
 "   <C-o>         - Switch to normal mode inside of search results

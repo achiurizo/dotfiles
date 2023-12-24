@@ -1,7 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -16,12 +14,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'projekt0n/github-nvim-theme'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'roosta/vim-srcery'
-Plug 'rose-pine/neovim'
 Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
-Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -91,7 +87,7 @@ set wildignore+=*.swp,*~,._*
 "set guioptions-=r  "remove right-hand scroll bar
 
 set background=dark
-colorscheme kanagawa
+colorscheme srcery
 
 " highlight overrides
 "hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f
@@ -100,10 +96,6 @@ colorscheme kanagawa
 "hi Pmenu guibg=black
 
 " SWAP AND BACKUP
-"
-" Store temporary files in a central spot
-"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Turn off all swaps and backups
 set noswapfile
@@ -115,14 +107,10 @@ set foldenable
 set foldmethod=syntax
 set foldlevelstart=1
 
-"set statusline=%f
-
-if has('nvim')
-  " NeoVim handles ESC keys as alt+key, set this to solve the problem
-  " https://github.com/neovim/neovim/issues/2017
-   set ttimeout
-   set ttimeoutlen=0
-endif
+" NeoVim handles ESC keys as alt+key, set this to solve the problem
+" https://github.com/neovim/neovim/issues/2017
+set ttimeout
+set ttimeoutlen=0
 
 " Find merge conflits
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>

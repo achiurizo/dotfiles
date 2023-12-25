@@ -38,4 +38,5 @@
     }
   },
  "elixir.pathToElixirLS": "~/code/elixir-ls/language_server.sh",
+ "Lua.diagnostic.globals": ["vim"],
 }

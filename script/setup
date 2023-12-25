@@ -39,15 +39,7 @@ install_asdf() {
   pip install pynvim
 }
 
-install_gh_extensions() {
-  gh extension install yusukebe/gh-markdown-preview
-  gh extension install dlvhdr/gh-dash
-  gh extension install cli/gh-webhook
-  gh extension install actions/gh-actions-cache
-}
-
 install_homebrew
 install_files
 install_asdf
 install_nvim_plug
-install_gh_extensions

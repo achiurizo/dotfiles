@@ -20,12 +20,12 @@ end
 
 if test (uname) = "Linux"
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv) # homebrew
-  source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish # asdf
+  #source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish # asdf
 end
 
 if test (uname) = "Darwin"
   eval (/opt/homebrew/bin/brew shellenv) # homebrew
-  source /opt/homebrew/opt/asdf/libexec/asdf.fish # asdf
+  #source /opt/homebrew/opt/asdf/libexec/asdf.fish # asdf
 end
 
 rtx activate fish | source

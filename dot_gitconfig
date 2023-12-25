@@ -6,6 +6,10 @@
 [alias]
   co     = checkout
   cm     = commit -S -va
+  s      = status -sb
+  d      = diff
+  dm     = !git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
+  del    = !git ls-files --deleted -z | xargs -0 git rm
 [push]
   default = current
 [format]

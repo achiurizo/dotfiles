@@ -18,6 +18,7 @@ Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'thedenisnikulin/vim-cyberpunk'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -80,14 +81,13 @@ set wildignore+=*.swp,*~,._*
 " GUI/LOOK OPTIONS
 "
 "set t_Co=256       "xterm 256 color mode
-"set termguicolors
+set termguicolors
 "set background=dark
 "set guioptions-=m  "remove menu bar
 "set guioptions-=T  "remove toolbar
 "set guioptions-=r  "remove right-hand scroll bar
 
-set background=dark
-colorscheme srcery
+colorscheme ayu
 
 " highlight overrides
 "hi Visual cterm=bold ctermfg=235 ctermbg=185 gui=bold guifg=wheat guibg=#60578f

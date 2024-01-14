@@ -4,6 +4,7 @@ return {
     "junegunn/seoul256.vim",
     "rebelot/kanagawa.nvim",
     "projekt0n/github-nvim-theme",
+    "NLKNguyen/papercolor-theme",
     {
         [1] = "roosta/vim-srcery",
         lazy = false,

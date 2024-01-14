@@ -49,6 +49,9 @@ vim.opt.lazyredraw = true
 -- Force vertical splits to always open on the right
 vim.opt.splitright = true
 
+-- live dariningly
+vim.opt.swapfile = false
+
 -- Setup folding
 vim.opt.foldenable = true
 vim.opt.foldmethod = "syntax"

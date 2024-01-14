@@ -3,6 +3,7 @@
   "emmet-vim": { "branch": "master", "commit": "def5d57a1ae5afb1b96ebe83c4652d1c03640f4d" },
   "everforest": { "branch": "master", "commit": "72f101bd63228a1a45012325e39c5280ec22c828" },
   "github-nvim-theme": { "branch": "main", "commit": "d3199bc5074a80b123b6cd5b6797076b1727576a" },
+  "indentmini.nvim": { "branch": "main", "commit": "a58129ae424fd6d8e0e2e7f6ce06c0443101e370" },
   "kanagawa.nvim": { "branch": "master", "commit": "c19b9023842697ec92caf72cd3599f7dd7be4456" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lualine.nvim": { "branch": "master", "commit": "566b7036f717f3d676362742630518a47f132fff" },

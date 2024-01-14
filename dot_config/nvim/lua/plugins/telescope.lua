@@ -8,6 +8,7 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+        vim.keymap.set('n', '<leader>fm', builtin.marks, {})
         vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {})
         vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})
         vim.keymap.set('n', '<leader>ft', builtin.treesitter, {})

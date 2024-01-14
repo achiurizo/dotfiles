@@ -27,6 +27,23 @@ return {
                 --["rust_analyzer"] = function ()
                     --require("rust-tools").setup {}
                 --end
+                ["rubocop"] = function ()
+                  require("lspconfig").rubocop.setup {
+                    cmd = { "bundle", "exec", "rubocop", "--lsp", "--format", "json", "$FILENAME" },
+                    filetypes = { "ruby" },
+                    root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
+                    settings = {
+                      rootMarkers = { "Gemfile", ".git" },
+                      lint = {
+                        rubocop = {
+                          configFile = ".rubocop.yml",
+                          filetypes = { "ruby" },
+                          rootMarkers = { "Gemfile", ".git" },
+                        },
+                      },
+                    },
+                  }
+                end
             }
         end,
     },

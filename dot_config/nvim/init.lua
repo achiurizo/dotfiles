@@ -24,24 +24,24 @@ require("lazy").setup("plugins", {
 --vim.g.loaded_netrwPlugin = 1
 
 -- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
-vim.opt.clipboard = "unnamedplus"
-vim.opt.number = true
+vim.opt.termguicolors  = true
+vim.opt.background     = "dark"
+vim.opt.clipboard      = "unnamedplus"
+vim.opt.number         = true
 vim.opt.relativenumber = false
-vim.opt.wrap = false
-vim.opt.cursorline = true
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 300
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.shiftround = true
+vim.opt.wrap           = false
+vim.opt.cursorline     = true
+vim.opt.signcolumn     = "yes"
+vim.opt.updatetime     = 300
+vim.opt.tabstop        = 2
+vim.opt.softtabstop    = 2
+vim.opt.shiftwidth     = 2
+vim.opt.expandtab      = true
+vim.opt.shiftround     = true
 -- Setup smarter search settings
 vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.hlsearch = true
+vim.opt.smartcase  = true
+vim.opt.hlsearch   = true
 -- Use global statusline
 vim.opt.laststatus = 3
 -- Redraw the screen less during computationally intensive tasks
@@ -53,8 +53,9 @@ vim.opt.splitright = true
 vim.opt.swapfile = false
 
 -- Setup folding
-vim.opt.foldenable = true
-vim.opt.foldmethod = "syntax"
+vim.opt.foldenable     = true
+vim.opt.foldmethod     = "expr"
+vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 2
 
 require("keymaps")

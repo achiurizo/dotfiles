@@ -4,4 +4,7 @@ return {
     keys = {
         { "<leader>di", "<Cmd>update | Dispatch<CR>" },
     },
+    config = function()
+      vim.g.dispatch_quickfix_height = 20
+    end
 }

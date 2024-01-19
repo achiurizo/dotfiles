@@ -13,6 +13,7 @@ return {
             "ruby",
             "javascript",
             "typescript",
+            "vimdoc",
           },
           highlight = {
             enable = true,

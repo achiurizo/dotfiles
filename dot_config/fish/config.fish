@@ -3,6 +3,7 @@ fish_vi_key_bindings
 set -gx EDITOR "nvim -f"
 set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git"
+set -gx LANG "en_US.UTF-8"
 
 # For ruby debug
 set -gx RUBY_DEBUG_NO_RELINE 1

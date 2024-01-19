@@ -203,3 +203,4 @@ vim/bundle
 
 # ASDF
 .tool-versions
+.mise.toml

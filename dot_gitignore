@@ -204,3 +204,6 @@ vim/bundle
 # ASDF
 .tool-versions
 .mise.toml
+
+# exrc
+.nvim.lua

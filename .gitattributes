@@ -1,0 +1,6 @@
+dot_bashrc linguist-language=Shell
+dot_gemrc linguist-language=YAML
+dot_gitconfig linguist-language=Git-Config
+dot_gitignore linguist-language=Ignore-List
+dot_inputrc linguist-language=Readline-Config
+dot_tmux.conf linguist-language=Shell

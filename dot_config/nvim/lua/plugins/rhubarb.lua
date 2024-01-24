@@ -1,6 +1,6 @@
 return {
     [1] = "tpope/vim-rhubarb",
     keys = {
-        { "<leader>gb", "<Cmd>GBrowse<CR>" },
+        { "<leader>gB", "<Cmd>GBrowse<CR>" },
     }
 }

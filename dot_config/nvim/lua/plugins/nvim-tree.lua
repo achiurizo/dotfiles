@@ -67,6 +67,9 @@ return {
             ".git",
           },
         },
+        view = {
+          width = 40,
+        },
         renderer = {
           icons = {
             glyphs = {

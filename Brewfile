@@ -1,4 +1,3 @@
-brew "asdf"
 brew "bat"
 brew "chezmoi"
 brew "exa"

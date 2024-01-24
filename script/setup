@@ -14,32 +14,19 @@ install_homebrew() {
   brew bundle
 }
 
-# Install Neovim Plug and all plugins
-install_nvim_plug() {
-  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  nvim --headless +PlugInstall +UpdateRemotePlugins +qa
-}
-
 # Install chezmoi and apply dotfiles
 install_files() {
   chezmoi init --apply --verbose achiurizo
 }
 
-# Install asdf and languages. Also installs python latest for neovim plugins.
-install_asdf() {
-  asdf plugin-add python
-  asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-  asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-  asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
-  asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-  asdf install python 3.11.0 # We use this version as neovim/denite doesn't work well with latest currently (>3.12)
-  asdf global python 3.11.0
+# Install mise and languages. Also installs python latest for neovim plugins.
+install_mise() {
+  mise use -g python@latest
+  mise use -g ruby@latest
+  mise use -g ruby@latest
   pip install pynvim
 }
 
 install_homebrew
 install_files
-install_asdf
-install_nvim_plug
+install_mise

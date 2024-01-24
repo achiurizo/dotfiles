@@ -207,3 +207,6 @@ vim/bundle
 
 # exrc
 .nvim.lua
+
+# ruby-lsp
+.index.yml

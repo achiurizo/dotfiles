@@ -11,4 +11,5 @@ aliases:
     co: pr checkout
     clone: repo clone
     readme: markdown-preview
+    ci-status: 'api -H "Accept: application/vnd.github+json" /repos/$1/commits/$2/status'
 version: "1"

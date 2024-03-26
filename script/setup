@@ -27,6 +27,10 @@ install_mise() {
   pip install pynvim
 }
 
+install_tmux() {
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 install_homebrew
 install_files
 install_mise

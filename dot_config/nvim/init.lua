@@ -25,7 +25,7 @@ require("lazy").setup("plugins", {
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors  = true
-vim.opt.background     = "dark"
+vim.opt.background     = "light"
 vim.opt.clipboard      = "unnamedplus"
 vim.opt.number         = true
 vim.opt.relativenumber = false

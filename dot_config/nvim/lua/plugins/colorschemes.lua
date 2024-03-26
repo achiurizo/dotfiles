@@ -1,16 +1,22 @@
 return {
-    "sainnhe/everforest",
-    "thedenisnikulin/vim-cyberpunk",
-    "junegunn/seoul256.vim",
-    "rebelot/kanagawa.nvim",
     "NLKNguyen/papercolor-theme",
+    "junegunn/seoul256.vim",
+    "olimorris/onedarkpro.nvim",
+    "rebelot/kanagawa.nvim",
     "roosta/vim-srcery",
+    "rose-pine/neovim",
+    "sainnhe/everforest",
+    "sainnhe/gruvbox-material",
+    "savq/melange-nvim",
+    "thedenisnikulin/vim-cyberpunk",
+    "projekt0n/github-nvim-theme",
     {
-        [1] = "projekt0n/github-nvim-theme",
+        [1] = "sainnhe/everforest",
         lazy = false,
         priority = 1000,
         config = function()
-          vim.cmd("colorscheme github_dark_colorblind")
+          vim.opt.background = "light"
+          vim.cmd("colorscheme everforest")
         end,
     },
 }

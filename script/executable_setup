@@ -34,3 +34,4 @@ install_tmux() {
 install_homebrew
 install_files
 install_mise
+install_tmux

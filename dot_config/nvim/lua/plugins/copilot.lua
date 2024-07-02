@@ -1,3 +1,3 @@
 return {
-  "github/copilot.vim",
+  import = "lazyvim.plugins.extras.coding.copilot",
 }

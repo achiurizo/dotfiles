@@ -1,3 +1,3 @@
 return {
-  import = "lazyvim.plugins.extras.coding.copilot-chat",
+  import = "lazyvim.plugins.extras.ai.copilot-chat",
 }

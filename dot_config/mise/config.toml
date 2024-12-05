@@ -1,7 +1,7 @@
 [tools]
-ruby = "3.2.2"
 node = "latest"
 python = "latest"
 go = "latest"
 lua = "latest"
 julia = "latest"
+ruby = "3.3.6"

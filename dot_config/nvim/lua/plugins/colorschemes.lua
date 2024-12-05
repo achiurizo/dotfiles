@@ -10,6 +10,7 @@ return {
   "savq/melange-nvim",
   "thedenisnikulin/vim-cyberpunk",
   "projekt0n/github-nvim-theme",
+  "Biscuit-Theme/nvim",
   {
     "LazyVim/LazyVim",
     opts = {

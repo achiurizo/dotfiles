@@ -210,3 +210,6 @@ vim/bundle
 
 # ruby-lsp
 .index.yml
+
+# yarn
+.yarn/

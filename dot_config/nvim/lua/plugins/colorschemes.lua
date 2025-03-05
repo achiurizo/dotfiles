@@ -24,7 +24,8 @@ return {
       vim.cmd([[
         highlight Normal guibg=NONE ctermbg=NONE
         highlight NonText guibg=NONE ctermbg=NONE
-        colorscheme rose-pine
+        colorscheme melange
+        set background=light
       ]])
     end,
     -- you can set set configuration options here

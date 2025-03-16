@@ -3,12 +3,13 @@ set -o nounset
 
 # Install Homebrew
 install_homebrew() {
-  /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  # Add Homebrew to your PATH in /home/linuxbrew/.profile:
   if [[ $(uname) = "Linux" ]]; then
+    echo "Installing Homebrew for Linux (requires sudo)..."
+    sudo /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   elif [[ $(uname) = "Darwin" ]]; then
+    echo "Installing Homebrew for macOS..."
+    /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
   brew bundle
@@ -18,12 +19,11 @@ install_homebrew() {
 install_files() {
   chezmoi init --apply --verbose achiurizo
 }
-
-# Install mise and languages. Also installs python latest for neovim plugins.
 install_mise() {
+  echo "Installing languages with mise..."
   mise use -g python@latest
   mise use -g ruby@latest
-  mise use -g ruby@latest
+  # Install Python pynvim package for Neovim plugins
   pip install pynvim
 }
 

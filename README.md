@@ -7,58 +7,54 @@ Welcome to my dotfiles! These are my files that I run between mac OS, Ubuntu, WS
 
 I use [Homebrew]() to manage dependencies across both systems and manage the deps within a [Brewfile]().
 
+## Quick Install
 
-## Dispatch
+Install everything with a single command:
 
-| Command      | Description                          |
-|--------------|--------------------------------------|
-| '<leader>di' | Update file and run dispatch command |
+```bash
+curl -fsSL https://raw.githubusercontent.com/achiurizo/dotfiles/main/bootstrap.sh | bash
+```
 
-## Mini
-
-| Command             | Description                               |
-|--------------       |--------------------------------------     |
-| 'ga<char>'          | Aligns visual block with given <char>     |
-| 'gc'                | Comments out visual block                 |
-| 'sr<find><replace>' | Replace surrounding <find> with <replace> |
-| '<leader>tw'        | Remove trailing whitespace                |
-
-## LSP
-
-| Command             | Description                               |
-|--------------       |--------------------------------------     |
-| 'gD'                | goto declaration                          |
-| 'gd'                | goto definition                           |
-| 'K'                 | hover                                     |
-| 'gi'                | goto implementation                       |
-| '<C-k>'             | goto signature help                       |
-| '<space>wa'         | Add workspace folder                      |
-| '<space>wr'         | Remove workspace folder                   |
-| '<space>wl'         | List workspace folders                    |
-| '<space>D'          | goto type definition                      |
-| '<space>rn'         | run rename                                |
-| '<space>ca'         | run code action                           |
-| 'gr'                | goto references                           |
-| '<space>f'          | run format                                |
+This will:
+- 🍺 Install Homebrew (macOS/Linux)
+- 🏠 Install chezmoi
+- 📄 Clone and apply dotfiles
+- 📦 Install all dependencies from Brewfile
+- 🐍💎 Setup Python/Ruby via mise
+- 🪟 Configure tmux plugin manager
 
 
-## Rhubarb
+## Custom Features
 
-| Command      | Description                          |
-|--------------|--------------------------------------|
-| '<leader>gB' | Open code in GitHub                  |
+This dotfiles setup focuses on modern CLI tools and vi-style workflow consistency across all applications.
 
+### Shell & Terminal
+- **Vi-mode everywhere**: Consistent vi bindings in shell (readline), tmux, and Neovim
+- **Modern CLI tools**: Uses `bat`, `fd`, `ripgrep` instead of traditional cat/find/grep
+- **Homebrew environment**: Auto-configured for Linux/macOS with shell integration
 
-## Telescope
+### Git Workflow
+- **Custom aliases**: `co` (checkout), `cm` (GPG-signed commit), `s` (compact status), `dm` (delete merged branches)
+- **GPG signing**: Default commit alias includes automatic GPG signing (`git cm`)
+- **Enhanced diff**: Custom pretty format with colors and relative timestamps
+- **Project overrides**: Support for local `.gitconfig.local` files
 
-| Command      | Description                  |
-|--------------|------------------------------|
-| '<leader>ff' | Find files by name           |
-| '<leader>fg' | Grep(rg) for contents        |
-| '<leader>fb  | find active buffers          |
-| '<leader>fh' | search vimdocs(help)         |
-| '<leader>fm' | search all marks             |
-| '<leader>gd' | search all LSP definitions   |
-| '<leader>fd' | search diagnostics           |
-| '<leader>ft' | search all tags(treesitter)  |
-| '<leader>fc' | search colorschemes and pick |
+### Tmux Configuration
+- **Custom prefix**: Changed from Ctrl-B to Ctrl-A for easier access
+- **Vi copy/paste**: Full vi-mode bindings for copy/selection
+- **Quick reload**: `r` key reloads tmux configuration
+- **Catppuccin theme**: Purple-themed status bar with 'latte' flavor
+
+### Neovim Customizations
+- **Project configs**: Enables `.nvim.lua` for project-specific settings
+- **Copilot integration**: Custom keybinds for buffer (`<leader>ab`) and visual selection (`<leader>av`) chat
+- **Multiple colorschemes**: Extensive collection including Kanagawa, Rose Pine, OneDarkPro, etc.
+
+### GitHub CLI
+- **Custom aliases**: `co` (pr checkout), `readme` (markdown preview), `ci-status` (commit status)
+- **Enhanced pager**: Uses `bat` for syntax highlighting
+
+### Development Tools
+- **Language management**: mise for Python/Ruby with automated pynvim installation
+- **Modern alternatives**: fd, ripgrep, bat, fzf, gum for enhanced CLI experience
+- **Git tools**: tig, universal-ctags for enhanced git workflow

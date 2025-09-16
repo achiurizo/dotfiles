@@ -44,25 +44,25 @@ error_exit() {
     exit 1
 }
 
-# Logging functions with proper error handling
+# Logging functions with proper error handling and emojis
 log_info() {
     local message="${1:-""}"
-    printf "%b[INFO]%b %s\n" "${BLUE}" "${NC}" "${message}" | tee -a "${LOG_FILE}"
+    printf "%b[INFO]%b 🔍 %s\n" "${BLUE}" "${NC}" "${message}" | tee -a "${LOG_FILE}"
 }
 
 log_success() {
     local message="${1:-""}"
-    printf "%b[SUCCESS]%b %s\n" "${GREEN}" "${NC}" "${message}" | tee -a "${LOG_FILE}"
+    printf "%b[SUCCESS]%b ✅ %s\n" "${GREEN}" "${NC}" "${message}" | tee -a "${LOG_FILE}"
 }
 
 log_warning() {
     local message="${1:-""}"
-    printf "%b[WARNING]%b %s\n" "${YELLOW}" "${NC}" "${message}" | tee -a "${LOG_FILE}"
+    printf "%b[WARNING]%b ⚠️ %s\n" "${YELLOW}" "${NC}" "${message}" | tee -a "${LOG_FILE}"
 }
 
 log_error() {
     local message="${1:-""}"
-    printf "%b[ERROR]%b %s\n" "${RED}" "${NC}" "${message}" | tee -a "${LOG_FILE}" >&2
+    printf "%b[ERROR]%b ❌ %s\n" "${RED}" "${NC}" "${message}" | tee -a "${LOG_FILE}" >&2
 }
 
 # Check if command exists with proper error handling
@@ -125,7 +125,7 @@ install_homebrew() {
         return 0
     fi
 
-    log_info "Installing Homebrew..."
+    log_info "Installing Homebrew... 🍺"
 
     # Download and verify Homebrew installer
     local homebrew_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
@@ -145,7 +145,7 @@ install_homebrew() {
     os_type="$(detect_os)"
     setup_brew_env "${os_type}"
 
-    log_success "Homebrew installed successfully"
+    log_success "Homebrew installed successfully! 🍺✨"
 }
 
 # Install chezmoi with proper error handling
@@ -155,7 +155,7 @@ install_chezmoi() {
         return 0
     fi
 
-    log_info "Installing chezmoi via Homebrew..."
+    log_info "Installing chezmoi via Homebrew... 🏠"
 
     if ! brew install chezmoi 2>&1 | tee -a "${LOG_FILE}"; then
         error_exit "Failed to install chezmoi"
@@ -166,12 +166,12 @@ install_chezmoi() {
         error_exit "chezmoi installation verification failed"
     fi
 
-    log_success "chezmoi installed successfully"
+    log_success "chezmoi installed successfully! 🏠✨"
 }
 
 # Initialize and apply dotfiles with robust error handling
 setup_dotfiles() {
-    log_info "Initializing and applying dotfiles..."
+    log_info "Initializing and applying dotfiles... 📄"
 
     local dotfiles_repo="https://github.com/achiurizo/dotfiles.git"
 
@@ -184,7 +184,7 @@ setup_dotfiles() {
         chezmoi apply --verbose 2>&1 | tee -a "${LOG_FILE}" || apply_exit_code=$?
 
         if [[ ${apply_exit_code} -eq 0 ]]; then
-            log_success "Dotfiles applied successfully"
+            log_success "Dotfiles applied successfully! 📄✨"
         else
             log_warning "chezmoi apply completed with warnings (exit code: ${apply_exit_code})"
             log_info "This may be due to TTY limitations in automated environments"
@@ -195,7 +195,7 @@ setup_dotfiles() {
         chezmoi init --apply --verbose "${dotfiles_repo}" 2>&1 | tee -a "${LOG_FILE}" || init_exit_code=$?
 
         if [[ ${init_exit_code} -eq 0 ]]; then
-            log_success "Dotfiles initialized and applied successfully"
+            log_success "Dotfiles initialized and applied successfully! 📄🚀"
         else
             log_warning "chezmoi init completed with warnings (exit code: ${init_exit_code})"
             log_info "This may be due to TTY limitations in automated environments"
@@ -205,7 +205,7 @@ setup_dotfiles() {
 
 # Install Homebrew dependencies with enhanced error handling
 install_brew_dependencies() {
-    log_info "Installing Homebrew dependencies from Brewfile..."
+    log_info "Installing Homebrew dependencies from Brewfile... 📦"
 
     # Get chezmoi source directory safely
     local chezmoi_source_dir
@@ -234,7 +234,7 @@ install_brew_dependencies() {
         cd "${original_dir}"
 
         if [[ ${bundle_exit_code} -eq 0 ]]; then
-            log_success "Homebrew dependencies installed successfully"
+            log_success "Homebrew dependencies installed successfully! 📦✨"
         else
             log_warning "Some Homebrew dependencies failed to install (exit code: ${bundle_exit_code})"
         fi
@@ -250,20 +250,20 @@ setup_mise() {
         return 0
     fi
 
-    log_info "Setting up languages with mise..."
+    log_info "Setting up languages with mise... 🐍💎"
 
     # Install Python globally with error handling
     if mise use -g python@latest 2>&1 | tee -a "${LOG_FILE}"; then
-        log_success "Python installed via mise"
+        log_success "Python installed via mise! 🐍"
 
         # Install pynvim for Neovim
         if command_exists pip; then
-            log_info "Installing pynvim for Neovim..."
+            log_info "Installing pynvim for Neovim... 🔥"
             local pip_exit_code=0
             pip install --user pynvim 2>&1 | tee -a "${LOG_FILE}" || pip_exit_code=$?
 
             if [[ ${pip_exit_code} -eq 0 ]]; then
-                log_success "pynvim installed"
+                log_success "pynvim installed! 🔥✨"
             else
                 log_warning "Failed to install pynvim (exit code: ${pip_exit_code})"
             fi
@@ -276,7 +276,7 @@ setup_mise() {
 
     # Install Ruby globally with error handling
     if mise use -g ruby@latest 2>&1 | tee -a "${LOG_FILE}"; then
-        log_success "Ruby installed via mise"
+        log_success "Ruby installed via mise! 💎"
     else
         log_warning "Failed to install Ruby via mise"
     fi
@@ -291,7 +291,7 @@ setup_tmux() {
         return 0
     fi
 
-    log_info "Installing tmux plugin manager..."
+    log_info "Installing tmux plugin manager... 🪟"
 
     # Create parent directory if it doesn't exist
     local plugins_dir="${HOME}/.tmux/plugins"
@@ -307,7 +307,7 @@ setup_tmux() {
     git clone https://github.com/tmux-plugins/tpm "${tpm_dir}" 2>&1 | tee -a "${LOG_FILE}" || clone_exit_code=$?
 
     if [[ ${clone_exit_code} -eq 0 ]]; then
-        log_success "tmux plugin manager installed"
+        log_success "tmux plugin manager installed! 🪟✨"
         log_info "Run 'tmux source ~/.tmux.conf && tmux run ~/.tmux/plugins/tpm/scripts/install_plugins.sh' to install plugins"
     else
         log_warning "Failed to install tmux plugin manager (exit code: ${clone_exit_code})"
@@ -316,7 +316,7 @@ setup_tmux() {
 
 # Verify installations with detailed checking
 verify_setup() {
-    log_info "Verifying installation..."
+    log_info "Verifying installation... 🔍"
 
     # Define essential tools array properly
     local -a tools=("brew" "chezmoi" "bat" "fd" "fzf" "gh" "rg" "nvim" "tmux")
@@ -340,7 +340,7 @@ verify_setup() {
         log_info "You may need to restart your shell or source your shell configuration"
         log_info "Available tools: ${available_tools[*]}"
     else
-        log_success "All essential tools are available!"
+        log_success "All essential tools are available! 🎉"
     fi
 
     # Log summary
@@ -375,7 +375,7 @@ main() {
     local start_time
     start_time="$(date '+%Y-%m-%d %H:%M:%S')"
 
-    log_info "Starting dotfiles bootstrap process at ${start_time}"
+    log_info "Starting dotfiles bootstrap process at ${start_time} 🚀"
     log_info "Script: ${SCRIPT_NAME}"
     log_info "Log file: ${LOG_FILE}"
 
@@ -388,23 +388,23 @@ main() {
     validate_prerequisites
 
     # Run installation steps with progress tracking
-    log_info "=== Installation Phase ==="
+    log_info "=== Installation Phase === 📥"
     install_homebrew
     install_chezmoi
     setup_dotfiles
     install_brew_dependencies
 
-    log_info "=== Configuration Phase ==="
+    log_info "=== Configuration Phase === ⚙️"
     setup_mise
     setup_tmux
 
-    log_info "=== Verification Phase ==="
+    log_info "=== Verification Phase === 🔍"
     verify_setup
 
     # Final summary
     local end_time
     end_time="$(date '+%Y-%m-%d %H:%M:%S')"
-    log_success "Bootstrap process completed at ${end_time}!"
+    log_success "Bootstrap process completed at ${end_time}! 🎉🚀"
     log_info "You may need to restart your shell to use all tools"
     log_info "Run 'chezmoi diff' to see any pending changes"
     log_info "Full log available at: ${LOG_FILE}"

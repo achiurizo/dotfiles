@@ -11,8 +11,10 @@ IFS=$'\n\t'
 trap 'error_exit "Script failed at line $LINENO"' ERR
 
 # Global variables
-declare -r SCRIPT_NAME="$(basename "${0}")"
-declare -r TEMP_DIR="$(mktemp -d)"
+declare -r SCRIPT_NAME
+SCRIPT_NAME="$(basename "${0}")"
+declare -r TEMP_DIR
+TEMP_DIR="$(mktemp -d)"
 declare -r LOG_FILE="${TEMP_DIR}/bootstrap.log"
 
 # Colors for output (disable if not a terminal)

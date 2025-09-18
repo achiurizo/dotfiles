@@ -245,20 +245,33 @@ install_brew_dependencies() {
   fi
 }
 
-# Setup mise and install languages with proper error handling
+# Setup mise and install tools from config.toml with proper error handling
 setup_mise() {
   if ! command_exists mise; then
     log_warning "mise not installed, skipping language setup"
     return 0
   fi
 
-  log_info "Setting up languages with mise... 🐍💎"
+  log_info "Installing tools with mise from config.toml... 🛠️"
 
-  # Install Python globally with error handling
-  if mise use -g python@latest 2>&1 | tee -a "${LOG_FILE}"; then
-    log_success "Python installed via mise! 🐍"
+  # Configure readline for Ruby installation (requires Homebrew readline)
+  if command_exists brew; then
+    local readline_path
+    readline_path="$(brew --prefix readline 2>/dev/null)" || true
+    if [[ -n "${readline_path}" && -d "${readline_path}" ]]; then
+      log_info "Configuring readline for Ruby installation..."
+      export RUBY_CONFIGURE_OPTS="--with-readline-dir=${readline_path}"
+    fi
+  fi
 
-    # Install pynvim for Neovim
+  # Install all tools defined in config.toml
+  local install_exit_code=0
+  mise install 2>&1 | tee -a "${LOG_FILE}" || install_exit_code=$?
+
+  if [[ ${install_exit_code} -eq 0 ]]; then
+    log_success "All tools installed via mise! 🛠️✨"
+
+    # Install pynvim for Neovim if Python was installed
     if command_exists pip; then
       log_info "Installing pynvim for Neovim... 🔥"
       local pip_exit_code=0
@@ -273,14 +286,7 @@ setup_mise() {
       log_warning "pip not available, skipping pynvim installation"
     fi
   else
-    log_warning "Failed to install Python via mise"
-  fi
-
-  # Install Ruby globally with error handling
-  if mise use -g ruby@latest 2>&1 | tee -a "${LOG_FILE}"; then
-    log_success "Ruby installed via mise! 💎"
-  else
-    log_warning "Failed to install Ruby via mise"
+    log_warning "Failed to install some tools via mise (exit code: ${install_exit_code})"
   fi
 }
 

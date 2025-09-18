@@ -286,19 +286,24 @@ setup_mise() {
 setup_neovim_providers() {
   log_info "Setting up Neovim providers and dependencies... 🔥"
 
-  # Install Node.js neovim package
+  # Install Node.js neovim package and additional tools
   if command_exists npm; then
-    log_info "Installing neovim package for Node.js provider..."
-    local npm_exit_code=0
-    npm install -g neovim 2>&1 | tee -a "${LOG_FILE}" || npm_exit_code=$?
+    local -a npm_packages=("neovim" "@mermaid-js/mermaid-cli")
+    local npm_package
 
-    if [[ ${npm_exit_code} -eq 0 ]]; then
-      log_success "Node.js neovim package installed! 📦✨"
-    else
-      log_warning "Failed to install Node.js neovim package (exit code: ${npm_exit_code})"
-    fi
+    for npm_package in "${npm_packages[@]}"; do
+      log_info "Installing ${npm_package} via npm..."
+      local npm_exit_code=0
+      npm install -g "${npm_package}" 2>&1 | tee -a "${LOG_FILE}" || npm_exit_code=$?
+
+      if [[ ${npm_exit_code} -eq 0 ]]; then
+        log_success "${npm_package} installed! 📦✨"
+      else
+        log_warning "Failed to install ${npm_package} (exit code: ${npm_exit_code})"
+      fi
+    done
   else
-    log_warning "npm not available, skipping Node.js neovim package installation"
+    log_warning "npm not available, skipping Node.js packages installation"
   fi
 
   # Install Python packages for Neovim

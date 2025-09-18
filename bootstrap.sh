@@ -11,11 +11,11 @@ IFS=$'\n\t'
 trap 'error_exit "Script failed at line $LINENO"' ERR
 
 # Global variables
-declare -r SCRIPT_NAME
 SCRIPT_NAME="$(basename "${0}")"
-declare -r TEMP_DIR
 TEMP_DIR="$(mktemp -d)"
-declare -r LOG_FILE="${TEMP_DIR}/bootstrap.log"
+readonly SCRIPT_NAME TEMP_DIR
+LOG_FILE="${TEMP_DIR}/bootstrap.log"
+readonly LOG_FILE
 
 # Colors for output (disable if not a terminal)
 if [[ -t 1 ]]; then
@@ -354,7 +354,7 @@ setup_neovim_providers() {
   if command_exists nvim; then
     log_info "Installing treesitter parsers for Neovim..."
     local nvim_exit_code=0
-    nvim --headless -c "TSInstall diff regex css html javascript latex scss svelte tsx typst vue" -c "qa" 2>&1 | tee -a "${LOG_FILE}" || nvim_exit_code=$?
+    nvim --headless -c "TSInstallSync diff regex css html javascript latex scss svelte tsx typst vue" -c "qa" 2>&1 | tee -a "${LOG_FILE}" || nvim_exit_code=$?
 
     if [[ ${nvim_exit_code} -eq 0 ]]; then
       log_success "Treesitter parsers installed! 🌳✨"

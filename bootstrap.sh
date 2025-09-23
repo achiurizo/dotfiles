@@ -120,47 +120,118 @@ setup_brew_env() {
   fi
 }
 
-# Install Homebrew with enhanced error handling
+# Prompt user for homebrew installation with sudo awareness
+prompt_homebrew_install() {
+  log_info "Homebrew installation may require administrative privileges (sudo)"
+  log_info "This is needed to install to system directories like /opt/homebrew or /home/linuxbrew"
+
+  # Check if we're in a non-interactive environment
+  if [[ "${CI:-false}" == "true" ]] || [[ ! -t 0 ]]; then
+    log_warning "Non-interactive environment detected, skipping Homebrew installation"
+    log_info "You can install Homebrew manually later: https://brew.sh"
+    return 1
+  fi
+
+  printf "%b[PROMPT]%b Would you like to install Homebrew? This may require sudo access. [y/N]: " "${YELLOW}" "${NC}"
+  local response
+  read -r response
+
+  case "${response,,}" in
+    y|yes)
+      return 0
+      ;;
+    *)
+      log_info "Skipping Homebrew installation"
+      return 1
+      ;;
+  esac
+}
+
+# Install Homebrew with enhanced error handling and sudo awareness
 install_homebrew() {
   if command_exists brew; then
     log_info "Homebrew already installed"
     return 0
   fi
 
+  # Prompt user for installation consent
+  if ! prompt_homebrew_install; then
+    log_warning "Homebrew installation skipped by user"
+    return 1
+  fi
+
   log_info "Installing Homebrew... 🍺"
+  log_info "Note: You may be prompted for your password (sudo access)"
 
   # Download and verify Homebrew installer
   local homebrew_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
   local installer_script="${TEMP_DIR}/homebrew_install.sh"
 
   if ! curl -fsSL "${homebrew_url}" -o "${installer_script}"; then
-    error_exit "Failed to download Homebrew installer"
+    log_error "Failed to download Homebrew installer"
+    return 1
   fi
 
-  # Execute installer with proper environment
-  if ! NONINTERACTIVE=1 bash "${installer_script}" 2>&1 | tee -a "${LOG_FILE}"; then
-    error_exit "Failed to install Homebrew"
+  # Execute installer with proper environment (remove NONINTERACTIVE to allow sudo prompts)
+  local install_exit_code=0
+  bash "${installer_script}" 2>&1 | tee -a "${LOG_FILE}" || install_exit_code=$?
+
+  if [[ ${install_exit_code} -ne 0 ]]; then
+    log_error "Failed to install Homebrew (exit code: ${install_exit_code})"
+    log_info "You can install Homebrew manually later: https://brew.sh"
+    return 1
   fi
 
   # Setup Homebrew environment
   local os_type
   os_type="$(detect_os)"
-  setup_brew_env "${os_type}"
-
-  log_success "Homebrew installed successfully! 🍺✨"
+  if setup_brew_env "${os_type}"; then
+    log_success "Homebrew installed successfully! 🍺✨"
+    return 0
+  else
+    log_warning "Homebrew installed but environment setup failed"
+    return 1
+  fi
 }
 
-# Install chezmoi with proper error handling
+# Install chezmoi with proper error handling and fallback options
 install_chezmoi() {
   if command_exists chezmoi; then
     log_info "chezmoi already installed"
     return 0
   fi
 
-  log_info "Installing chezmoi via Homebrew... 🏠"
+  # Try to install via Homebrew if available
+  if command_exists brew; then
+    log_info "Installing chezmoi via Homebrew... 🏠"
 
-  if ! brew install chezmoi 2>&1 | tee -a "${LOG_FILE}"; then
-    error_exit "Failed to install chezmoi"
+    if brew install chezmoi 2>&1 | tee -a "${LOG_FILE}"; then
+      # Verify installation
+      if command_exists chezmoi; then
+        log_success "chezmoi installed successfully via Homebrew! 🏠✨"
+        return 0
+      else
+        log_warning "chezmoi installation via Homebrew failed verification"
+      fi
+    else
+      log_warning "Failed to install chezmoi via Homebrew"
+    fi
+  else
+    log_warning "Homebrew not available for chezmoi installation"
+  fi
+
+  # Fallback: install chezmoi via its installer script
+  log_info "Installing chezmoi via official installer... 🏠"
+
+  local chezmoi_installer="${TEMP_DIR}/chezmoi_install.sh"
+  local chezmoi_url="https://get.chezmoi.io"
+
+  if ! curl -fsSL "${chezmoi_url}" -o "${chezmoi_installer}"; then
+    error_exit "Failed to download chezmoi installer"
+  fi
+
+  if ! bash "${chezmoi_installer}" 2>&1 | tee -a "${LOG_FILE}"; then
+    error_exit "Failed to install chezmoi via official installer"
   fi
 
   # Verify installation
@@ -168,7 +239,7 @@ install_chezmoi() {
     error_exit "chezmoi installation verification failed"
   fi
 
-  log_success "chezmoi installed successfully! 🏠✨"
+  log_success "chezmoi installed successfully via official installer! 🏠✨"
 }
 
 # Initialize and apply dotfiles with robust error handling
@@ -207,6 +278,13 @@ setup_dotfiles() {
 
 # Install Homebrew dependencies with enhanced error handling
 install_brew_dependencies() {
+  # Check if Homebrew is available
+  if ! command_exists brew; then
+    log_warning "Homebrew not available, skipping Brewfile dependency installation"
+    log_info "You can install Homebrew later and run 'brew bundle' in your dotfiles directory"
+    return 0
+  fi
+
   log_info "Installing Homebrew dependencies from Brewfile... 📦"
 
   # Get chezmoi source directory safely
@@ -441,10 +519,25 @@ main() {
 
   # Run installation steps with progress tracking
   log_info "=== Installing... === 📥"
-  install_homebrew
+
+  # Install Homebrew (may be skipped by user or in non-interactive environments)
+  local homebrew_installed=false
+  if install_homebrew; then
+    homebrew_installed=true
+    log_info "Homebrew installation completed successfully"
+  else
+    log_info "Continuing without Homebrew..."
+  fi
+
   install_chezmoi
   setup_dotfiles
-  install_brew_dependencies
+
+  # Only attempt Homebrew dependencies if Homebrew was successfully installed
+  if [[ "${homebrew_installed}" == "true" ]] || command_exists brew; then
+    install_brew_dependencies
+  else
+    log_info "Skipping Homebrew dependencies (Homebrew not available)"
+  fi
 
   log_info "=== Configuring... === ⚙️"
   setup_mise

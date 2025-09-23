@@ -246,8 +246,6 @@ install_chezmoi() {
 setup_dotfiles() {
   log_info "Initializing and applying dotfiles... 📄"
 
-  local dotfiles_repo="https://github.com/achiurizo/dotfiles.git"
-
   # Check if chezmoi is already initialized
   local chezmoi_data
   if chezmoi_data="$(chezmoi data 2>/dev/null)" && printf "%s" "${chezmoi_data}" | grep -q "achiurizo"; then
@@ -263,9 +261,9 @@ setup_dotfiles() {
       log_info "This may be due to TTY limitations in automated environments"
     fi
   else
-    log_info "Initializing chezmoi with dotfiles repository..."
+    log_info "Initializing chezmoi with achiurizo's dotfiles..."
     local init_exit_code=0
-    chezmoi init --apply --verbose "${dotfiles_repo}" 2>&1 | tee -a "${LOG_FILE}" || init_exit_code=$?
+    chezmoi init --apply achiurizo 2>&1 | tee -a "${LOG_FILE}" || init_exit_code=$?
 
     if [[ ${init_exit_code} -eq 0 ]]; then
       log_success "Dotfiles initialized and applied successfully! 📄🚀"

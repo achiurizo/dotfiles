@@ -2,7 +2,7 @@
 require("config.lazy")
 
 require("CopilotChat").setup({
-  model = "claude-3.7-sonnet",
+  model = "gpt-5",
   prompts = {
     Local = {
       system_prompt = vim.fn.filereadable(".github/copilot-instructions.md") == 1

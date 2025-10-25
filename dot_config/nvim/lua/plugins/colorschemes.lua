@@ -20,12 +20,9 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.g.zenbones_compat = 1
       vim.cmd([[
-        highlight Normal guibg=NONE ctermbg=NONE
-        highlight NonText guibg=NONE ctermbg=NONE
-        colorscheme rose-pine-moon
-        set background=light
+        colorscheme catppuccin-mocha
+        set background=dark
       ]])
     end,
     -- you can set set configuration options here

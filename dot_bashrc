@@ -1,3 +1,6 @@
+# Add ~/.local/bin to PATH for user scripts
+export PATH="$HOME/.local/bin:$PATH"
+
 if [[ $(uname) == 'Linux' ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" # homebrew
 fi

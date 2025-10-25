@@ -1,0 +1,74 @@
+# Local machine-specific configuration
+# Copy this file to ~/.local.fish and customize for your machine
+#
+# This file is sourced at the end of config.fish and can override
+# any settings from the main configuration.
+
+# ============================================================================
+# EXAMPLE: Machine-specific PATH additions
+# ============================================================================
+# Add custom paths that exist only on this machine
+# fish_add_path /opt/custom-tools/bin
+# fish_add_path ~/local-scripts
+
+# ============================================================================
+# EXAMPLE: Machine-specific aliases and functions
+# ============================================================================
+# Quick navigation to frequently used projects
+# alias work="cd ~/work/important-project"
+# alias docs="cd ~/Documents"
+
+# Machine-specific shortcuts
+# function vpn-connect
+#     sudo openconnect vpn.example.com --user=myuser
+# end
+
+# ============================================================================
+# EXAMPLE: Environment variables
+# ============================================================================
+# API keys, tokens, or credentials (DO NOT commit this file!)
+# set -gx MY_API_KEY "secret-key-here"
+# set -gx AWS_PROFILE "personal"
+# set -gx DATABASE_URL "postgresql://localhost/mydb"
+
+# ============================================================================
+# EXAMPLE: Override Tide prompt settings
+# ============================================================================
+# Customize Tide prompt for this machine
+# set -g tide_left_prompt_items pwd git
+# set -g tide_right_prompt_items status cmd_duration context jobs
+
+# ============================================================================
+# EXAMPLE: Platform-specific overrides
+# ============================================================================
+# WSL-specific settings
+# if set -q IS_WSL
+#     # Use Windows browser from WSL
+#     set -gx BROWSER "/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
+# end
+
+# macOS-specific settings
+# if set -q IS_MACOS
+#     # Use custom Homebrew location
+#     set -gx HOMEBREW_PREFIX /opt/custom-brew
+# end
+
+# ============================================================================
+# EXAMPLE: Development environment overrides
+# ============================================================================
+# Use different editor on this machine
+# set -gx EDITOR "code --wait"
+
+# Custom FZF configuration for larger screens
+# set -gx FZF_DEFAULT_OPTS "--height=50% --layout=reverse --border"
+
+# ============================================================================
+# EXAMPLE: Docker/Kubernetes shortcuts
+# ============================================================================
+# function dps
+#     docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+# end
+
+# function kctx
+#     kubectl config get-contexts
+# end

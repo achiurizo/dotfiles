@@ -8,7 +8,7 @@ function gwt-create -d "Create git worktree for feature development" -a branch_n
     set -l project_name (basename (pwd))
 
     # Create worktree path: ../project-feature-name
-    set -l worktree_path "../$project_name-$branch_name"
+    set -l worktree_path ".worktrees/$branch_name"
 
     # Create worktree with new branch
     git worktree add -b $branch_name $worktree_path

@@ -12,4 +12,21 @@ aliases:
     clone: repo clone
     readme: markdown-preview
     ci-status: 'api -H "Accept: application/vnd.github+json" /repos/$1/commits/$2/status'
+    # PR workflow
+    prs: pr list --author "@me"
+    prv: pr view --web
+    prm: pr merge --merge --delete-branch
+    prd: pr diff
+    # Issue workflow
+    issues: issue list --assignee "@me"
+    iv: issue view --web
+    ic: issue create
+    # CI/Actions
+    runs: run list
+    watch: run watch
+    logs: run view --log
+    # Repository
+    sync: repo sync
+    browse: repo view --web
+    forks: repo list --fork
 version: "1"

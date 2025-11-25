@@ -21,7 +21,7 @@ return {
     priority = 1000,
     config = function()
       vim.cmd([[
-        colorscheme catppuccin-mocha
+        colorscheme gruvbox-material
         set background=dark
       ]])
     end,

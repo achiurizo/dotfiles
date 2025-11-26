@@ -11,6 +11,7 @@ return {
   "thedenisnikulin/vim-cyberpunk",
   "projekt0n/github-nvim-theme",
   "Biscuit-Theme/nvim",
+  "uhs-robert/oasis.nvim",
   {
     "zenbones-theme/zenbones.nvim",
     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
@@ -20,8 +21,9 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      require("oasis").setup()
       vim.cmd([[
-        colorscheme gruvbox-material
+        colorscheme oasis-starlight
         set background=dark
       ]])
     end,

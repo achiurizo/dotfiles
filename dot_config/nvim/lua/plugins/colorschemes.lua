@@ -23,7 +23,7 @@ return {
     config = function()
       require("oasis").setup()
       vim.cmd([[
-        colorscheme oasis-starlight
+        colorscheme oasis-twilight
         set background=dark
       ]])
     end,

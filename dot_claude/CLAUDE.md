@@ -17,24 +17,43 @@ Always output:
 ∙Confidence level
 ∙Key caveats
 
-## Never Commit These Files
+## NEVER COMMIT THESE FILES
 
-HARD BLOCK: Do not `git add` or commit these files under any circumstances.
-Warn if attempted.
+**CRITICAL RULE - CHECK BEFORE EVERY COMMIT**
 
-### Directories
+Before running `git add` or `git commit`, verify you are NOT staging:
 
-- `docs/plans/` - Planning documents
-- `.claude-artifacts/` - LLM working artifacts
+### Blocked Directories
 
-### Patterns
+- `docs/plans/`
+- `.claude-artifacts/`
 
-- `*-plan.md` - Plan documents
-- `*-design.md` - Design documents
-- `*-implementation.md` - Implementation docs
-- `*.plan.md` - Alternative plan format
+### Blocked Patterns
 
-These are working documents, not source artifacts.
+- `*-plan.md`
+- `*-design.md`
+- `*-implementation.md`
+- `*.plan.md`
+
+### Enforcement
+
+**Before ANY git commit operation:**
+
+1. Run `git status` and review staged files
+2. If ANY blocked file/pattern appears, run `git reset <file>`
+3. Only proceed with commit after verification
+
+**Blocked commands for these files:**
+
+```bash
+# NEVER run these for blocked files:
+git add docs/plans/
+git add .claude-artifacts/
+git add *-plan.md
+git add *-design.md
+```
+
+These are working documents, not source artifacts. This rule applies even when skills or workflows suggest committing "all changes."
 
 ## Git Conventions
 

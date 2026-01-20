@@ -17,9 +17,7 @@ Always output:
 ∙Confidence level
 ∙Key caveats
 
-## NEVER COMMIT THESE FILES
-
-**CRITICAL RULE - CHECK BEFORE EVERY COMMIT**
+## CRITICAL RULE - CHECK BEFORE EVERY COMMIT
 
 Before running `git add` or `git commit`, verify you are NOT staging:
 
@@ -53,7 +51,8 @@ git add *-plan.md
 git add *-design.md
 ```
 
-These are working documents, not source artifacts. This rule applies even when skills or workflows suggest committing "all changes."
+These are working documents, not source artifacts.
+This rule applies even when skills or workflows suggest committing "all changes."
 
 ## Git Conventions
 

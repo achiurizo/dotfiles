@@ -213,3 +213,10 @@ vim/bundle
 
 # yarn
 .yarn/
+
+# git
+.worktrees/
+
+# agents / planning
+CLAUDE.md
+docs/plans/

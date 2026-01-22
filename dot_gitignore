@@ -217,6 +217,9 @@ vim/bundle
 # git
 .worktrees/
 
+# ripgrep
+.rgignore
+
 # agents / planning
 CLAUDE.md
 docs/plans/

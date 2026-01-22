@@ -201,9 +201,10 @@ vim/bundle
 ########
 .test_queue_stats
 
-# ASDF
+# ASDF / Mise
 .tool-versions
 .mise.toml
+mise.toml
 
 # exrc
 .nvim.lua
@@ -222,4 +223,7 @@ vim/bundle
 
 # agents / planning
 CLAUDE.md
-docs/plans/
+**/docs/
+
+# markdown lint
+.markdownlint*

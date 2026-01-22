@@ -1,3 +1,3 @@
-# Tide prompt configuration
-# Tide is configured via `tide configure` wizard
-# Custom settings can be added here if needed
+# Starship prompt
+# Config: ~/.config/starship.toml
+starship init fish | source

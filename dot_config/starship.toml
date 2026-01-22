@@ -1,0 +1,114 @@
+# Starship prompt configuration
+# https://starship.rs/config/
+
+# Timeout for commands (ms)
+command_timeout = 1000
+
+# Newline between prompts
+add_newline = true
+
+# Prompt format
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$ruby\
+$rust\
+$golang\
+$python\
+$elixir\
+$docker_context\
+$kubernetes\
+$aws\
+$line_break\
+$character"""
+
+# Right prompt
+right_format = """$cmd_duration"""
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+vimcmd_replace_one_symbol = "[❮](bold purple)"
+vimcmd_replace_symbol = "[❮](bold purple)"
+vimcmd_visual_symbol = "[❮](bold yellow)"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold cyan"
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+symbol = " "
+style = "bold purple"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold red"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "*"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style)"
+style = "bold yellow"
+
+[nodejs]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold green"
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+
+[ruby]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold red"
+
+[rust]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold orange"
+
+[golang]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold cyan"
+
+[python]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold yellow"
+
+[elixir]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold purple"
+
+[docker_context]
+format = "[$symbol$context]($style) "
+symbol = " "
+style = "bold blue"
+only_with_files = true
+
+[kubernetes]
+format = "[$symbol$context( \\($namespace\\))]($style) "
+symbol = "☸ "
+style = "bold blue"
+disabled = true
+
+[aws]
+format = "[$symbol($profile)(\\($region\\))]($style) "
+symbol = " "
+style = "bold yellow"
+disabled = true

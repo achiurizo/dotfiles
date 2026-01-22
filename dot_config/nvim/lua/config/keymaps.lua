@@ -4,12 +4,10 @@
 
 -- Find files including ignored (.env, .gitignore, etc.)
 vim.keymap.set("n", "<leader>fI", function()
-  require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+  Snacks.picker.files({ hidden = true, ignored = true })
 end, { desc = "Find Files (incl. ignored)" })
 
 -- Grep including ignored files
 vim.keymap.set("n", "<leader>sI", function()
-  require("telescope.builtin").live_grep({
-    additional_args = { "--no-ignore", "--hidden" },
-  })
+  Snacks.picker.grep({ hidden = true, ignored = true })
 end, { desc = "Grep (incl. ignored)" })

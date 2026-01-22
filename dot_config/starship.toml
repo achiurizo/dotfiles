@@ -7,11 +7,17 @@ command_timeout = 1000
 # Newline between prompts
 add_newline = true
 
-# Prompt format
+# Prompt format (left side)
 format = """
 $directory\
 $git_branch\
 $git_status\
+$line_break\
+$character"""
+
+# Right prompt (info-rich like Tide)
+right_format = """\
+$jobs\
 $nodejs\
 $ruby\
 $rust\
@@ -21,11 +27,10 @@ $elixir\
 $docker_context\
 $kubernetes\
 $aws\
-$line_break\
-$character"""
-
-# Right prompt
-right_format = """$cmd_duration"""
+$cmd_duration\
+$username\
+$hostname\
+$time"""
 
 [character]
 success_symbol = "[❯](bold green)"
@@ -61,7 +66,7 @@ deleted = "✘"
 
 [cmd_duration]
 min_time = 2000
-format = "[$duration]($style)"
+format = "[$duration]($style) "
 style = "bold yellow"
 
 [nodejs]
@@ -78,7 +83,7 @@ style = "bold red"
 [rust]
 format = "[$symbol($version)]($style) "
 symbol = " "
-style = "bold orange"
+style = "bold #f74c00"
 
 [golang]
 format = "[$symbol($version)]($style) "
@@ -112,3 +117,26 @@ format = "[$symbol($profile)(\\($region\\))]($style) "
 symbol = " "
 style = "bold yellow"
 disabled = true
+
+[jobs]
+format = "[$symbol$number]($style) "
+symbol = "✦ "
+style = "bold blue"
+number_threshold = 1
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "bold dimmed white"
+time_format = "%H:%M"
+
+[username]
+format = "[$user]($style)"
+style_user = "bold dimmed white"
+style_root = "bold red"
+show_always = false
+
+[hostname]
+format = "[@$hostname]($style) "
+style = "bold dimmed white"
+ssh_only = true

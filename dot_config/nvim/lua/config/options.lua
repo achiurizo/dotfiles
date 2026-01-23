@@ -4,3 +4,11 @@
 
 -- turn on local `.nvim.lua` for project specific setting
 vim.opt.exrc = true
+
+-- Treat .env files as dotenv, not shell (prevents shellcheck from linting them)
+vim.filetype.add({
+  pattern = {
+    ["%.env"] = "dotenv",
+    ["%.env%.[%w_.-]+"] = "dotenv",
+  },
+})

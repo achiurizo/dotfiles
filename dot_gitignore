@@ -222,6 +222,7 @@ mise.toml
 .rgignore
 
 # agents / planning
+.claude/
 CLAUDE.md
 **/docs/
 

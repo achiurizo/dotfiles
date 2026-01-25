@@ -27,6 +27,11 @@ return {
             },
           },
         },
+        ruby_lsp = {
+          mason = false,
+          cmd = { "mise", "exec", "--", "ruby-lsp" },
+        },
+        rubocop = { enabled = false },
       },
     },
   },

@@ -6,16 +6,6 @@ return {
       inlay_hints = { enabled = true },
 
       servers = {
-        tsserver = {
-          settings = {
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayFunctionParameterTypeHints = true,
-              },
-            },
-          },
-        },
         pyright = {
           settings = {
             python = {

@@ -18,6 +18,7 @@ set -l custom_paths \
     ~/.cargo/bin \
     ~/.deno/bin \
     ~/.bin \
+    ~/.local/bin \
     ~/.foundry/bin
 
 for path_dir in $custom_paths

@@ -27,6 +27,7 @@ aliases:
     runs: run list
     watch: run watch
     logs: run view --log
+    dispatch: '!gh workflow run ".github/workflows/$1" --ref "$(git branch --show-current)"'
     # Repository
     sync: repo sync
     browse: repo view --web

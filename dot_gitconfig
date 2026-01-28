@@ -20,6 +20,15 @@
   whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   autocrlf     = false
   safecrlf     = true
+  pager        = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  dark = true
+  line-numbers = true
+[merge]
+  conflictstyle = zdiff3
 [branch]
   autosetuprebase = always
 [credential]

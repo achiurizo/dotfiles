@@ -1,16 +1,7 @@
-function gmd -d "Delete local branches for merged PRs (handles squash merges)"
-    set -l branches (gh pr list --state merged --author "@me" --json headRefName -q ".[].headRefName" 2>/dev/null)
-
-    if test -z "$branches"
-        echo "No merged PR branches found"
-        return 0
-    end
-
-    for branch in $branches
-        if git show-ref --verify --quiet refs/heads/$branch
-            git branch -d $branch
-            and echo "Deleted: $branch"
-            or git branch -D $branch && echo "Force deleted: $branch (squash merged)"
-        end
+function gmd -d "Delete branches whose remote tracking branch is gone"
+    git fetch -p
+    for branch in (git branch -vv | grep ': gone]' | awk '{print $1}')
+        echo "Deleting $branch..."
+        git branch -d $branch
     end
 end

@@ -9,6 +9,8 @@ function gwt -d "Git worktree management"
             _gwt_list
         case remove rm
             _gwt_remove
+        case clean
+            _gwt_clean $args
         case switch sw
             _gwt_switch $args
         case ''
@@ -27,6 +29,7 @@ function _gwt_usage
     echo "  create <branch>  Create worktree and switch to it"
     echo "  list             List all worktrees"
     echo "  remove           Remove worktree (fzf picker)"
+    echo "  clean            Remove all worktrees (-f to skip confirmation)"
     echo "  switch [branch]  Switch to worktree (fzf picker if no branch)"
 end
 
@@ -98,4 +101,46 @@ function _gwt_switch
             cd $selected
         end
     end
+end
+
+function _gwt_clean
+    set -l force 0
+    if test "$argv[1]" = -f
+        set force 1
+    end
+
+    set -l main_repo (_gwt_main_repo)
+    set -l worktrees (git worktree list | grep "\.worktrees/" | awk '{print $1}')
+
+    if test (count $worktrees) -eq 0
+        echo "No worktrees to clean up"
+        return 0
+    end
+
+    echo "Worktrees to remove:"
+    for wt in $worktrees
+        echo "  $wt"
+    end
+    echo ""
+
+    if test $force -eq 0
+        read -l -P "Remove all worktrees? [y/N] " confirm
+        if test "$confirm" != y -a "$confirm" != Y
+            echo "Cancelled"
+            return 0
+        end
+    end
+
+    # Switch to main repo if currently in a worktree
+    if string match -q "*/.worktrees/*" (pwd)
+        echo "Switching to main repo..."
+        cd $main_repo
+    end
+
+    for wt in $worktrees
+        echo "Removing $wt..."
+        git worktree remove $wt
+    end
+
+    echo "Done"
 end

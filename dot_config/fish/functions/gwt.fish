@@ -9,6 +9,8 @@ function gwt -d "Git worktree management"
             _gwt_list
         case remove rm
             _gwt_remove
+        case checkout co
+            _gwt_checkout $args
         case clean
             _gwt_clean $args
         case switch sw
@@ -26,7 +28,8 @@ function _gwt_usage
     echo "Usage: gwt <command> [args]"
     echo ""
     echo "Commands:"
-    echo "  create <branch>  Create worktree and switch to it"
+    echo "  create <branch>  Create worktree for new branch and switch to it"
+    echo "  checkout <branch> Checkout remote branch into worktree (co)"
     echo "  list             List all worktrees"
     echo "  remove           Remove worktree (fzf picker)"
     echo "  clean            Remove all worktrees (-f to skip confirmation)"
@@ -49,6 +52,33 @@ function _gwt_create
     set -l worktree_path "$main_repo/.worktrees/$branch_name"
 
     git worktree add -b $branch_name $worktree_path
+
+    if test $status -eq 0
+        echo "Worktree created at: $worktree_path"
+        cd $worktree_path
+    else
+        return 1
+    end
+end
+
+function _gwt_checkout
+    set -l input $argv[1]
+
+    if test -z "$input"
+        echo "Usage: gwt checkout <[remote/]branch>"
+        return 1
+    end
+
+    # Strip remote prefix if provided (e.g. origin/branch -> branch)
+    set -l branch (string replace -r '^[^/]+/' '' $input)
+
+    git fetch --all
+
+    set -l main_repo (_gwt_main_repo)
+    set -l worktree_path "$main_repo/.worktrees/$branch"
+
+    # git DWIM auto-tracks the remote branch
+    git worktree add $worktree_path $branch
 
     if test $status -eq 0
         echo "Worktree created at: $worktree_path"

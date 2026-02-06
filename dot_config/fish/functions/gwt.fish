@@ -51,7 +51,11 @@ function _gwt_create
     set -l main_repo (_gwt_main_repo)
     set -l worktree_path "$main_repo/.worktrees/$branch_name"
 
-    git worktree add -b $branch_name $worktree_path
+    if git show-ref --verify --quiet refs/heads/$branch_name
+        git worktree add $worktree_path $branch_name
+    else
+        git worktree add -b $branch_name $worktree_path
+    end
 
     if test $status -eq 0
         echo "Worktree created at: $worktree_path"

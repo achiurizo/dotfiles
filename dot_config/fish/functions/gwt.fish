@@ -29,7 +29,7 @@ function _gwt_usage
     echo ""
     echo "Commands:"
     echo "  create <branch>  Create worktree for new branch and switch to it"
-    echo "  checkout <branch> Checkout remote branch into worktree (co)"
+    echo "  checkout [branch] Checkout remote branch into worktree (fzf picker if no branch)"
     echo "  list             List all worktrees"
     echo "  remove           Remove worktree (fzf picker)"
     echo "  clean            Remove all worktrees (-f to skip confirmation)"
@@ -64,15 +64,23 @@ end
 function _gwt_checkout
     set -l input $argv[1]
 
+    git fetch --all
+
     if test -z "$input"
-        echo "Usage: gwt checkout <[remote/]branch>"
-        return 1
+        if not type -q fzf
+            echo "Error: fzf is required when no branch is specified"
+            return 1
+        end
+
+        set input (git branch -r | string trim | grep -v '/HEAD' | fzf --height=40% --reverse)
+
+        if test -z "$input"
+            return 0
+        end
     end
 
     # Strip remote prefix if provided (e.g. origin/branch -> branch)
     set -l branch (string replace -r '^[^/]+/' '' $input)
-
-    git fetch --all
 
     set -l main_repo (_gwt_main_repo)
     set -l worktree_path "$main_repo/.worktrees/$branch"

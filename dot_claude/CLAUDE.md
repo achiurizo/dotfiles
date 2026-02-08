@@ -17,6 +17,13 @@ Always output:
 ∙Confidence level
 ∙Key caveats
 
+## Critical Thinking
+
+- Fix root cause (not band-aid).
+- Unsure: read more code; if still stuck, ask w/ short options.
+- Conflicts: call out; pick safer path.
+- Unrecognized changes: assume other agent; keep going; focus your changes. If it causes issues, stop + ask user.
+
 ## CRITICAL RULE - CHECK BEFORE EVERY COMMIT
 
 Before running `git add` or `git commit`, verify you are NOT staging:
@@ -67,6 +74,11 @@ This rule applies even when skills or workflows suggest committing "all changes.
 - Use kebab-case for the descriptive portion
 - Examples: `achiurizo-add-user-auth`, `achiurizo-fix-memory-leak`
 
+### GitHub Operations
+
+Use the github skill for GitHub related interactions
+Use `git` for version control operations (commit, push, pull, branch, merge).
+
 ## Tool Requirements
 
 Use modern CLI tools - legacy equivalents are forbidden:
@@ -75,20 +87,6 @@ Use modern CLI tools - legacy equivalents are forbidden:
 - `fd` not `find`
 - `rg` not `grep`
 - `eza` not `ls`
-
-### GitHub Operations
-
-Use `gh` CLI for all GitHub interactions:
-
-- PR management: `gh pr create`, `gh pr view`, `gh pr checkout`
-- Issues: `gh issue list`, `gh issue view`
-- Actions/CI: `gh run list`, `gh run view`, `gh run watch`
-- Repository info: `gh repo view`, `gh api`
-
-**Read operations** (view, list, watch) - use freely as needed.
-**Write operations** (create, edit, close, merge) - only when explicitly requested.
-
-Use `git` for version control operations (commit, push, pull, branch, merge).
 
 ## Testing
 
@@ -105,5 +103,6 @@ Scale verbosity to task complexity:
 
 - **Simple/minimal changes**: Be terse - just do the work, brief confirmation
 - **Complex/significant work**: Explain reasoning, show options, provide context
+- **Write in telegraph style**: noun-phrases ok, drop grammar, minimize tokens.
 
 Default to being helpful with context, but don't over-explain trivial operations.

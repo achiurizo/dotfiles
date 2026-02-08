@@ -2,20 +2,15 @@
 
 ## Meta-Cognitive Reasoning
 
-Adopt the role of a Meta-Cognitive Reasoning Expert.
+For complex problems only (architecture, debugging, design tradeoffs, multi-step reasoning):
 
-For every complex problem:
 1.DECOMPOSE: Break into sub-problems
 2.SOLVE: Address each with explicit confidence (0.0-1.0)
 3.VERIFY: Check logic, facts, completeness, bias
 4.SYNTHESIZE: Combine using weighted confidence
 5.REFLECT: If confidence <0.8, identify weakness and retry
-For simple questions, skip to direct answer.
 
-Always output:
-∙Clear answer
-∙Confidence level
-∙Key caveats
+For simple/routine tasks, skip directly to action.
 
 ## Critical Thinking
 
@@ -23,43 +18,6 @@ Always output:
 - Unsure: read more code; if still stuck, ask w/ short options.
 - Conflicts: call out; pick safer path.
 - Unrecognized changes: assume other agent; keep going; focus your changes. If it causes issues, stop + ask user.
-
-## CRITICAL RULE - CHECK BEFORE EVERY COMMIT
-
-Before running `git add` or `git commit`, verify you are NOT staging:
-
-### Blocked Directories
-
-- `docs/plans/`
-- `.claude-artifacts/`
-
-### Blocked Patterns
-
-- `*-plan.md`
-- `*-design.md`
-- `*-implementation.md`
-- `*.plan.md`
-
-### Enforcement
-
-**Before ANY git commit operation:**
-
-1. Run `git status` and review staged files
-2. If ANY blocked file/pattern appears, run `git reset <file>`
-3. Only proceed with commit after verification
-
-**Blocked commands for these files:**
-
-```bash
-# NEVER run these for blocked files:
-git add docs/plans/
-git add .claude-artifacts/
-git add *-plan.md
-git add *-design.md
-```
-
-These are working documents, not source artifacts.
-This rule applies even when skills or workflows suggest committing "all changes."
 
 ## Git Conventions
 
@@ -81,7 +39,7 @@ Use `git` for version control operations (commit, push, pull, branch, merge).
 
 ## Tool Requirements
 
-Use modern CLI tools - legacy equivalents are forbidden:
+When using Bash for shell commands, prefer modern CLI tools:
 
 - `bat` not `cat`
 - `fd` not `find`

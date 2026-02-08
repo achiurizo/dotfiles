@@ -24,3 +24,6 @@ brew "tmux"
 brew "tree-sitter"
 brew "tree-sitter-cli"
 brew "universal-ctags"
+
+tap "steipete/tap"
+brew "gifgrep"
